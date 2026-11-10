@@ -1,0 +1,32 @@
+# Configuración del Agente Top 200
+# Podés editar estos valores directamente desde GitHub (botón del lápiz).
+
+universo:
+  cantidad: 200              # empresas por capitalización (mensual)
+  # Agregar o quitar tickers manualmente (formato Yahoo Finance)
+  excluir: []                # ej: ["2222.SR"]
+  incluir_extra: []          # ej: ["CAT"]
+
+semanal:
+  cantidad: 50               # empresas para análisis fundamental
+  peso_calidad: 0.55         # calidad + valor deben sumar 1
+  peso_valor: 0.45
+  cobertura_minima: 0.5      # % mínimo de métricas disponibles para puntuar
+
+diario:
+  cantidad: 20               # empresas para análisis técnico
+  solo_operables: true       # solo las que cotizan en EE.UU. (acciones o ADR, comprables desde Hapi)
+
+ia:
+  activada: true
+  modelo: "claude-sonnet-5-5"        # modelo para tesis semanales
+  modelo_diario: "claude-sonnet-5-5" # modelo para el comentario técnico diario
+  hilos: 4                           # llamadas en paralelo
+  max_noticias: 6                    # titulares recientes por empresa
+
+# Reglas personales (se le pasan a la IA como contexto)
+perfil_inversor: >
+  Inversora de largo plazo (horizonte ~8 años), perfil agresivo, invierte en dólares
+  desde Argentina vía Hapi. Núcleo en índices (VOO/VXUS) y un satélite de ~13% en
+  acciones individuales de calidad/valor, sin apalancamiento, máximo 4-5% por posición.
+  Busca negocios sólidos a precio razonable para mantener años, no trading.
