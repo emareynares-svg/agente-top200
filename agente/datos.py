@@ -130,13 +130,20 @@ class YahooProveedor:
     def fundamentales(self, ticker: str) -> dict:
         t = self.yf.Ticker(ticker)
         info = {}
-        for intento in range(3):
+        for intento in range(5):
             try:
                 info = t.info or {}
-                break
+                if info.get("marketCap") or info.get("longName"):
+                    break
+                time.sleep(3 * (intento + 1))
             except Exception as e:  # noqa: BLE001
-                log.debug("Reintento %s info (%s)", ticker, e)
-                time.sleep(2 * (intento + 1))
+                limite = "rate" in str(e).lower() or "too many" in str(e).lower()
+                espera = (15 if limite else 3) * (2 ** intento)
+                log.warning("%s: %s → reintento en %ss", ticker, str(e)[:120], espera)
+                time.sleep(espera)
+        if not info:
+            log.warning("%s: sin datos de Yahoo tras varios intentos", ticker)
+            return {}
         datos = {k: info.get(k) for k in CAMPOS_INFO}
         datos.update(self._estados(t))
         return datos

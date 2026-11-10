@@ -151,7 +151,7 @@ def ejecutar(prov, cfg: dict, universo: dict) -> dict:
             log.warning("Fallo fundamentales %s: %s", t, e)
             return t, {}
 
-    with ThreadPoolExecutor(max_workers=6) as pool:
+    with ThreadPoolExecutor(max_workers=3) as pool:
         crudos = dict(pool.map(bajar, tickers))
 
     filas = []
@@ -165,8 +165,11 @@ def ejecutar(prov, cfg: dict, universo: dict) -> dict:
                   "operable": e.get("operable"), "pais": raw.get("country") or e.get("pais")})
         m["alertas"] = _alertas(m)
         filas.append(m)
+    sin_datos = [t for t in tickers if not crudos.get(t)]
+    log.info("Fundamentales: %d con datos, %d sin datos%s", len(filas), len(sin_datos),
+             f" ({', '.join(sin_datos[:15])}{'…' if len(sin_datos) > 15 else ''})" if sin_datos else "")
     if not filas:
-        raise RuntimeError("No se pudo obtener ningún dato fundamental.")
+        raise RuntimeError("Yahoo Finance no devolvió datos fundamentales (posible bloqueo o límite de consultas).")
 
     df = puntuar(pd.DataFrame(filas), cfg)
     n50 = int(cfg["semanal"].get("cantidad", 50))
