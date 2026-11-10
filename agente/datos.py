@@ -184,18 +184,23 @@ class YahooProveedor:
             log.debug("Estados contables incompletos: %s", e)
         return out
 
-    def noticias(self, ticker: str, maximo: int = 6) -> list[str]:
+    def noticias(self, ticker: str, maximo: int = 6, dias: int | None = None) -> list[str]:
+        """Titulares recientes ('AAAA-MM-DD Título'). Con `dias`, solo los de los últimos N días."""
         try:
             items = self.yf.Ticker(ticker).news or []
         except Exception:  # noqa: BLE001
             return []
+        desde = (pd.Timestamp.today() - pd.Timedelta(days=dias)).strftime("%Y-%m-%d") if dias else ""
         titulos = []
-        for it in items[:maximo]:
+        for it in items:
             c = it.get("content", it)
             titulo = c.get("title")
             fecha = (c.get("pubDate") or "")[:10]
-            if titulo:
-                titulos.append(f"{fecha} {titulo}".strip())
+            if not titulo or (desde and fecha and fecha < desde):
+                continue
+            titulos.append(f"{fecha} {titulo}".strip())
+            if len(titulos) >= maximo:
+                break
         return titulos
 
     # ---------- Precios ----------
@@ -261,8 +266,9 @@ class DemoProveedor:
             "longBusinessSummary": "Empresa simulada para la demo.",
         }
 
-    def noticias(self, ticker: str, maximo: int = 6) -> list[str]:
-        return [f"Titular simulado {i} sobre {ticker}" for i in range(2)]
+    def noticias(self, ticker: str, maximo: int = 6, dias: int | None = None) -> list[str]:
+        hoy = pd.Timestamp.today().strftime("%Y-%m-%d")
+        return [f"{hoy} Titular simulado {i} sobre {ticker}" for i in range(2)]
 
     def historia(self, tickers: list[str], periodo: str = "2y", inicio: str | None = None,
                  minimo: int = 30) -> dict[str, pd.DataFrame]:

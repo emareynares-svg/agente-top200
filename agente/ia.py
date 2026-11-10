@@ -42,12 +42,18 @@ PLANTILLA_SEMANAL = """Estas son las empresas elegidas esta semana entre las 50 
 fundamentales. Para cada una tenés el análisis técnico al cierre (precio, SMA50/200, RSI(14), histograma
 MACD, %B de Bollinger, distancia al máximo de 52 semanas, rendimientos, etiqueta automática) y un resumen
 de la tesis fundamental del mes (veredicto, valuación, qué vigilar). "motivo" indica por qué entró esta semana.
+"noticias_semana" trae los titulares de los últimos días (fecha y título; puede estar vacío).
 
 {datos}
 
 La inversora compra para mantener años; el técnico sirve solo para elegir MEJORES MOMENTOS DE ENTRADA.
 Cruzá tesis y técnico: una empresa con buena tesis en retroceso ordenado puede ser "Entrar ahora" o
 "Entrar de a poco"; una sobreextendida, "Esperar"; una con tesis floja o tendencia rota, "Evitar".
+NOTICIAS: si algún titular afecta de forma material la tesis del mes (resultados o guidance muy distintos
+a lo esperado, regulación, juicios, fusiones/adquisiciones, cambio de CEO, problemas contables, pérdida de
+un cliente clave), completá "alerta_tesis" explicando en 1-2 frases qué cambia y si refuerza o debilita la
+tesis, y tenelo en cuenta en el "momento". Si no hay nada material, usá null. Basate SOLO en los titulares
+provistos: no inventes noticias ni supongas el contenido más allá del título.
 Devolvé este JSON:
 {{
  "titular": "una frase con lo más importante de la semana",
@@ -55,7 +61,8 @@ Devolvé este JSON:
  "por_empresa": {{
    "TICKER": {{"momento": "Entrar ahora | Entrar de a poco | Esperar | Evitar",
               "comentario": "2-3 frases que crucen tesis y técnico",
-              "nivel": "precio o condición concreta a vigilar para entrar (ej. 'cerca de la SMA50, ~185')"}}
+              "nivel": "precio o condición concreta a vigilar para entrar (ej. 'cerca de la SMA50, ~185')",
+              "alerta_tesis": null}}
  }}
 }}
 Incluí todas las empresas en por_empresa."""
@@ -221,7 +228,7 @@ def comentario_semanal(cfg: dict, filas: list[dict]) -> dict | None:
     campos = ["ticker", "nombre", "motivo", "precio", "sma50", "sma200", "rsi", "macd_hist", "bb_pct",
               "dist_max52", "rend_1s", "rend_1m", "rend_3m", "rend_ytd", "cruce", "tendencia", "etiqueta",
               "puntaje_tecnico", "score_fundamental", "veredicto_mensual", "valuacion_mensual",
-              "tesis_mensual", "vigilar_mensual"]
+              "tesis_mensual", "vigilar_mensual", "noticias_semana"]
     datos = "\n".join(json.dumps({k: _fmt(f.get(k)) for k in campos}, ensure_ascii=False) for f in filas)
     prompt = PLANTILLA_SEMANAL.format(datos=datos)
     return _llamar(cfg, cfg["ia"].get("modelo_semanal", "claude-sonnet-5-5"), prompt,

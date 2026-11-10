@@ -2,6 +2,8 @@
 técnico y Claude evalúa el momento de entrada cruzándolo con la tesis mensual."""
 from __future__ import annotations
 
+from concurrent.futures import ThreadPoolExecutor
+
 import numpy as np
 import pandas as pd
 
@@ -194,10 +196,31 @@ def ejecutar(prov, cfg: dict, mensual: dict) -> dict:
         filas.append(ind)
     filas.sort(key=lambda x: x["puntaje_tecnico"], reverse=True)
 
+    # Titulares de la semana: para detectar noticias que cambien la tesis del mes
+    sc = cfg["semanal"]
+    maxn, dias = int(sc.get("max_noticias", 5)), int(sc.get("dias_noticias", 8))
+
+    def con_noticias(f: dict) -> dict:
+        try:
+            f["noticias_semana"] = prov.noticias(f["ticker"], maxn, dias)
+        except Exception:  # noqa: BLE001
+            f["noticias_semana"] = []
+        return f
+
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        filas = list(pool.map(con_noticias, filas))
+    log.info("Titulares de la semana: %d en total", sum(len(f["noticias_semana"]) for f in filas))
+
     resumen = None
     if ia.disponible(cfg) and filas:
         log.info("Pidiendo a Claude la evaluación del momento de entrada...")
         resumen = ia.comentario_semanal(cfg, filas)
+
+    # Copia en cada empresa la evaluación de la IA (momento y, si hay, alerta por noticias)
+    for f in filas:
+        w = ((resumen or {}).get("por_empresa") or {}).get(f["ticker"]) or {}
+        if isinstance(w, dict):
+            f["alerta_tesis"] = w.get("alerta_tesis") or None
 
     # Actualiza el historial de rotación
     fecha = hoy()

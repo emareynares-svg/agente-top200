@@ -44,6 +44,7 @@ def _evaluaciones() -> list[dict]:
                     "precio_reportado": e.get("precio"), "puntaje_tecnico": e.get("puntaje_tecnico"),
                     "etiqueta": e.get("etiqueta"), "tendencia": e.get("tendencia"), "rsi": e.get("rsi"),
                     "momento": w.get("momento"), "comentario": w.get("comentario"),
+                    "alerta_tesis": w.get("alerta_tesis"),
                     "score": e.get("score_fundamental"), "motivo": e.get("motivo"),
                 })
         elif "score" in empresas[0]:  # evaluación fundamental (mensual / semanal antigua)
