@@ -58,6 +58,8 @@ dialog::backdrop{background:rgba(0,0,0,.45)}
 .x{background:none;border:0;font-size:22px;color:var(--muted);cursor:pointer}
 .legend{font-size:12px;color:var(--muted)}.legend i{display:inline-block;width:14px;height:3px;vertical-align:middle;margin:0 4px 0 10px}
 .empty{color:var(--muted);padding:30px;text-align:center}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:16px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}.kpi span{color:var(--muted);font-size:12px;display:block}.kpi b{font-size:24px;font-weight:650;display:block;margin-top:2px}.kpi small{color:var(--muted);font-size:12px}
 .disc{color:var(--muted);font-size:12px;margin-top:24px}
 </style>
 </head>
@@ -69,6 +71,8 @@ dialog::backdrop{background:rgba(0,0,0,.45)}
     <button data-t="hoy" class="on">Semana · entrada (20)</button>
     <button data-t="semana">Mes · tesis (50)</button>
     <button data-t="universo">Universo (200)</button>
+    <button data-t="historial">Historial</button>
+    <button data-t="costos">Costos</button>
     <button data-t="como">Cómo funciona</button>
   </nav>
 </header>
@@ -76,6 +80,8 @@ dialog::backdrop{background:rgba(0,0,0,.45)}
   <section id="t-hoy"></section>
   <section id="t-semana" hidden></section>
   <section id="t-universo" hidden></section>
+  <section id="t-historial" hidden></section>
+  <section id="t-costos" hidden></section>
   <section id="t-como" hidden></section>
   <p class="disc">Herramienta de análisis personal. No es asesoramiento financiero. Datos de Yahoo Finance y companiesmarketcap.com; pueden tener errores o demoras.</p>
 </main>
@@ -90,7 +96,7 @@ const n=(v,d=1)=>v==null?"–":Number(v).toLocaleString("es-AR",{maximumFraction
 const money=v=>v==null?"–":v>=1e12?"US$ "+n(v/1e12,2)+" T":v>=1e9?"US$ "+n(v/1e9,0)+" B":"US$ "+n(v/1e6,0)+" M";
 const fecha=s=>s?new Date(s).toLocaleString("es-AR",{dateStyle:"medium",timeStyle:"short"}):"–";
 // S = mensual (50 con tesis) · D = semanal (20 con técnico) · R = rotación
-let U=null,S=null,D=null,R=null,SER={};
+let U=null,S=null,D=null,R=null,H=null,C=null,SER={};
 
 async function load(f){try{const r=await fetch("data/"+f+"?v="+Date.now());return r.ok?r.json():null}catch(e){return null}}
 
@@ -220,6 +226,105 @@ function detalle(t){
   $("#dbody").innerHTML=h;$("#dlg").showModal();
 }
 
+
+// ---------------- HISTORIAL ----------------
+let hTicker="",hFiltro={fecha:"",tipo:"",senal:""},hSort={k:"fecha",asc:false};
+const senal=e=>e.tipo==="mensual"?e.veredicto:e.momento||e.etiqueta;
+function colSenal(v){return !v?"var(--c3)":/Candidata|Entrar|compra|sana/.test(v)?"var(--pos)":/No encaja|Evitar|Debilidad/.test(v)?"var(--neg)":"var(--warn)"}
+function chartHist(t){
+  const s=H.series[t],ref=H.series[H.referencia];if(!s)return`<p class="mut">Sin precios para ${esc(t)}.</p>`;
+  const ev=H.evaluaciones.filter(e=>e.ticker===t).sort((a,b)=>a.fecha<b.fecha?-1:1);
+  const f0=ev[0].fecha,i0=Math.max(0,s.fechas.findIndex(d=>d>=f0)-1);
+  const F=s.fechas.slice(i0),C=s.close.slice(i0);
+  let RB=null;if(ref){const m=new Map(ref.fechas.map((d,i)=>[d,ref.close[i]]));const r0=m.get(F[0]);if(r0)RB=F.map(d=>m.has(d)?m.get(d)/r0*C[0]:null)}
+  const W=820,Hh=240,pl=44,pb=20,all=[...C,...(RB||[])].filter(v=>v!=null),lo=Math.min(...all),hi=Math.max(...all);
+  const X=i=>pl+i*(W-pl-6)/Math.max(1,F.length-1),Y=v=>6+(Hh-pb-10)*(1-(v-lo)/((hi-lo)||1));
+  const path=a=>{let d="",m=false;a.forEach((v,i)=>{if(v==null){m=false;return}d+=(m?"L":"M")+X(i).toFixed(1)+" "+Y(v).toFixed(1);m=true});return d};
+  let g="";[lo,(lo+hi)/2,hi].forEach(v=>g+=`<line x1="${pl}" x2="${W}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--line)"/><text x="0" y="${Y(v)+4}" font-size="10" fill="var(--muted)">${n(v,0)}</text>`);
+  [0,Math.floor((F.length-1)/2),F.length-1].forEach(i=>g+=`<text x="${X(i)}" y="${Hh-4}" font-size="10" fill="var(--muted)" text-anchor="${i==0?"start":i==F.length-1?"end":"middle"}">${F[i]}</text>`);
+  let mk="";for(const e of ev){let i=F.findIndex(d=>d>=e.fecha);if(i<0)i=F.length-1;const v=C[i];
+    const sh=e.tipo==="mensual"?`<rect x="${X(i)-5}" y="${Y(v)-5}" width="10" height="10" transform="rotate(45 ${X(i)} ${Y(v)})"`:`<circle cx="${X(i)}" cy="${Y(v)}" r="5"`;
+    mk+=`${sh} fill="${colSenal(senal(e))}" stroke="var(--panel)" stroke-width="1.5"><title>${e.fecha} · ${e.tipo} · ${esc(senal(e)||"")}</title>${e.tipo==="mensual"?"</rect>":"</circle>"}`}
+  return `<svg viewBox="0 0 ${W} ${Hh}" width="100%" height="${Hh}" role="img" aria-label="Historial de ${esc(t)}">${g}
+    ${RB?`<path d="${path(RB)}" fill="none" stroke="var(--c3)" stroke-width="1.3" stroke-dasharray="4 3"/>`:""}
+    <path d="${path(C)}" fill="none" stroke="var(--c1)" stroke-width="2"/>${mk}</svg>
+    <div class="legend"><i style="background:var(--c1)"></i>${esc(t)} (semanal)${RB?`<i style="background:var(--c3)"></i>${esc(H.referencia)} llevado al mismo punto de partida`:""} · ◆ tesis mensual · ● análisis semanal (verde = a favor, ámbar = esperar/seguir, rojo = en contra)</div>`;
+}
+function tablaSenales(arr,titulo){
+  if(!arr?.length)return `<div><h3>${titulo}</h3><p class="mut">Todavía no hay evaluaciones con al menos ${H.dias_minimos} días de antigüedad.</p></div>`;
+  return `<div><h3>${titulo}</h3><table><thead><tr><th>Señal</th><th class="n">Casos</th><th class="n">Rend. prom.</th><th class="n">${esc(H.referencia)} mismo período</th><th class="n">Diferencia</th><th class="n">Le ganó</th></tr></thead><tbody>
+  ${arr.map(g=>`<tr style="cursor:default"><td>${esc(g.grupo)}</td><td class="n">${g.n}</td><td class="n">${spct(g.rend_prom)}</td><td class="n">${spct(g.ref_prom)}</td><td class="n"><b>${spct(g.exceso_prom)}</b></td><td class="n">${pct(g.le_gano_pct,0)}</td></tr>`).join("")}</tbody></table></div>`;
+}
+function renderHistorial(){
+  const el=$("#t-historial");
+  if(!H||!H.evaluaciones?.length){el.innerHTML=`<div class="empty">Todavía no hay historial. Se arma solo con cada ejecución.</div>`;return}
+  const ev=H.evaluaciones;
+  const tick=[...new Set(ev.map(e=>e.ticker))].sort();
+  if(!hTicker)hTicker=(D?.empresas?.[0]?.ticker)||tick[0];
+  const nombre=t=>ev.find(e=>e.ticker===t)?.nombre||t;
+  let h=`<div class="panel"><h2>¿Funcionan las señales?</h2>
+   <div class="mut" style="margin-bottom:6px">Rendimiento promedio de las acciones desde la fecha en que se analizaron, comparado con ${esc(H.referencia)} en el mismo período. Cuantos más meses de historial, más confiable la lectura.</div>
+   <div class="two">${tablaSenales(H.senales.veredicto,"Por veredicto de la tesis mensual")}${tablaSenales(H.senales.momento,"Por momento de entrada semanal")}</div></div>`;
+  const evT=ev.filter(e=>e.ticker===hTicker).sort((a,b)=>a.fecha<b.fecha?-1:1);
+  h+=`<div class="panel"><div class="row" style="margin-bottom:8px"><h2 style="margin:0">Seguimiento por empresa</h2>
+   <select onchange="hTicker=this.value;renderHistorial()">${tick.map(t=>`<option value="${esc(t)}" ${t===hTicker?"selected":""}>${esc(t)} · ${esc(nombre(t))}</option>`).join("")}</select></div>
+   ${chartHist(hTicker)}
+   <div class="tablewrap" style="margin-top:10px"><table><thead><tr><th>Fecha</th><th>Tipo</th><th>Señal</th><th class="n">Score</th><th class="n">Técnico</th><th class="n">Precio entonces</th><th class="n">Desde entonces</th><th class="n">vs ${esc(H.referencia)}</th><th>Comentario</th></tr></thead><tbody>
+   ${evT.map(e=>`<tr style="cursor:default"><td>${e.fecha}</td><td>${e.tipo==="mensual"?"Tesis mensual":"Semanal"}</td><td>${e.tipo==="mensual"?chipVer(e.veredicto):chipMom(e.momento)||chipEtiqueta(e.etiqueta||"")}</td>
+     <td class="n">${n(e.score,0)}</td><td class="n">${e.puntaje_tecnico??"–"}</td><td class="n">${n(e.precio_eval,2)}</td><td class="n">${e.dias<1?"–":spct(e.rend)}</td><td class="n">${e.dias<1?"–":spct(e.exceso)}</td>
+     <td style="white-space:normal;min-width:260px;font-size:12px" class="mut">${esc(e.resumen||e.comentario||"")}</td></tr>`).join("")}</tbody></table></div></div>`;
+  // Tabla general
+  let rows=ev.filter(e=>(!hFiltro.fecha||e.fecha===hFiltro.fecha)&&(!hFiltro.tipo||e.tipo===hFiltro.tipo)&&(!hFiltro.senal||senal(e)===hFiltro.senal));
+  const k=hSort.k;rows=[...rows].sort((a,b)=>{const x=a[k]??-1e9,y=b[k]??-1e9;return (x>y?1:x<y?-1:0)*(hSort.asc?1:-1)});
+  const senales=[...new Set(ev.map(senal).filter(Boolean))].sort();
+  const th=(k,t,c="")=>`<th class="${c}" onclick="hSort={k:'${k}',asc:hSort.k==='${k}'?!hSort.asc:false};renderHistorial()">${t}${hSort.k===k?(hSort.asc?" ▲":" ▼"):""}</th>`;
+  h+=`<div class="panel"><h2>Todas las evaluaciones</h2><div class="filters">
+   <select onchange="hFiltro.fecha=this.value;renderHistorial()"><option value="">Todas las fechas</option>${[...H.fechas].reverse().map(f=>`<option ${f===hFiltro.fecha?"selected":""}>${f}</option>`).join("")}</select>
+   <select onchange="hFiltro.tipo=this.value;renderHistorial()"><option value="">Mensual y semanal</option><option value="mensual" ${hFiltro.tipo==="mensual"?"selected":""}>Tesis mensual</option><option value="semanal" ${hFiltro.tipo==="semanal"?"selected":""}>Semanal</option></select>
+   <select onchange="hFiltro.senal=this.value;renderHistorial()"><option value="">Todas las señales</option>${senales.map(x=>`<option ${x===hFiltro.senal?"selected":""}>${esc(x)}</option>`).join("")}</select>
+   <span class="mut" style="align-self:center">${rows.length} evaluaciones · tocá una fila para ver la empresa</span></div>
+   <div class="tablewrap"><table><thead><tr>${th("fecha","Fecha")}${th("ticker","Ticker")}<th>Tipo</th><th>Señal</th>${th("score","Score","n")}${th("puntaje_tecnico","Técnico","n")}${th("precio_eval","Precio","n")}${th("rend","Desde entonces","n")}${th("exceso","vs "+esc(H.referencia),"n")}</tr></thead><tbody>
+   ${rows.map(e=>`<tr onclick="hTicker='${esc(e.ticker)}';renderHistorial();window.scrollTo({top:0,behavior:'smooth'})"><td>${e.fecha}</td><td><b>${esc(e.ticker)}</b></td><td>${e.tipo==="mensual"?"Mensual":"Semanal"}</td><td>${e.tipo==="mensual"?chipVer(e.veredicto):chipMom(e.momento)||chipEtiqueta(e.etiqueta||"")}</td>
+     <td class="n">${n(e.score,0)}</td><td class="n">${e.puntaje_tecnico??"–"}</td><td class="n">${n(e.precio_eval,2)}</td><td class="n">${e.dias<1?"–":spct(e.rend)}</td><td class="n">${e.dias<1?"–":spct(e.exceso)}</td></tr>`).join("")}</tbody></table></div>
+   <p class="mut" style="font-size:12px">Precios ajustados por dividendos y splits. Las acciones que no cotizan en EE.UU. se miden en su moneda local. Actualizado ${fecha(H.actualizado)}.</p></div>`;
+  el.innerHTML=h;
+}
+
+
+// ---------------- COSTOS ----------------
+const usd=(v,d=2)=>v==null?"–":"US$ "+Number(v).toLocaleString("es-AR",{minimumFractionDigits:d,maximumFractionDigits:d});
+const miles=v=>v==null?"–":Number(v).toLocaleString("es-AR");
+function renderCostos(){
+  const el=$("#t-costos");
+  const regs=(C?.registros||[]).slice().sort((a,b)=>a.fecha<b.fecha?1:-1);
+  if(!regs.length){el.innerHTML=`<div class="empty">Todavía no hay ejecuciones registradas.</div>`;return}
+  const gastado=regs.reduce((a,r)=>a+(r.costo||0),0),cargado=(C.cargas||[]).reduce((a,c)=>a+(c.monto||0),0);
+  const saldo=cargado-gastado,mesAct=new Date().toISOString().slice(0,7);
+  const esteMes=regs.filter(r=>r.fecha.slice(0,7)===mesAct).reduce((a,r)=>a+(r.costo||0),0);
+  const prom=m=>{const x=regs.filter(r=>r.modo===m&&r.resultado==="ok"&&r.llamadas);return x.length?x.reduce((a,r)=>a+r.costo,0)/x.length:null};
+  const pm=prom("mensual")??(prom("todo")!=null?prom("todo")-(prom("semanal")||0.06):null),ps=prom("semanal");
+  const proy=pm!=null?pm+(ps??0.06)*4.33:null;
+  const alerta=cargado&&saldo<(C.alerta_saldo??1.5);
+  let h=`<div class="kpis">
+    <div class="kpi" ${alerta?'style="border-color:var(--neg)"':""}><span>Saldo estimado</span><b class="${alerta?"neg":""}">${cargado?usd(saldo):"–"}</b><small>${cargado?`cargado ${usd(cargado)} − gastado ${usd(gastado)}`:"agregá tus cargas en config.yaml"}</small></div>
+    <div class="kpi"><span>Gastado en total</span><b>${usd(gastado)}</b><small>${regs.length} ejecuciones registradas</small></div>
+    <div class="kpi"><span>Este mes</span><b>${usd(esteMes)}</b><small>${mesAct}</small></div>
+    <div class="kpi"><span>Proyección por mes</span><b>${usd(proy)}</b><small>1 mensual + ~4,3 semanales${proy&&cargado?` · alcanza para ~${n(Math.max(0,saldo/proy),1)} meses`:""}</small></div></div>`;
+  if(alerta)h+=`<div class="panel" style="border-color:var(--neg)"><b class="neg">Saldo bajo.</b> Cargá crédito en console.anthropic.com y agregá la carga en <code>config.yaml</code> → <code>costos.cargas</code>. Si el saldo llega a cero, el agente sigue funcionando pero sin tesis ni comentarios de IA.</div>`;
+  const porMes={};regs.forEach(r=>{const m=r.fecha.slice(0,7);porMes[m]??={n:0,ll:0,c:0};porMes[m].n++;porMes[m].ll+=r.llamadas||0;porMes[m].c+=r.costo||0});
+  h+=`<div class="two"><div class="panel"><h2>Por mes</h2><table><thead><tr><th>Mes</th><th class="n">Ejecuciones</th><th class="n">Llamadas IA</th><th class="n">Costo</th></tr></thead><tbody>
+    ${Object.keys(porMes).sort().reverse().map(m=>`<tr style="cursor:default"><td>${m}</td><td class="n">${porMes[m].n}</td><td class="n">${miles(porMes[m].ll)}</td><td class="n"><b>${usd(porMes[m].c)}</b></td></tr>`).join("")}</tbody></table></div>
+    <div class="panel"><h2>Cargas de crédito</h2>${(C.cargas||[]).length?`<table><thead><tr><th>Fecha</th><th class="n">Monto</th></tr></thead><tbody>${C.cargas.map(c=>`<tr style="cursor:default"><td>${esc(c.fecha)}</td><td class="n">${usd(c.monto)}</td></tr>`).join("")}</tbody></table>`:`<p class="mut">Sin cargas registradas.</p>`}
+    <p class="mut" style="font-size:12px">Se editan en <code>config.yaml</code> → <code>costos.cargas</code>.</p></div></div>`;
+  h+=`<div class="panel"><h2>Cada ejecución</h2><div class="tablewrap"><table><thead><tr><th>Fecha</th><th>Modo</th><th>Origen</th><th>Resultado</th><th class="n">Llamadas</th><th class="n">Tokens entrada</th><th class="n">Tokens salida</th><th class="n">Costo</th><th>Detalle</th></tr></thead><tbody>
+    ${regs.map(r=>`<tr style="cursor:default"><td>${fecha(r.fecha)}</td><td>${esc(r.modo)}</td><td>${esc(r.origen||"")}</td>
+      <td>${r.resultado==="ok"?`<span class="chip pos">ok</span>`:`<span class="chip neg">${esc(r.resultado)}</span>`}${r.cortada?`<span class="chip warn">IA cortada</span>`:""}</td>
+      <td class="n">${miles(r.llamadas)}</td><td class="n">${miles(r.tokens_in)}</td><td class="n">${miles(r.tokens_out)}</td><td class="n"><b>${usd(r.costo)}</b></td>
+      <td style="white-space:normal;min-width:200px;font-size:12px" class="mut">${r.run?`<a href="${esc(r.run)}" target="_blank" rel="noopener">ver ejecución</a> · `:""}${esc(r.nota||r.fuente||"")}</td></tr>`).join("")}</tbody></table></div>
+    <p class="mut" style="font-size:12px">Costo estimado con los precios de lista de cada modelo (config.yaml → ia.precios). El saldo exacto está en console.anthropic.com → Billing.</p></div>`;
+  el.innerHTML=h;
+}
+
 function renderComo(){
   const m=(S?.criterio?.metricas)||[];
   const tabla=b=>m.filter(x=>x.bloque===b).map(x=>`<tr><td>${esc(x.nombre)}</td><td>${x.mayor_es_mejor?"Más alto":"Más bajo"}</td><td>${x.relativa_sector?"Dentro del sector":"Contra las 200"}</td><td class="n">${x.peso}</td></tr>`).join("");
@@ -232,10 +337,10 @@ function renderComo(){
 }
 
 (async()=>{
-  [U,S,D,R]=await Promise.all([load("universo.json"),load("mensual.json"),load("semanal.json"),load("rotacion.json")]);
+  [U,S,D,R,H,C]=await Promise.all([load("universo.json"),load("mensual.json"),load("semanal.json"),load("rotacion.json"),load("historial.json"),load("costos.json")]);
   SER=(await load("series.json"))?.series||{};
   $("#meta").textContent=`Semanal: ${fecha(D?.actualizado)} · Mensual: ${fecha(S?.actualizado)}`;
-  renderHoy();renderSemana();renderUniverso();renderComo();
+  renderHoy();renderSemana();renderUniverso();renderHistorial();renderCostos();renderComo();
 })();
 </script>
 </body>

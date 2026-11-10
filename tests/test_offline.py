@@ -10,7 +10,7 @@ from types import SimpleNamespace
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from agente import fundamental, ia, tecnico, universo, util  # noqa: E402
+from agente import costos, fundamental, historial, ia, tecnico, universo, util  # noqa: E402
 from agente.datos import DemoProveedor  # noqa: E402
 
 
@@ -94,9 +94,37 @@ def correr(destino: Path) -> None:
     operables = sum(1 for e in m["empresas"] if e["operable"])
     assert cob["analizadas"] == operables, (cob, operables)
     assert falso.llamadas == 54, falso.llamadas
+
+    # Historial: simulamos evaluaciones pasadas copiando los snapshots con fechas anteriores
+    import shutil
+    hdir = destino / "historial"
+    hoy_ = util.hoy()
+    shutil.copy(hdir / f"mensual-{hoy_}.json", hdir / "mensual-2026-08-03.json")
+    shutil.copy(hdir / f"semanal-{hoy_}.json", hdir / "semanal-2026-08-09.json")
+    shutil.copy(hdir / f"semanal-{hoy_}.json", hdir / "semanal-2026-09-13.json")
+    shutil.copy(hdir / f"mensual-{hoy_}.json", hdir / "mensual-2026-10-01.json")
+    h = historial.ejecutar(prov, cfg)
+    ev = h["evaluaciones"]
+    assert {e["tipo"] for e in ev} == {"mensual", "semanal"}
+    viejas = [e for e in ev if e["fecha"] == "2026-08-03"]
+    assert len(viejas) == 50 and all(e["rend"] is not None and e["exceso"] is not None for e in viejas)
+    assert h["senales"]["veredicto"] and h["senales"]["momento"]
+    assert "VOO" in h["series"] and all(t in h["series"] for t in {e["ticker"] for e in ev})
+    assert len(h["fechas"]) == 5, h["fechas"]
+
+    # Costos: el uso de IA se acumula por modelo y se persiste ejecución tras ejecución
+    u = ia.uso(cfg)
+    assert u["llamadas"] == 54 and u["por_modelo"][0]["modelo"] == "claude-sonnet-5-5"
+    esperado = (54 * 1500 * 2 + 54 * 600 * 10) / 1e6
+    assert abs(u["costo"] - esperado) < 1e-6, (u["costo"], esperado)
+    costos.registrar(cfg, "todo", u, util.ahora_iso(), 120, True)
+    costos.registrar(cfg, "semanal", u, util.ahora_iso(), 60, False)
+    c = json.loads((destino / "costos.json").read_text())
+    assert len(c["registros"]) == 2 and abs(c["total"] - 2 * esperado) < 1e-3
+    assert c["registros"][1]["resultado"] == "con error"
     print(f"OK: universo 200, mensual 50 (+50 tesis), semanal 20 con rotación "
           f"(semana 2 repite solo {len(seg)} en seguimiento; cobertura {cob['analizadas']}/{cob['total']} "
-          f"en 4 semanas), {falso.llamadas} llamadas IA")
+          f"en 4 semanas), {falso.llamadas} llamadas IA; historial {len(ev)} evaluaciones en {len(h['fechas'])} fechas")
 
 
 def test_indicadores() -> None:
@@ -118,7 +146,8 @@ def test_disyuntor() -> None:
             Cortado.llamadas += 1
             return SimpleNamespace(content=[SimpleNamespace(type="text", text='{"resumen": "inc')],
                                    stop_reason="max_tokens", usage=SimpleNamespace(input_tokens=10, output_tokens=10))
-    viejo = dict(ia._ESTADO)
+    import copy
+    viejo = copy.deepcopy(ia._ESTADO)
     ia._CLIENTE = Cortado()
     cfg = util.cargar_config()
     for _ in range(10):

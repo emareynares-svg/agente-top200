@@ -18,6 +18,18 @@ semanal:
   seguimiento_max: 5         # lugares reservados para repetir las que la semana anterior dieron "zona de compra"
   solo_operables: true       # solo las que cotizan en EE.UU. (acciones o ADR, comprables desde Hapi)
 
+costos:
+  # Cada vez que cargues crédito en console.anthropic.com, agregá una línea acá.
+  # El dashboard (pestaña Costos) usa esto para estimar tu saldo.
+  cargas:
+    - {fecha: "2026-11-10", monto: 5}
+    - {fecha: "2026-11-10", monto: 5}
+  alerta_saldo: 1.5          # avisar en el dashboard si el saldo estimado baja de este monto (US$)
+
+historial:
+  referencia: "VOO"          # índice contra el que se compara cada análisis (tu núcleo)
+  dias_minimos: 7            # días mínimos desde el análisis para contarlo en "¿funcionan las señales?"
+
 ia:
   activada: true
   modelo: "claude-sonnet-5-5"        # tesis mensuales (50 llamadas por mes)
@@ -26,8 +38,10 @@ ia:
   pensamiento: "between_tools"       # sin razonamiento previo (Sonnet 5.5). Para Haiku: "disabled"
   max_tokens_tesis: 4000
   max_tokens_semanal: 10000
-  precio_entrada: 2                  # US$ por millón de tokens (Sonnet 5.5), solo para estimar el costo
-  precio_salida: 10
+  # Precios en US$ por millón de tokens [entrada, salida], solo para estimar el costo de cada ejecución.
+  # Si cambiás de modelo, agregá acá su precio (ver platform.claude.com/docs → Pricing).
+  precios:
+    claude-sonnet-5-5: [2, 10]
   hilos: 4                           # llamadas en paralelo
   max_noticias: 6                    # titulares recientes por empresa
 

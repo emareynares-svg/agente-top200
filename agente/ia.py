@@ -90,17 +90,40 @@ def _extraer_json(texto: str) -> dict:
 # Control de gasto y fallas (compartido entre hilos)
 _LOCK = threading.Lock()
 _ESTADO = {"fallas_seguidas": 0, "cortado": False, "tokens_in": 0, "tokens_out": 0, "llamadas": 0,
-           "sin_pensamiento": False}
+           "sin_pensamiento": False, "por_modelo": {}}
 MAX_FALLAS_SEGUIDAS = 3
+
+# Precios por defecto (US$ por millón de tokens: entrada, salida). Se pueden pisar en config.yaml → ia.precios
+PRECIOS = {"claude-sonnet-5-5": (2.0, 10.0), "claude-opus-5-5": (4.0, 20.0), "claude-fable-5-2": (8.0, 40.0)}
+
+
+def _precio(cfg: dict, modelo: str) -> tuple[float, float]:
+    ia_cfg = cfg.get("ia", {})
+    p = (ia_cfg.get("precios") or {}).get(modelo) or PRECIOS.get(modelo)
+    if p:
+        return float(p[0]), float(p[1])
+    return float(ia_cfg.get("precio_entrada", 2)), float(ia_cfg.get("precio_salida", 10))
+
+
+def uso(cfg: dict) -> dict:
+    """Consumo de IA de esta ejecución, con costo estimado por modelo."""
+    modelos, total = [], 0.0
+    for m, d in _ESTADO["por_modelo"].items():
+        pin, pout = _precio(cfg, m)
+        c = (d["in"] * pin + d["out"] * pout) / 1e6
+        total += c
+        modelos.append({"modelo": m, "llamadas": d["llamadas"], "tokens_in": d["in"],
+                        "tokens_out": d["out"], "costo": round(c, 4)})
+    return {"llamadas": _ESTADO["llamadas"], "tokens_in": _ESTADO["tokens_in"],
+            "tokens_out": _ESTADO["tokens_out"], "costo": round(total, 4),
+            "cortada": _ESTADO["cortado"], "por_modelo": modelos}
 
 
 def resumen_uso(cfg: dict) -> str:
-    ia_cfg = cfg.get("ia", {})
-    costo = (_ESTADO["tokens_in"] * float(ia_cfg.get("precio_entrada", 2))
-             + _ESTADO["tokens_out"] * float(ia_cfg.get("precio_salida", 10))) / 1e6
-    return (f"IA: {_ESTADO['llamadas']} llamadas, {_ESTADO['tokens_in']:,} tokens de entrada, "
-            f"{_ESTADO['tokens_out']:,} de salida, costo estimado US$ {costo:.2f}"
-            + (" (CORTADA por fallas repetidas)" if _ESTADO["cortado"] else ""))
+    u = uso(cfg)
+    return (f"IA: {u['llamadas']} llamadas, {u['tokens_in']:,} tokens de entrada, "
+            f"{u['tokens_out']:,} de salida, costo estimado US$ {u['costo']:.2f}"
+            + (" (CORTADA por fallas repetidas)" if u["cortada"] else ""))
 
 
 def _llamar(cfg: dict, modelo: str, prompt: str, max_tokens: int) -> dict | None:
@@ -136,9 +159,15 @@ def _llamar(cfg: dict, modelo: str, prompt: str, max_tokens: int) -> dict | None
             time.sleep(5)
             continue
         with _LOCK:
+            tin = getattr(resp.usage, "input_tokens", 0) or 0
+            tout = getattr(resp.usage, "output_tokens", 0) or 0
             _ESTADO["llamadas"] += 1
-            _ESTADO["tokens_in"] += getattr(resp.usage, "input_tokens", 0) or 0
-            _ESTADO["tokens_out"] += getattr(resp.usage, "output_tokens", 0) or 0
+            _ESTADO["tokens_in"] += tin
+            _ESTADO["tokens_out"] += tout
+            pm = _ESTADO["por_modelo"].setdefault(modelo, {"llamadas": 0, "in": 0, "out": 0})
+            pm["llamadas"] += 1
+            pm["in"] += tin
+            pm["out"] += tout
         texto = "".join(b.text for b in resp.content if getattr(b, "type", "") == "text")
         try:
             datos = _extraer_json(texto)

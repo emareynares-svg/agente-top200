@@ -1,0 +1,57 @@
+{
+ "registros": [
+  {
+   "fecha": "2026-11-10T15:00:00+00:00",
+   "modo": "todo",
+   "origen": "manual",
+   "resultado": "con error",
+   "duracion_min": null,
+   "llamadas": null,
+   "tokens_in": null,
+   "tokens_out": null,
+   "costo": 4.74,
+   "cortada": false,
+   "por_modelo": [],
+   "fuente": "saldo de Anthropic (cargado a mano)",
+   "nota": "Versión inicial: el razonamiento de Sonnet 5.5 agotaba el límite de respuesta y se reintentaba. Gasto sin resultado; corregido el mismo día.",
+   "run": null
+  },
+  {
+   "fecha": "2026-11-10T20:00:00+00:00",
+   "modo": "todo",
+   "origen": "manual",
+   "resultado": "ok",
+   "duracion_min": null,
+   "llamadas": 51,
+   "tokens_in": 88912,
+   "tokens_out": 68005,
+   "costo": 0.86,
+   "cortada": false,
+   "por_modelo": [
+    {
+     "modelo": "claude-sonnet-5-5",
+     "llamadas": 51,
+     "tokens_in": 88912,
+     "tokens_out": 68005,
+     "costo": 0.86
+    }
+   ],
+   "fuente": "resumen de la ejecución (cargado a mano)",
+   "nota": "Primer mensual + semanal con la IA corregida.",
+   "run": null
+  }
+ ],
+ "actualizado": "2026-11-10T20:00:00+00:00",
+ "total": 5.6,
+ "cargas": [
+  {
+   "fecha": "2026-11-10",
+   "monto": 5.0
+  },
+  {
+   "fecha": "2026-11-10",
+   "monto": 5.0
+  }
+ ],
+ "alerta_saldo": 1.5
+}

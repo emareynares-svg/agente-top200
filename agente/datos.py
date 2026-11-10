@@ -199,15 +199,17 @@ class YahooProveedor:
         return titulos
 
     # ---------- Precios ----------
-    def historia(self, tickers: list[str], periodo: str = "2y") -> dict[str, pd.DataFrame]:
-        df = self.yf.download(tickers, period=periodo, interval="1d", group_by="ticker",
-                              auto_adjust=True, progress=False, threads=True)
+    def historia(self, tickers: list[str], periodo: str = "2y", inicio: str | None = None,
+                 minimo: int = 30) -> dict[str, pd.DataFrame]:
+        rango = {"start": inicio} if inicio else {"period": periodo}
+        df = self.yf.download(tickers, interval="1d", group_by="ticker", auto_adjust=True,
+                              progress=False, threads=True, **rango)
         out = {}
         for t in tickers:
             try:
                 sub = df[t] if isinstance(df.columns, pd.MultiIndex) else df
                 sub = sub.dropna(subset=["Close"])
-                if len(sub) > 30:
+                if len(sub) >= minimo:
                     out[t] = sub
             except KeyError:
                 log.warning("Sin historia de precios para %s", t)
@@ -262,7 +264,8 @@ class DemoProveedor:
     def noticias(self, ticker: str, maximo: int = 6) -> list[str]:
         return [f"Titular simulado {i} sobre {ticker}" for i in range(2)]
 
-    def historia(self, tickers: list[str], periodo: str = "2y") -> dict[str, pd.DataFrame]:
+    def historia(self, tickers: list[str], periodo: str = "2y", inicio: str | None = None,
+                 minimo: int = 30) -> dict[str, pd.DataFrame]:
         out = {}
         idx = pd.bdate_range(end=pd.Timestamp.today().normalize(), periods=500)
         for t in tickers:
