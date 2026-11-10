@@ -2,15 +2,14 @@ name: Agente Top 200
 
 on:
   schedule:
-    - cron: "0 22 1 * *"      # MENSUAL: día 1 de cada mes, 19:00 (Argentina)
-    - cron: "0 13 * * 0"      # SEMANAL: domingos, 10:00 (Argentina)
-    - cron: "30 21 * * 1-5"   # DIARIO: lunes a viernes, 18:30 (Argentina), tras el cierre de NY
+    - cron: "0 12 1 * *"      # MENSUAL: día 1 de cada mes, 09:00 (Argentina)
+    - cron: "0 13 * * 0"      # SEMANAL: domingos, 10:00 (Argentina), con el cierre del viernes
   workflow_dispatch:
     inputs:
       modo:
         description: "Qué análisis correr"
         type: choice
-        options: [diario, semanal, mensual, todo]
+        options: [semanal, mensual, todo]
         default: todo
 
 permissions:
@@ -47,9 +46,8 @@ jobs:
             MODO="${{ inputs.modo }}"
           else
             case "${{ github.event.schedule }}" in
-              "0 22 1 * *")    MODO=mensual ;;
-              "0 13 * * 0")    MODO=semanal ;;
-              *)               MODO=diario ;;
+              "0 12 1 * *")    MODO=mensual ;;
+              *)               MODO=semanal ;;
             esac
           fi
           echo "modo=$MODO" >> "$GITHUB_OUTPUT"
