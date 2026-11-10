@@ -66,8 +66,8 @@ dialog::backdrop{background:rgba(0,0,0,.45)}
   <h1>Agente Top 200</h1>
   <div class="sub" id="meta">Cargando…</div>
   <nav>
-    <button data-t="hoy" class="on">Hoy · técnico (20)</button>
-    <button data-t="semana">Semana · fundamental (50)</button>
+    <button data-t="hoy" class="on">Semana · entrada (20)</button>
+    <button data-t="semana">Mes · tesis (50)</button>
     <button data-t="universo">Universo (200)</button>
     <button data-t="como">Cómo funciona</button>
   </nav>
@@ -89,7 +89,8 @@ const spct=(v,d=1)=>v==null?"–":`<span class="${v>=0?"pos":"neg"}">${v>=0?"+":
 const n=(v,d=1)=>v==null?"–":Number(v).toLocaleString("es-AR",{maximumFractionDigits:d,minimumFractionDigits:d});
 const money=v=>v==null?"–":v>=1e12?"US$ "+n(v/1e12,2)+" T":v>=1e9?"US$ "+n(v/1e9,0)+" B":"US$ "+n(v/1e6,0)+" M";
 const fecha=s=>s?new Date(s).toLocaleString("es-AR",{dateStyle:"medium",timeStyle:"short"}):"–";
-let U=null,S=null,D=null,SER={};
+// S = mensual (50 con tesis) · D = semanal (20 con técnico) · R = rotación
+let U=null,S=null,D=null,R=null,SER={};
 
 async function load(f){try{const r=await fetch("data/"+f+"?v="+Date.now());return r.ok?r.json():null}catch(e){return null}}
 
@@ -118,26 +119,28 @@ const legend=`<div class="legend"><i style="background:var(--c1)"></i>Precio<i s
 function chipEtiqueta(e){const c=/compra|sana/i.test(e)?"pos":/Debilidad|cautela/i.test(e)?"neg":/esperar/i.test(e)?"warn":"";return `<span class="chip ${c}">${esc(e)}</span>`}
 function chipVer(v){if(!v)return"";const c=/Candidata/.test(v)?"pos":/No encaja/.test(v)?"neg":"warn";return `<span class="chip ${c}">${esc(v)}</span>`}
 
+const ORD_MOM={"Entrar ahora":0,"Entrar de a poco":1,"Esperar":2,"Evitar":3};
+function chipMom(m){if(!m)return"";const c=/ahora/.test(m)?"pos":/a poco/.test(m)?"pos":/Evitar/.test(m)?"neg":"warn";return `<span class="chip ${c}" style="font-weight:600">${esc(m)}</span>`}
 function renderHoy(){
   const el=$("#t-hoy");
-  if(!D){el.innerHTML=`<div class="empty">Todavía no hay análisis diario.</div>`;return}
-  const r=D.resumen_ia;let h="";
-  if(r){
-    const lst=(a,c)=>(a||[]).map(o=>`<li><b>${esc(o.ticker)}</b> — ${esc(o.comentario)}</li>`).join("")||`<li class="mut">Nada destacado.</li>`;
-    h+=`<div class="panel"><h2>${esc(r.titular||"Resumen del día")}</h2><div>${esc(r.resumen||"")}</div>
-    <div class="two" style="margin-top:8px"><div><h3 class="pos">Posibles entradas</h3><ul>${lst(r.oportunidades)}</ul></div>
-    <div><h3 class="warn">Conviene esperar</h3><ul>${lst(r.cuidado)}</ul></div></div></div>`;
-  }
-  h+=`<div class="row" style="margin:4px 0 10px"><div class="mut">Ordenadas por puntaje técnico (−100 a +100)</div>${legend}</div><div class="grid">`;
-  for(const e of D.empresas){
+  if(!D){el.innerHTML=`<div class="empty">Todavía no hay análisis semanal.</div>`;return}
+  const r=D.resumen_ia,pe=r?.por_empresa||{};let h="";
+  const cob=D.cobertura_mes;
+  h+=`<div class="panel"><h2>${esc(r?.titular||"Análisis de la semana")}</h2>${r?.resumen?`<div>${esc(r.resumen)}</div>`:""}
+    ${cob?`<div class="mut" style="margin-top:8px">Ciclo del mes: ${cob.analizadas} de ${cob.total} empresas ya analizadas. Cada semana entran las que hace más tiempo que no se revisan, más hasta 5 en seguimiento.</div>`:""}</div>`;
+  const emp=[...D.empresas].sort((a,b)=>((ORD_MOM[pe[a.ticker]?.momento]??9)-(ORD_MOM[pe[b.ticker]?.momento]??9))||(b.puntaje_tecnico-a.puntaje_tecnico));
+  h+=`<div class="row" style="margin:4px 0 10px"><div class="mut">Ordenadas por momento de entrada y puntaje técnico (−100 a +100)</div>${legend}</div><div class="grid">`;
+  for(const e of emp){const w=pe[e.ticker];
     h+=`<div class="card" onclick="detalle('${esc(e.ticker)}')">
       <div class="row"><div><span class="tk">${esc(e.ticker)}</span> <span class="nm">${esc(e.nombre)}</span></div>
       <div class="big ${e.puntaje_tecnico>=0?"pos":"neg"}">${e.puntaje_tecnico>0?"+":""}${e.puntaje_tecnico}</div></div>
+      <div>${chipMom(w?.momento)}${/Seguimiento/.test(e.motivo||"")?`<span class="chip warn">Seguimiento</span>`:/Primera/.test(e.motivo||"")?`<span class="chip">Nueva</span>`:""}</div>
       ${spark(e.ticker)}
       <div>${chipEtiqueta(e.etiqueta)}${e.cruce?`<span class="chip warn">${esc(e.cruce)}</span>`:""}</div>
-      <div class="kv"><div><span>Precio</span><b>${n(e.precio,2)}</b></div><div><span>Día</span><b>${spct(e.rend_1d)}</b></div><div><span>RSI</span><b>${n(e.rsi,0)}</b></div>
+      <div class="kv"><div><span>Precio</span><b>${n(e.precio,2)}</b></div><div><span>Semana</span><b>${spct(e.rend_1s)}</b></div><div><span>RSI</span><b>${n(e.rsi,0)}</b></div>
       <div><span>1 mes</span><b>${spct(e.rend_1m)}</b></div><div><span>Desde máx.</span><b>${spct(e.dist_max52)}</b></div><div><span>Fund.</span><b>${n(e.score_fundamental,0)}</b></div></div>
-      ${r&&r.por_empresa&&r.por_empresa[e.ticker]?`<div class="mut" style="font-size:12px;margin-top:6px">${esc(r.por_empresa[e.ticker])}</div>`:""}
+      ${w?.comentario?`<div style="font-size:12px;margin-top:6px">${esc(w.comentario)}</div>`:""}
+      ${w?.nivel?`<div class="mut" style="font-size:12px;margin-top:4px">A vigilar: ${esc(w.nivel)}</div>`:""}
     </div>`;
   }
   el.innerHTML=h+"</div>";
@@ -146,7 +149,7 @@ function renderHoy(){
 let sortS={k:"puesto",asc:true},filtroS={sector:"",ver:"",op:""};
 function renderSemana(){
   const el=$("#t-semana");
-  if(!S){el.innerHTML=`<div class="empty">Todavía no hay análisis semanal.</div>`;return}
+  if(!S){el.innerHTML=`<div class="empty">Todavía no hay análisis mensual.</div>`;return}
   const sectores=[...new Set(S.empresas.map(e=>e.sector))].sort();
   let rows=S.empresas.filter(e=>(!filtroS.sector||e.sector===filtroS.sector)&&(!filtroS.ver||(e.ia&&e.ia.veredicto===filtroS.ver))&&(!filtroS.op||String(e.operable)===filtroS.op));
   const k=sortS.k;rows.sort((a,b)=>{const x=a[k]??-1e9,y=b[k]??-1e9;return (x>y?1:x<y?-1:0)*(sortS.asc?1:-1)});
@@ -155,12 +158,12 @@ function renderSemana(){
    <select onchange="filtroS.sector=this.value;renderSemana()"><option value="">Todos los sectores</option>${sectores.map(s=>`<option ${s===filtroS.sector?"selected":""}>${esc(s)}</option>`).join("")}</select>
    <select onchange="filtroS.ver=this.value;renderSemana()"><option value="">Todos los veredictos</option>${["Candidata para el satélite","Seguir de cerca","No encaja"].map(s=>`<option ${s===filtroS.ver?"selected":""}>${s}</option>`).join("")}</select>
    <select onchange="filtroS.op=this.value;renderSemana()"><option value="">Todas</option><option value="true" ${filtroS.op==="true"?"selected":""}>Comprables desde EE.UU.</option><option value="false" ${filtroS.op==="false"?"selected":""}>Solo mercados locales</option></select>
-   <span class="mut" style="align-self:center">${rows.length} empresas · ★ = top 20 de la semana</span></div>
-   <div class="tablewrap"><table><thead><tr>${th("puesto","#","n")}${th("ticker","Ticker")}<th>Empresa</th>${th("sector","Sector")}${th("score","Score","n")}${th("score_calidad","Calidad","n")}${th("score_valor","Valor","n")}${th("roic","ROIC","n")}${th("fcf_yield","FCF yield","n")}${th("pe_forward","PE fwd","n")}<th>Veredicto IA</th><th>Alertas</th></tr></thead><tbody>`;
+   <span class="mut" style="align-self:center">${rows.length} empresas · ★ = analizada esta semana</span></div>
+   <div class="tablewrap"><table><thead><tr>${th("puesto","#","n")}${th("ticker","Ticker")}<th>Empresa</th>${th("sector","Sector")}${th("score","Score","n")}${th("score_calidad","Calidad","n")}${th("score_valor","Valor","n")}${th("roic","ROIC","n")}${th("fcf_yield","FCF yield","n")}${th("pe_forward","PE fwd","n")}<th>Veredicto IA</th><th>Último técnico</th><th>Alertas</th></tr></thead><tbody>`;
   for(const e of rows){
-    h+=`<tr onclick="detalle('${esc(e.ticker)}')"><td class="n">${e.puesto}</td><td><b>${esc(e.ticker)}</b>${e.top20?" ★":""}</td><td class="nm" style="max-width:220px">${esc(e.nombre)}</td><td>${esc(e.sector)}</td>
+    h+=`<tr onclick="detalle('${esc(e.ticker)}')"><td class="n">${e.puesto}</td><td><b>${esc(e.ticker)}</b>${D?.empresas.some(x=>x.ticker===e.ticker)?" ★":""}</td><td class="nm" style="max-width:220px">${esc(e.nombre)}</td><td>${esc(e.sector)}</td>
     <td class="n"><b>${n(e.score,0)}</b><span class="bar" style="width:${(e.score||0)*0.5}px"></span></td><td class="n">${n(e.score_calidad,0)}</td><td class="n">${n(e.score_valor,0)}</td>
-    <td class="n">${pct(e.roic)}</td><td class="n">${pct(e.fcf_yield)}</td><td class="n">${n(e.pe_forward,1)}</td><td>${chipVer(e.ia&&e.ia.veredicto)}</td><td>${(e.alertas||[]).map(a=>`<span class="chip neg">${esc(a)}</span>`).join("")}</td></tr>`;
+    <td class="n">${pct(e.roic)}</td><td class="n">${pct(e.fcf_yield)}</td><td class="n">${n(e.pe_forward,1)}</td><td>${chipVer(e.ia&&e.ia.veredicto)}</td><td class="mut">${R?.historial?.[e.ticker]?.ultima||"–"}</td><td>${(e.alertas||[]).map(a=>`<span class="chip neg">${esc(a)}</span>`).join("")}</td></tr>`;
   }
   el.innerHTML=h+"</tbody></table></div></div>";
 }
@@ -179,7 +182,7 @@ function renderUniverso(){
   <span class="mut" style="align-self:center">${U.cantidad} empresas · ${U.operables} comprables desde EE.UU. · actualizado ${fecha(U.actualizado)}</span></div>
   ${U.entraron?.length?`<div style="margin-bottom:8px">Entraron este mes: ${U.entraron.map(t=>`<span class="chip pos">${esc(t)}</span>`).join("")}</div>`:""}
   ${U.salieron?.length?`<div style="margin-bottom:8px">Salieron: ${U.salieron.map(t=>`<span class="chip neg">${esc(t)}</span>`).join("")}</div>`:""}
-  <div class="tablewrap"><table><thead><tr>${th("rank","#","n")}${th("ticker","Ticker")}<th>Empresa</th>${th("sector","Sector")}${th("market_cap","Capitalización","n")}${th("score","Score semanal","n")}${th("operable","EE.UU.")}</tr></thead><tbody>`;
+  <div class="tablewrap"><table><thead><tr>${th("rank","#","n")}${th("ticker","Ticker")}<th>Empresa</th>${th("sector","Sector")}${th("market_cap","Capitalización","n")}${th("score","Score mensual","n")}${th("operable","EE.UU.")}</tr></thead><tbody>`;
   for(const e of rows)h+=`<tr onclick="detalle('${esc(e.ticker)}')"><td class="n">${e.rank??"+"}</td><td><b>${esc(e.ticker)}</b></td><td class="nm" style="max-width:260px">${esc(e.nombre)}</td><td>${esc(e.sector||"")}</td><td class="n">${money(e.market_cap)}</td><td class="n">${n(e.score,0)}</td><td>${e.operable?"Sí":"<span class='mut'>No</span>"}</td></tr>`;
   el.innerHTML=h+"</tbody></table></div></div>";
 }
@@ -189,7 +192,9 @@ function detalle(t){
   const f=S?.empresas.find(e=>e.ticker===t),d=D?.empresas.find(e=>e.ticker===t),u=U?.empresas.find(e=>e.ticker===t),r=S?.ranking_completo?.find(e=>e.ticker===t);
   $("#dtitle").innerHTML=`<span class="tk">${esc(t)}</span> <span class="mut">${esc(f?.nombre||d?.nombre||u?.nombre||"")}</span>`;
   let h="";
-  if(d){h+=`<h3>Técnico de hoy</h3>${spark(t,820,220,true)}${legend}
+  if(d){const w=D.resumen_ia?.por_empresa?.[t];
+    if(w)h+=`<div class="panel">${chipMom(w.momento)}<span class="chip">${esc(d.motivo||"")}</span><p>${esc(w.comentario)}</p>${w.nivel?`<div class="mut">A vigilar: ${esc(w.nivel)}</div>`:""}</div>`;
+    h+=`<h3>Técnico de la semana</h3>${spark(t,820,220,true)}${legend}
     <div>${chipEtiqueta(d.etiqueta)}<span class="chip">Tendencia: ${esc(d.tendencia)}</span><span class="chip">Puntaje ${d.puntaje_tecnico}</span></div>
     <div class="kv"><div><span>Precio</span><b>${n(d.precio,2)}</b></div><div><span>SMA50 / SMA200</span><b>${n(d.sma50,1)} / ${n(d.sma200,1)}</b></div><div><span>RSI 14</span><b>${n(d.rsi,0)}</b></div>
     <div><span>MACD hist.</span><b>${n(d.macd_hist,2)}</b></div><div><span>Bollinger %B</span><b>${n(d.bb_pct,2)}</b></div><div><span>Volatilidad (ATR)</span><b>${pct(d.atr_pct)}</b></div>
@@ -197,7 +202,7 @@ function detalle(t){
     <div><span>Desde máx. 52s</span><b>${spct(d.dist_max52)}</b></div><div><span>Desde mín. 52s</span><b>${spct(d.dist_min52)}</b></div><div><span>Volumen vs prom.</span><b>${n(d.vol_rel,2)}x</b></div></div>
     <div class="mut" style="font-size:12px;margin-top:6px">${(d.motivos||[]).map(esc).join(" · ")}</div>`}
   if(f){const ia=f.ia;
-    h+=`<h3>Fundamental de la semana · puesto ${f.puesto} de ${S.empresas.length}</h3>
+    h+=`<h3>Tesis del mes · puesto ${f.puesto} de ${S.empresas.length}</h3>
     <div><span class="chip">Score ${n(f.score,0)}</span><span class="chip">Calidad ${n(f.score_calidad,0)}</span><span class="chip">Valor ${n(f.score_valor,0)}</span><span class="chip">${esc(f.sector)}</span>${f.operable?`<span class="chip pos">Comprable desde EE.UU.</span>`:`<span class="chip warn">Solo mercado local</span>`}${(f.alertas||[]).map(a=>`<span class="chip neg">${esc(a)}</span>`).join("")}</div>`;
     if(ia){const L=a=>(a||[]).map(x=>`<li>${esc(x)}</li>`).join("");
       h+=`<div class="panel" style="margin-top:10px">${chipVer(ia.veredicto)}<span class="chip">Calidad: ${esc(ia.calidad)}</span><span class="chip">Valuación: ${esc(ia.valuacion)}</span><span class="chip">Confianza ${esc(ia.confianza)}/5</span>
@@ -210,7 +215,7 @@ function detalle(t){
       <div><span>Deuda neta/EBITDA</span><b>${n(f.deuda_neta_ebitda,2)}</b></div><div><span>Crec. ventas</span><b>${pct(f.crecimiento_ventas)}</b></div><div><span>Años FCF +</span><b>${f.fcf_consistencia==null?"–":pct(f.fcf_consistencia,0)}</b></div><div><span>Upside analistas</span><b>${spct(f.upside_analistas)}</b></div>
       <div><span>Capitalización</span><b>${money(f.market_cap)}</b></div><div><span>Dividendo</span><b>${f.dividend_yield==null?"–":n(f.dividend_yield,2)+"%"}</b></div><div><span>Beta</span><b>${n(f.beta,2)}</b></div><div><span>Consenso</span><b>${esc(f.recomendacion||"–")}</b></div></div>
       ${f.noticias?.length?`<h3>Titulares considerados</h3><ul>${f.noticias.map(x=>`<li class="mut">${esc(x)}</li>`).join("")}</ul>`:""}`;
-  }else if(r){h+=`<h3>Score semanal</h3><div><span class="chip">Score ${n(r.score,0)}</span><span class="chip">Calidad ${n(r.score_calidad,0)}</span><span class="chip">Valor ${n(r.score_valor,0)}</span></div><p class="mut">No quedó entre las ${S.empresas.length} mejores esta semana, por eso no tiene análisis detallado.</p>`}
+  }else if(r){h+=`<h3>Score mensual</h3><div><span class="chip">Score ${n(r.score,0)}</span><span class="chip">Calidad ${n(r.score_calidad,0)}</span><span class="chip">Valor ${n(r.score_valor,0)}</span></div><p class="mut">No quedó entre las ${S.empresas.length} mejores este mes, por eso no tiene tesis.</p>`}
   else h+=`<p class="mut">Sin datos fundamentales esta semana.</p>`;
   $("#dbody").innerHTML=h;$("#dlg").showModal();
 }
@@ -219,18 +224,17 @@ function renderComo(){
   const m=(S?.criterio?.metricas)||[];
   const tabla=b=>m.filter(x=>x.bloque===b).map(x=>`<tr><td>${esc(x.nombre)}</td><td>${x.mayor_es_mejor?"Más alto":"Más bajo"}</td><td>${x.relativa_sector?"Dentro del sector":"Contra las 200"}</td><td class="n">${x.peso}</td></tr>`).join("");
   $("#t-como").innerHTML=`<div class="panel"><h2>Ciclo del agente</h2><ul>
-   <li><b>Mensual (día 1):</b> toma las 200 empresas con mayor capitalización del mundo y marca cuáles se pueden comprar desde EE.UU. (acciones o ADR).</li>
-   <li><b>Semanal (domingo):</b> calcula métricas de calidad y valor para las 200, arma un score y elige las 50 mejores. Claude escribe una tesis para cada una. Las 20 mejores comprables pasan al seguimiento diario.</li>
-   <li><b>Diario (lunes a viernes, después del cierre):</b> análisis técnico de las 20 (tendencia, RSI, MACD, medias, Bollinger) para detectar buenos momentos de entrada.</li></ul>
+   <li><b>Mensual (día 1):</b> toma las 200 empresas de mayor capitalización, calcula un score de calidad + valor, elige las 50 mejores y Claude escribe una tesis para cada una.</li>
+   <li><b>Semanal (domingo):</b> elige 20 de esas 50: hasta 5 en <i>seguimiento</i> (las que la semana anterior estaban para entrar) y el resto por <i>rotación</i> (las que hace más tiempo que no se analizan, primero las de mejor score). Hace el análisis técnico y Claude cruza la tesis con el precio: entrar ahora, de a poco, esperar o evitar.</li></ul>
    <p class="mut">Score = ${S?Math.round(S.criterio.peso_calidad*100):55}% calidad + ${S?Math.round(S.criterio.peso_valor*100):45}% valor. Cada métrica se convierte en percentil (0 a 100) y se promedia por peso.</p></div>
    <div class="two"><div class="panel"><h2>Calidad</h2><table><thead><tr><th>Métrica</th><th>Mejor</th><th>Comparación</th><th class="n">Peso</th></tr></thead><tbody>${tabla("calidad")}</tbody></table></div>
    <div class="panel"><h2>Valor</h2><table><thead><tr><th>Métrica</th><th>Mejor</th><th>Comparación</th><th class="n">Peso</th></tr></thead><tbody>${tabla("valor")}</tbody></table></div></div>`;
 }
 
 (async()=>{
-  [U,S,D]=await Promise.all([load("universo.json"),load("semanal.json"),load("diario.json")]);
+  [U,S,D,R]=await Promise.all([load("universo.json"),load("mensual.json"),load("semanal.json"),load("rotacion.json")]);
   SER=(await load("series.json"))?.series||{};
-  $("#meta").textContent=`Diario: ${fecha(D?.actualizado)} · Semanal: ${fecha(S?.actualizado)} · Universo: ${fecha(U?.actualizado)}`;
+  $("#meta").textContent=`Semanal: ${fecha(D?.actualizado)} · Mensual: ${fecha(S?.actualizado)}`;
   renderHoy();renderSemana();renderUniverso();renderComo();
 })();
 </script>

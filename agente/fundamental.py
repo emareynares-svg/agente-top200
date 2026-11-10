@@ -1,5 +1,5 @@
-"""Proceso SEMANAL: puntúa las 200 por calidad + valor, elige las 50 mejores,
-hace análisis fundamental (con Claude) y define las 20 principales de la semana."""
+"""Proceso MENSUAL (2ª parte): puntúa las 200 por calidad + valor, elige las 50 mejores
+y Claude escribe una tesis para cada una."""
 from __future__ import annotations
 
 from concurrent.futures import ThreadPoolExecutor
@@ -130,7 +130,7 @@ def puntuar(df: pd.DataFrame, cfg: dict) -> pd.DataFrame:
 
     df["score_calidad"], cob_c = bloque("calidad")
     df["score_valor"], cob_v = bloque("valor")
-    s = cfg["semanal"]
+    s = cfg["mensual"]
     wq, wv = float(s.get("peso_calidad", 0.55)), float(s.get("peso_valor", 0.45))
     df["cobertura"] = (cob_c * wq + cob_v * wv) / (wq + wv)
     df["score"] = (df["score_calidad"].fillna(0) * wq + df["score_valor"].fillna(0) * wv) / (wq + wv)
@@ -172,18 +172,13 @@ def ejecutar(prov, cfg: dict, universo: dict) -> dict:
         raise RuntimeError("Yahoo Finance no devolvió datos fundamentales (posible bloqueo o límite de consultas).")
 
     df = puntuar(pd.DataFrame(filas), cfg)
-    n50 = int(cfg["semanal"].get("cantidad", 50))
+    n50 = int(cfg["mensual"].get("cantidad", 50))
     top = df[df["score"].notna()].head(n50)
 
-    # 20 principales: las mejores de las 50 (opcionalmente solo operables desde EE.UU.)
-    d = cfg["diario"]
-    candidatas = top[top["operable"]] if d.get("solo_operables", True) else top
-    top20 = candidatas.head(int(d.get("cantidad", 20)))["ticker"].tolist()
 
     registros = top.to_dict("records")
     for i, r in enumerate(registros, 1):
         r["puesto"] = i
-        r["top20"] = r["ticker"] in top20
 
     # Análisis con IA
     if ia.disponible(cfg):
@@ -204,15 +199,14 @@ def ejecutar(prov, cfg: dict, universo: dict) -> dict:
                      "score", "score_calidad", "score_valor", "cobertura", "alertas"]
     resultado = {
         "actualizado": ahora_iso(),
-        "criterio": {"peso_calidad": cfg["semanal"]["peso_calidad"],
-                     "peso_valor": cfg["semanal"]["peso_valor"],
+        "criterio": {"peso_calidad": cfg["mensual"]["peso_calidad"],
+                     "peso_valor": cfg["mensual"]["peso_valor"],
                      "metricas": [{"id": m, "nombre": NOMBRES_METRICAS[m], "bloque": b,
                                    "mayor_es_mejor": may, "relativa_sector": rel, "peso": w}
                                   for m, b, may, rel, w in METRICAS]},
-        "top20": top20,
         "empresas": registros,
         "ranking_completo": df[columnas_rank].to_dict("records"),
     }
-    guardar_json("semanal.json", resultado)
-    log.info("Semanal listo. Top 5: %s", ", ".join(top["ticker"].head(5)))
+    guardar_json("mensual.json", resultado)
+    log.info("Mensual listo. Top 5: %s", ", ".join(top["ticker"].head(5)))
     return resultado

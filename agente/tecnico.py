@@ -1,11 +1,12 @@
-"""Proceso DIARIO: análisis técnico de las 20 principales de la semana."""
+"""Proceso SEMANAL: elige 20 de las 50 del mes (rotación + seguimiento), hace el análisis
+técnico y Claude evalúa el momento de entrada cruzándolo con la tesis mensual."""
 from __future__ import annotations
 
 import numpy as np
 import pandas as pd
 
 from . import ia
-from .util import ahora_iso, guardar_json, log
+from .util import ahora_iso, guardar_json, hoy, leer_json, log
 
 
 def rsi(close: pd.Series, n: int = 14) -> pd.Series:
@@ -137,36 +138,86 @@ def _senal(i: dict) -> dict:
     return {"puntaje_tecnico": pts, "tendencia": tendencia, "etiqueta": etiqueta, "motivos": motivos}
 
 
-def ejecutar(prov, cfg: dict, semanal: dict) -> dict:
-    top20 = semanal.get("top20") or []
-    info = {e["ticker"]: e for e in semanal.get("empresas", [])}
-    log.info("Análisis técnico de %d empresas...", len(top20))
-    historias = prov.historia(top20, "2y")
+def seleccionar(cfg: dict, mensual: dict, rotacion: dict) -> list[dict]:
+    """Elige las empresas de la semana.
+
+    1. Seguimiento: hasta `seguimiento_max` que la semana anterior estaban en "Zona de compra".
+    2. Rotación: el resto, priorizando las que hace más tiempo que no se analizan
+       (las nunca analizadas primero) y, a igualdad, las de mejor score mensual.
+    Así en ~3 semanas se recorren las 50 y las oportunidades no se pierden de vista."""
+    s = cfg["semanal"]
+    n = int(s.get("cantidad", 20))
+    candidatas = [e for e in mensual.get("empresas", [])
+                  if e.get("operable") or not s.get("solo_operables", True)]
+    hist = rotacion.get("historial", {})
+    semanas = rotacion.get("semanas", [])
+    anterior = set(semanas[-1]["tickers"]) if semanas else set()
+
+    seguimiento = [e for e in candidatas if e["ticker"] in anterior
+                   and hist.get(e["ticker"], {}).get("zona_compra")]
+    seguimiento = seguimiento[: int(s.get("seguimiento_max", 5))]
+    elegidas = [dict(e, motivo="Seguimiento: zona de compra la semana pasada") for e in seguimiento]
+    ya = {e["ticker"] for e in elegidas}
+
+    resto = [e for e in candidatas if e["ticker"] not in ya]
+    resto.sort(key=lambda e: (hist.get(e["ticker"], {}).get("ultima", ""), -(e.get("score") or 0)))
+    for e in resto[: n - len(elegidas)]:
+        ult = hist.get(e["ticker"], {}).get("ultima")
+        elegidas.append(dict(e, motivo=f"Rotación (último análisis {ult})" if ult else "Primera vez en el ciclo"))
+    return elegidas
+
+
+def ejecutar(prov, cfg: dict, mensual: dict) -> dict:
+    rotacion = leer_json("rotacion.json") or {"historial": {}, "semanas": []}
+    elegidas = seleccionar(cfg, mensual, rotacion)
+    tickers = [e["ticker"] for e in elegidas]
+    log.info("Semana: %d empresas (%s)", len(tickers), ", ".join(tickers))
+    historias = prov.historia(tickers, "2y")
     filas = []
-    for t in top20:
+    for e in elegidas:
+        t = e["ticker"]
         if t not in historias:
+            log.warning("Sin precios para %s", t)
             continue
         try:
             ind = analizar(historias[t])
-        except Exception as e:  # noqa: BLE001
-            log.warning("Fallo técnico %s: %s", t, e)
+        except Exception as ex:  # noqa: BLE001
+            log.warning("Fallo técnico %s: %s", t, ex)
             continue
-        e = info.get(t, {})
+        tesis = e.get("ia") or {}
         ind.update({"ticker": t, "nombre": e.get("nombre", t), "sector": e.get("sector"),
-                    "score_fundamental": e.get("score"), "puesto_semanal": e.get("puesto"),
-                    "veredicto_semanal": (e.get("ia") or {}).get("veredicto")})
+                    "motivo": e["motivo"], "score_fundamental": e.get("score"),
+                    "puesto_mensual": e.get("puesto"), "veredicto_mensual": tesis.get("veredicto"),
+                    "valuacion_mensual": tesis.get("valuacion"),
+                    "tesis_mensual": (tesis.get("resumen") or "")[:300],
+                    "vigilar_mensual": tesis.get("que_vigilar")})
         filas.append(ind)
     filas.sort(key=lambda x: x["puntaje_tecnico"], reverse=True)
 
     resumen = None
     if ia.disponible(cfg) and filas:
-        log.info("Pidiendo a Claude el comentario técnico del día...")
-        resumen = ia.comentario_diario(cfg, filas)
+        log.info("Pidiendo a Claude la evaluación del momento de entrada...")
+        resumen = ia.comentario_semanal(cfg, filas)
+
+    # Actualiza el historial de rotación
+    fecha = hoy()
+    hist = rotacion.setdefault("historial", {})
+    for f in filas:
+        h = hist.setdefault(f["ticker"], {"veces": 0})
+        h.update({"ultima": fecha, "veces": h.get("veces", 0) + 1, "etiqueta": f["etiqueta"],
+                  "zona_compra": f["etiqueta"].startswith("Zona de compra")
+                  or ((resumen or {}).get("por_empresa", {}).get(f["ticker"], {}) or {}).get("momento") == "Entrar ahora"})
+    rotacion.setdefault("semanas", []).append({"fecha": fecha, "tickers": [f["ticker"] for f in filas]})
+    rotacion["semanas"] = rotacion["semanas"][-26:]
+    del_mes = {e["ticker"] for e in mensual.get("empresas", [])}
+    cubiertas = [t for t, h in hist.items() if t in del_mes and h.get("ultima", "") >= (mensual.get("actualizado") or "")[:10]]
+    guardar_json("rotacion.json", rotacion, historial=False)
 
     # Las series de precios van en un archivo aparte (sin historial, para no inflar el repo)
     series = {f["ticker"]: f.pop("serie") for f in filas}
     guardar_json("series.json", {"actualizado": ahora_iso(), "series": series}, historial=False)
-    resultado = {"actualizado": ahora_iso(), "semana_de": semanal.get("actualizado"),
+    resultado = {"actualizado": ahora_iso(), "mes_de": mensual.get("actualizado"),
+                 "cobertura_mes": {"analizadas": len(cubiertas), "total": len(del_mes)},
                  "resumen_ia": resumen, "empresas": filas}
-    guardar_json("diario.json", resultado)
+    guardar_json("semanal.json", resultado)
     return resultado

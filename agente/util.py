@@ -77,7 +77,12 @@ def leer_json(nombre: str) -> Any | None:
 def es_operable(ticker: str) -> bool:
     """Heurística: los tickers de Yahoo sin sufijo de mercado ('.XX') cotizan en EE.UU.
     (acciones locales o ADRs), por lo que se pueden comprar desde Hapi."""
-    return "." not in ticker or ticker.endswith((".A", ".B"))
+    if "." in ticker:
+        return False
+    # ADRs de mercado OTC (5 letras terminadas en Y o F, ej. TCEHY, NSRGY): suelen no estar en Hapi
+    if len(ticker) == 5 and ticker[-1] in "YF":
+        return False
+    return True
 
 
 def num(x: Any) -> float | None:

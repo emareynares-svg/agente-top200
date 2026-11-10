@@ -5,9 +5,12 @@ y publica los resultados en un dashboard web.
 
 | Frecuencia | Qué hace | Cuándo (hora Argentina) |
 |---|---|---|
-| **Mensual** | Toma las 200 de mayor capitalización y marca cuáles se pueden comprar desde EE.UU. (acciones o ADR) | Día 1, 19:00 |
-| **Semanal** | Puntúa las 200 por **calidad + valor**, elige las **50** mejores y Claude escribe una tesis para cada una (fortalezas, riesgos, catalizadores, veredicto). Define las **20 principales** | Domingo, 10:00 |
-| **Diario** | Análisis técnico de las 20 (tendencia, medias 50/200, RSI, MACD, Bollinger, momentum) y comentario de Claude sobre posibles momentos de entrada | Lunes a viernes, 18:30 |
+| **Mensual** | Toma las 200 de mayor capitalización, las puntúa por **calidad + valor**, elige las **50** mejores y Claude escribe una tesis para cada una (fortalezas, riesgos, catalizadores, veredicto) | Día 1, 09:00 |
+| **Semanal** | Elige **20** de esas 50 (hasta 5 en *seguimiento* + el resto por *rotación*), hace el análisis técnico y Claude cruza tesis y precio: **entrar ahora / de a poco / esperar / evitar** | Domingo, 10:00 |
+
+**Rotación:** cada semana entran primero las empresas que hace más tiempo que no se analizan
+(a igualdad, las de mejor score). Las que la semana anterior estaban para "entrar ahora" o en
+"zona de compra" se repiten como *seguimiento* (máximo 5). En unas 3 semanas se recorren las 50.
 
 Corre gratis en **GitHub Actions** y el dashboard se publica con **GitHub Pages**.
 
@@ -58,13 +61,14 @@ Desde ahí corre solo según el calendario de arriba.
 ## Personalizar
 Todo se ajusta en `config.yaml` (se puede editar desde GitHub con el lápiz):
 - Cantidades (200 / 50 / 20), pesos de **calidad** y **valor**.
-- `solo_operables`: si las 20 diarias deben ser solo las que se pueden comprar desde EE.UU.
+- `solo_operables`: si las 20 semanales deben ser solo las que se pueden comprar desde EE.UU.
+- `seguimiento_max`: cuántos lugares se reservan para repetir oportunidades de la semana anterior.
 - `excluir` / `incluir_extra`: sacar o agregar tickers a mano (ej. sumar `CAT` aunque no esté en el top 200).
 - Modelo de Claude y tu perfil inversor (la IA lo usa como contexto).
 
 Los horarios se cambian en `.github/workflows/agente.yml` (formato cron, en hora UTC = Argentina + 3).
 
-## Cómo se calcula el score semanal
+## Cómo se calcula el score mensual
 Cada métrica se convierte en percentil (0–100) contra las 200, o dentro del sector cuando
 depende mucho de la industria (márgenes, PE, EV/EBITDA). Después se promedian por peso:
 
@@ -78,8 +82,9 @@ Bancos y aseguradoras usan ROE y precio/libro en lugar de ROIC, FCF y deuda/EBIT
 ## Costos
 - GitHub Actions y Pages: **gratis** en repositorios públicos.
 - Datos: **gratis** (companiesmarketcap.com + Yahoo Finance).
-- Claude (Sonnet): aproximadamente **US$3–5 por mes** (50 tesis por semana + un comentario por día).
-  Para bajarlo, usá `claude-haiku-5-5` en `config.yaml`.
+- Claude (Sonnet 5.5): ~US$0,60 por mes por las 50 tesis + ~US$0,05 por semana por el análisis de entrada
+  = **~US$1 por mes**. El costo real de cada corrida aparece en el resumen de la ejecución en GitHub.
+- Correr a mano en modo `todo` gasta un mensual + un semanal (~US$0,65). Para probar, usá `semanal`.
 
 ## Privacidad
 Con el repo público, cualquiera que tenga el link puede ver el dashboard y `config.yaml` (incluido
@@ -90,7 +95,7 @@ el texto de `perfil_inversor`). No hay datos de tu cartera ni claves: la API key
 ```bash
 pip install -r requirements.txt
 python tests/test_offline.py          # prueba completa con datos simulados, sin Internet
-python -m agente diario --demo        # genera datos simulados en docs/data
+python -m agente todo --demo          # genera datos simulados en docs/data
 export ANTHROPIC_API_KEY=sk-ant-...
 python -m agente todo                 # corrida real
 cd docs && python -m http.server      # ver el dashboard en http://localhost:8000

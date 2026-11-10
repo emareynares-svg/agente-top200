@@ -1,9 +1,10 @@
-"""Capa de IA: Claude escribe las tesis semanales y el comentario técnico diario."""
+"""Capa de IA: Claude escribe las tesis mensuales y la evaluación semanal del momento de entrada."""
 from __future__ import annotations
 
 import json
 import os
 import re
+import threading
 import time
 
 from .util import log
@@ -37,22 +38,27 @@ Devolvé este JSON:
  "que_vigilar": "la métrica o evento que cambiaría la tesis"
 }}"""
 
-PLANTILLA_DIARIO = """Estas son las 20 empresas principales de la semana (elegidas por fundamentales) con su
-análisis técnico al cierre de hoy. Indicadores: precio, SMA50/200, RSI(14), histograma MACD, %B de Bollinger,
-distancia al máximo de 52 semanas, rendimientos y una etiqueta automática.
+PLANTILLA_SEMANAL = """Estas son las empresas elegidas esta semana entre las 50 mejores del mes por
+fundamentales. Para cada una tenés el análisis técnico al cierre (precio, SMA50/200, RSI(14), histograma
+MACD, %B de Bollinger, distancia al máximo de 52 semanas, rendimientos, etiqueta automática) y un resumen
+de la tesis fundamental del mes (veredicto, valuación, qué vigilar). "motivo" indica por qué entró esta semana.
 
 {datos}
 
-Escribí un comentario para una inversora de largo plazo que usa el análisis técnico solo para elegir
-MEJORES MOMENTOS DE ENTRADA (no para hacer trading). Devolvé este JSON:
+La inversora compra para mantener años; el técnico sirve solo para elegir MEJORES MOMENTOS DE ENTRADA.
+Cruzá tesis y técnico: una empresa con buena tesis en retroceso ordenado puede ser "Entrar ahora" o
+"Entrar de a poco"; una sobreextendida, "Esperar"; una con tesis floja o tendencia rota, "Evitar".
+Devolvé este JSON:
 {{
- "titular": "una frase con lo más importante del día",
- "resumen": "3-5 frases sobre el panorama técnico del grupo",
- "oportunidades": [{{"ticker": "...", "comentario": "por qué podría ser buen momento de entrada"}}],
- "cuidado": [{{"ticker": "...", "comentario": "por qué conviene esperar"}}],
- "por_empresa": {{"TICKER": "una línea breve", "...": "..."}}
+ "titular": "una frase con lo más importante de la semana",
+ "resumen": "3-5 frases sobre el panorama del grupo",
+ "por_empresa": {{
+   "TICKER": {{"momento": "Entrar ahora | Entrar de a poco | Esperar | Evitar",
+              "comentario": "2-3 frases que crucen tesis y técnico",
+              "nivel": "precio o condición concreta a vigilar para entrar (ej. 'cerca de la SMA50, ~185')"}}
+ }}
 }}
-Máximo 4 oportunidades y 4 de cuidado. Si no hay oportunidades claras, dejá la lista vacía."""
+Incluí todas las empresas en por_empresa."""
 
 _CLIENTE = None
 
@@ -65,7 +71,7 @@ def _cliente():
     global _CLIENTE
     if _CLIENTE is None:
         import anthropic
-        _CLIENTE = anthropic.Anthropic(max_retries=4)
+        _CLIENTE = anthropic.Anthropic(max_retries=2)
     return _CLIENTE
 
 
@@ -81,22 +87,86 @@ def _extraer_json(texto: str) -> dict:
         raise
 
 
+# Control de gasto y fallas (compartido entre hilos)
+_LOCK = threading.Lock()
+_ESTADO = {"fallas_seguidas": 0, "cortado": False, "tokens_in": 0, "tokens_out": 0, "llamadas": 0,
+           "sin_pensamiento": False}
+MAX_FALLAS_SEGUIDAS = 3
+
+
+def resumen_uso(cfg: dict) -> str:
+    ia_cfg = cfg.get("ia", {})
+    costo = (_ESTADO["tokens_in"] * float(ia_cfg.get("precio_entrada", 2))
+             + _ESTADO["tokens_out"] * float(ia_cfg.get("precio_salida", 10))) / 1e6
+    return (f"IA: {_ESTADO['llamadas']} llamadas, {_ESTADO['tokens_in']:,} tokens de entrada, "
+            f"{_ESTADO['tokens_out']:,} de salida, costo estimado US$ {costo:.2f}"
+            + (" (CORTADA por fallas repetidas)" if _ESTADO["cortado"] else ""))
+
+
 def _llamar(cfg: dict, modelo: str, prompt: str, max_tokens: int) -> dict | None:
+    """Una llamada a Claude que devuelve JSON. Tiene un 'disyuntor': si fallan
+    MAX_FALLAS_SEGUIDAS llamadas seguidas, deja de llamar en esta corrida para no gastar crédito."""
+    if _ESTADO["cortado"]:
+        return None
+    ia_cfg = cfg.get("ia", {})
     sistema = SISTEMA.format(perfil=cfg.get("perfil_inversor", "").strip())
-    for intento in range(3):
+    for _intento in range(2):
+        if _ESTADO["cortado"]:
+            return None
+        extra = {"output_config": {"effort": ia_cfg.get("esfuerzo", "low")}}
+        pens = ia_cfg.get("pensamiento")
+        if pens and not _ESTADO["sin_pensamiento"]:
+            extra["thinking"] = {"type": pens}
         try:
             resp = _cliente().messages.create(
                 model=modelo, max_tokens=max_tokens, system=sistema,
-                messages=[{"role": "user", "content": prompt}],
+                messages=[{"role": "user", "content": prompt}], extra_body=extra,
             )
-            texto = "".join(b.text for b in resp.content if getattr(b, "type", "") == "text")
-            return _extraer_json(texto)
-        except json.JSONDecodeError:
-            log.warning("Respuesta de IA no era JSON válido (intento %d)", intento + 1)
         except Exception as e:  # noqa: BLE001
-            log.warning("Error de IA (intento %d): %s", intento + 1, e)
-            time.sleep(5 * (intento + 1))
+            msg = str(e)
+            if "thinking" in msg.lower() and not _ESTADO["sin_pensamiento"]:
+                log.warning("El modelo no acepta thinking=%s; sigo sin ese parámetro.", pens)
+                _ESTADO["sin_pensamiento"] = True
+                continue
+            log.warning("Error de IA: %s", msg[:300])
+            _registrar_falla()
+            if any(x in msg.lower() for x in ("credit", "authentication", "api key", "not_found", "permission")):
+                _cortar(f"error no recuperable: {msg[:200]}")
+                return None
+            time.sleep(5)
+            continue
+        with _LOCK:
+            _ESTADO["llamadas"] += 1
+            _ESTADO["tokens_in"] += getattr(resp.usage, "input_tokens", 0) or 0
+            _ESTADO["tokens_out"] += getattr(resp.usage, "output_tokens", 0) or 0
+        texto = "".join(b.text for b in resp.content if getattr(b, "type", "") == "text")
+        try:
+            datos = _extraer_json(texto)
+        except (json.JSONDecodeError, ValueError):
+            log.warning("Respuesta no era JSON válido (stop_reason=%s, %d caracteres de texto)",
+                        getattr(resp, "stop_reason", "?"), len(texto))
+            _registrar_falla()
+            if getattr(resp, "stop_reason", "") == "max_tokens":
+                max_tokens *= 2  # se quedó corto: un único reintento con más margen
+                continue
+            return None
+        with _LOCK:
+            _ESTADO["fallas_seguidas"] = 0
+        return datos
     return None
+
+
+def _registrar_falla() -> None:
+    with _LOCK:
+        _ESTADO["fallas_seguidas"] += 1
+        if _ESTADO["fallas_seguidas"] >= MAX_FALLAS_SEGUIDAS:
+            _cortar(f"{MAX_FALLAS_SEGUIDAS} fallas seguidas")
+
+
+def _cortar(motivo: str) -> None:
+    if not _ESTADO["cortado"]:
+        log.error("IA desactivada para esta corrida (%s). Revisá crédito, API key o modelo.", motivo)
+    _ESTADO["cortado"] = True
 
 
 def _fmt(v):
@@ -115,14 +185,15 @@ def tesis_empresa(cfg: dict, r: dict) -> dict | None:
     datos = json.dumps({k: _fmt(r.get(k)) for k in campos}, ensure_ascii=False, indent=0)
     noticias = "\n".join(f"- {n}" for n in r.get("noticias") or []) or "(sin titulares)"
     prompt = PLANTILLA_TESIS.format(datos=datos, noticias=noticias)
-    return _llamar(cfg, cfg["ia"].get("modelo", "claude-sonnet-5-5"), prompt, 1200)
+    return _llamar(cfg, cfg["ia"].get("modelo", "claude-sonnet-5-5"), prompt, int(cfg["ia"].get("max_tokens_tesis", 4000)))
 
 
-def comentario_diario(cfg: dict, filas: list[dict]) -> dict | None:
-    campos = ["ticker", "nombre", "precio", "sma50", "sma200", "rsi", "macd_hist", "bb_pct",
-              "dist_max52", "rend_1d", "rend_1s", "rend_1m", "rend_3m", "rend_ytd", "vol_rel",
-              "cruce", "tendencia", "etiqueta", "puntaje_tecnico", "score_fundamental",
-              "veredicto_semanal"]
+def comentario_semanal(cfg: dict, filas: list[dict]) -> dict | None:
+    campos = ["ticker", "nombre", "motivo", "precio", "sma50", "sma200", "rsi", "macd_hist", "bb_pct",
+              "dist_max52", "rend_1s", "rend_1m", "rend_3m", "rend_ytd", "cruce", "tendencia", "etiqueta",
+              "puntaje_tecnico", "score_fundamental", "veredicto_mensual", "valuacion_mensual",
+              "tesis_mensual", "vigilar_mensual"]
     datos = "\n".join(json.dumps({k: _fmt(f.get(k)) for k in campos}, ensure_ascii=False) for f in filas)
-    prompt = PLANTILLA_DIARIO.format(datos=datos)
-    return _llamar(cfg, cfg["ia"].get("modelo_diario", "claude-sonnet-5-5"), prompt, 2500)
+    prompt = PLANTILLA_SEMANAL.format(datos=datos)
+    return _llamar(cfg, cfg["ia"].get("modelo_semanal", "claude-sonnet-5-5"), prompt,
+                   int(cfg["ia"].get("max_tokens_semanal", 10000)))

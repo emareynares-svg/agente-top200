@@ -1,1 +1,1 @@
-"""Agente Top 200: screening mensual, fundamental semanal y técnico diario."""
+"""Agente Top 200: universo y tesis mensuales, momento de entrada semanal."""

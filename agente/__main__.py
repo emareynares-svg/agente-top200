@@ -1,24 +1,25 @@
 """Punto de entrada.
 
 Uso:
-    python -m agente mensual    # universo de las 200 por capitalización
-    python -m agente semanal    # fundamentales: 50 mejores + tesis IA + 20 principales
-    python -m agente diario     # técnico de las 20 principales
-    python -m agente todo       # los tres en orden (útil la primera vez)
-    python -m agente diario --demo   # datos simulados, sin Internet ni IA
+    python -m agente mensual    # top 200 por capitalización + score + 50 mejores con tesis IA
+    python -m agente semanal    # 20 de las 50 (rotación + seguimiento): técnico + momento de entrada
+    python -m agente todo       # ambos en orden (útil la primera vez)
+    python -m agente semanal --demo   # datos simulados, sin Internet ni IA
 """
 from __future__ import annotations
 
 import argparse
 import sys
 
-from . import fundamental, tecnico, universo
+import os
+
+from . import fundamental, ia, tecnico, universo
 from .util import cargar_config, configurar_log, leer_json, log
 
 
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(prog="agente")
-    ap.add_argument("modo", choices=["mensual", "semanal", "diario", "todo"])
+    ap.add_argument("modo", choices=["mensual", "semanal", "todo"])
     ap.add_argument("--demo", action="store_true", help="usar datos simulados (sin Internet)")
     args = ap.parse_args(argv)
 
@@ -33,18 +34,21 @@ def main(argv: list[str] | None = None) -> int:
         prov = YahooProveedor()
 
     modo = args.modo
-    uni = leer_json("universo.json")
-    sem = leer_json("semanal.json")
+    mensual = leer_json("mensual.json")
 
-    # Cada etapa necesita la anterior: si falta, se genera automáticamente.
-    if modo in ("mensual", "todo") or uni is None:
+    # El semanal necesita el mensual: si todavía no existe, se genera primero.
+    if modo in ("mensual", "todo") or mensual is None:
         uni = universo.ejecutar(prov, cfg)
-    if modo in ("semanal", "todo") or (modo == "diario" and sem is None):
-        sem = fundamental.ejecutar(prov, cfg, uni)
-    if modo in ("diario", "todo"):
-        tecnico.ejecutar(prov, cfg, sem)
+        mensual = fundamental.ejecutar(prov, cfg, uni)
+    if modo in ("semanal", "todo"):
+        tecnico.ejecutar(prov, cfg, mensual)
 
+    uso = ia.resumen_uso(cfg)
+    log.info(uso)
     log.info("Listo (%s).", modo)
+    if os.environ.get("GITHUB_STEP_SUMMARY"):
+        with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as f:
+            f.write(f"### Agente Top 200 — {modo}\n\n- {uso}\n")
     return 0
 
 
