@@ -16,6 +16,8 @@ mensual:
 semanal:
   cantidad: 20               # empresas con análisis técnico + momento de entrada (1 vez por semana)
   seguimiento_max: 5         # lugares reservados para repetir las que la semana anterior dieron "zona de compra"
+  max_noticias: 5
+  dias_noticias: 8
   solo_operables: true       # solo las que cotizan en EE.UU. (acciones o ADR, comprables desde Hapi)
 
 costos:
