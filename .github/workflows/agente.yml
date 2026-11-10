@@ -9,7 +9,7 @@ on:
       modo:
         description: "Qué análisis correr"
         type: choice
-        options: [semanal, mensual, todo]
+        options: [semanal, mensual, todo, historial]
         default: todo
 
 permissions:
