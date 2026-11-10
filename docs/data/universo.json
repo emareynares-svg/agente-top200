@@ -1,19 +1,19 @@
 {
- "actualizado": "2026-11-10T15:18:37+00:00",
+ "actualizado": "2026-11-10T19:21:47+00:00",
  "cantidad": 200,
- "operables": 143,
+ "operables": 142,
  "entraron": [
-  "STX"
+  "BP"
  ],
  "salieron": [
-  "CVNA"
+  "PDD"
  ],
  "empresas": [
   {
    "rank": 1,
    "ticker": "AAPL",
    "nombre": "Apple",
-   "market_cap": 5046009856000.0,
+   "market_cap": 5062721536000.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -22,7 +22,7 @@
    "rank": 2,
    "ticker": "NVDA",
    "nombre": "NVIDIA",
-   "market_cap": 4168979316736.0,
+   "market_cap": 4059835138048.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -31,7 +31,7 @@
    "rank": 3,
    "ticker": "MSFT",
    "nombre": "Microsoft",
-   "market_cap": 4024403230720.0,
+   "market_cap": 3972048617472.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -40,7 +40,7 @@
    "rank": 4,
    "ticker": "GOOG",
    "nombre": "Alphabet (Google)",
-   "market_cap": 3540856602624.0,
+   "market_cap": 3498257416192.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -49,7 +49,7 @@
    "rank": 5,
    "ticker": "AMZN",
    "nombre": "Amazon",
-   "market_cap": 2940524822528.0,
+   "market_cap": 2922466770944.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -58,7 +58,7 @@
    "rank": 6,
    "ticker": "TSM",
    "nombre": "TSMC",
-   "market_cap": 2055088373760.0,
+   "market_cap": 2038050848768.0,
    "pais": "Taiwan",
    "operable": true,
    "nueva": false
@@ -67,7 +67,7 @@
    "rank": 7,
    "ticker": "SPCX",
    "nombre": "SpaceX",
-   "market_cap": 1953933557760.0,
+   "market_cap": 1917510483968.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -85,7 +85,7 @@
    "rank": 9,
    "ticker": "META",
    "nombre": "Meta Platforms (Facebook)",
-   "market_cap": 1646319239168.0,
+   "market_cap": 1638699761664.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -94,7 +94,7 @@
    "rank": 10,
    "ticker": "AVGO",
    "nombre": "Broadcom",
-   "market_cap": 1584009838592.0,
+   "market_cap": 1576228749312.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -103,7 +103,7 @@
    "rank": 11,
    "ticker": "TSLA",
    "nombre": "Tesla",
-   "market_cap": 1489675878400.0,
+   "market_cap": 1491177963520.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -112,7 +112,7 @@
    "rank": 12,
    "ticker": "LLY",
    "nombre": "Eli Lilly",
-   "market_cap": 1264688693248.0,
+   "market_cap": 1271974985728.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -121,7 +121,7 @@
    "rank": 13,
    "ticker": "BRK-B",
    "nombre": "Berkshire Hathaway",
-   "market_cap": 1228418318336.0,
+   "market_cap": 1243725430784.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -130,7 +130,7 @@
    "rank": 14,
    "ticker": "WMT",
    "nombre": "Walmart",
-   "market_cap": 992749617152.0,
+   "market_cap": 999096647680.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -148,7 +148,7 @@
    "rank": 16,
    "ticker": "JPM",
    "nombre": "JPMorgan Chase",
-   "market_cap": 911245901824.0,
+   "market_cap": 911259140096.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -157,7 +157,7 @@
    "rank": 17,
    "ticker": "AMD",
    "nombre": "AMD",
-   "market_cap": 873887760384.0,
+   "market_cap": 840397094912.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -166,7 +166,7 @@
    "rank": 18,
    "ticker": "MU",
    "nombre": "Micron Technology",
-   "market_cap": 826403454976.0,
+   "market_cap": 804418682880.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -175,7 +175,7 @@
    "rank": 19,
    "ticker": "V",
    "nombre": "Visa",
-   "market_cap": 784102457344.0,
+   "market_cap": 791770890240.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -184,7 +184,7 @@
    "rank": 20,
    "ticker": "JNJ",
    "nombre": "Johnson & Johnson",
-   "market_cap": 677621727232.0,
+   "market_cap": 673529331712.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -193,7 +193,7 @@
    "rank": 21,
    "ticker": "XOM",
    "nombre": "Exxon Mobil",
-   "market_cap": 668135849984.0,
+   "market_cap": 671236096000.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -211,7 +211,7 @@
    "rank": 23,
    "ticker": "ASML",
    "nombre": "ASML",
-   "market_cap": 590070677504.0,
+   "market_cap": 580731994112.0,
    "pais": "Netherlands",
    "operable": true,
    "nueva": false
@@ -220,7 +220,7 @@
    "rank": 24,
    "ticker": "MA",
    "nombre": "Mastercard",
-   "market_cap": 569566232576.0,
+   "market_cap": 575472795648.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -229,7 +229,7 @@
    "rank": 25,
    "ticker": "ABBV",
    "nombre": "AbbVie",
-   "market_cap": 516974739456.0,
+   "market_cap": 518733660160.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -238,27 +238,27 @@
    "rank": 26,
    "ticker": "TCEHY",
    "nombre": "Tencent",
-   "market_cap": 479742630000.0,
-   "pais": "China",
-   "operable": true,
-   "nueva": false
-  },
-  {
-   "rank": 27,
-   "ticker": "601939.SS",
-   "nombre": "China Construction Bank",
-   "market_cap": 471482688884.0,
+   "market_cap": 476400420000.0,
    "pais": "China",
    "operable": false,
    "nueva": false
   },
   {
-   "rank": 28,
+   "rank": 27,
    "ticker": "COST",
    "nombre": "Costco",
-   "market_cap": 469495545856.0,
+   "market_cap": 472847777792.0,
    "pais": "United States",
    "operable": true,
+   "nueva": false
+  },
+  {
+   "rank": 28,
+   "ticker": "601939.SS",
+   "nombre": "China Construction Bank",
+   "market_cap": 471482688884.0,
+   "pais": "China",
+   "operable": false,
    "nueva": false
   },
   {
@@ -274,7 +274,7 @@
    "rank": 30,
    "ticker": "KO",
    "nombre": "Coca-Cola",
-   "market_cap": 413498867712.0,
+   "market_cap": 416273563648.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -283,7 +283,7 @@
    "rank": 31,
    "ticker": "CVX",
    "nombre": "Chevron",
-   "market_cap": 409099829248.0,
+   "market_cap": 412358443008.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -292,7 +292,7 @@
    "rank": 32,
    "ticker": "PLTR",
    "nombre": "Palantir",
-   "market_cap": 404916076544.0,
+   "market_cap": 400410279936.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -301,7 +301,7 @@
    "rank": 33,
    "ticker": "RO.SW",
    "nombre": "Roche",
-   "market_cap": 397237606606.0,
+   "market_cap": 396657706396.0,
    "pais": "Switzerland",
    "operable": false,
    "nueva": false
@@ -310,7 +310,7 @@
    "rank": 34,
    "ticker": "PG",
    "nombre": "Procter & Gamble",
-   "market_cap": 389202116608.0,
+   "market_cap": 392215232512.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -319,7 +319,7 @@
    "rank": 35,
    "ticker": "CSCO",
    "nombre": "Cisco",
-   "market_cap": 389093916672.0,
+   "market_cap": 387359145984.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -337,7 +337,7 @@
    "rank": 37,
    "ticker": "ORCL",
    "nombre": "Oracle",
-   "market_cap": 372690812928.0,
+   "market_cap": 365504495616.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -355,7 +355,7 @@
    "rank": 39,
    "ticker": "MRK",
    "nombre": "Merck",
-   "market_cap": 361824124928.0,
+   "market_cap": 362144563200.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -364,25 +364,25 @@
    "rank": 40,
    "ticker": "UNH",
    "nombre": "UnitedHealth",
-   "market_cap": 358794330112.0,
+   "market_cap": 360841805824.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 41,
-   "ticker": "BAC",
-   "nombre": "Bank of America",
-   "market_cap": 350979162112.0,
+   "ticker": "HD",
+   "nombre": "Home Depot",
+   "market_cap": 350228971520.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 42,
-   "ticker": "HD",
-   "nombre": "Home Depot",
-   "market_cap": 350253907968.0,
+   "ticker": "BAC",
+   "nombre": "Bank of America",
+   "market_cap": 349737123840.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -391,7 +391,7 @@
    "rank": 43,
    "ticker": "GE",
    "nombre": "General Electric",
-   "market_cap": 346099744768.0,
+   "market_cap": 348584673280.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -407,10 +407,10 @@
   },
   {
    "rank": 45,
-   "ticker": "INTC",
-   "nombre": "Intel",
-   "market_cap": 315392098304.0,
-   "pais": "United States",
+   "ticker": "NVS",
+   "nombre": "Novartis",
+   "market_cap": 308771094528.0,
+   "pais": "Switzerland",
    "operable": true,
    "nueva": false
   },
@@ -418,17 +418,17 @@
    "rank": 46,
    "ticker": "HSBC",
    "nombre": "HSBC",
-   "market_cap": 309636857856.0,
+   "market_cap": 307722354688.0,
    "pais": "United Kingdom",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 47,
-   "ticker": "NVS",
-   "nombre": "Novartis",
-   "market_cap": 307958972416.0,
-   "pais": "Switzerland",
+   "ticker": "INTC",
+   "nombre": "Intel",
+   "market_cap": 305904812032.0,
+   "pais": "United States",
    "operable": true,
    "nueva": false
   },
@@ -436,25 +436,25 @@
    "rank": 48,
    "ticker": "PM",
    "nombre": "Philip Morris International",
-   "market_cap": 303843901440.0,
+   "market_cap": 303719219200.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 49,
-   "ticker": "AMAT",
-   "nombre": "Applied Materials",
-   "market_cap": 299551293440.0,
+   "ticker": "MS",
+   "nombre": "Morgan Stanley",
+   "market_cap": 293344247808.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 50,
-   "ticker": "MS",
-   "nombre": "Morgan Stanley",
-   "market_cap": 293922570240.0,
+   "ticker": "AMAT",
+   "nombre": "Applied Materials",
+   "market_cap": 293337432064.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -463,7 +463,7 @@
    "rank": 51,
    "ticker": "AZN",
    "nombre": "AstraZeneca",
-   "market_cap": 289695891456.0,
+   "market_cap": 289268465664.0,
    "pais": "United Kingdom",
    "operable": true,
    "nueva": false
@@ -472,7 +472,7 @@
    "rank": 52,
    "ticker": "RY",
    "nombre": "Royal Bank Of Canada",
-   "market_cap": 283039760384.0,
+   "market_cap": 281299648512.0,
    "pais": "Canada",
    "operable": true,
    "nueva": false
@@ -481,7 +481,7 @@
    "rank": 53,
    "ticker": "LRCX",
    "nombre": "Lam Research",
-   "market_cap": 281862930432.0,
+   "market_cap": 277209776128.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -490,31 +490,49 @@
    "rank": 54,
    "ticker": "SHEL",
    "nombre": "Shell",
-   "market_cap": 274745229312.0,
+   "market_cap": 275679346688.0,
    "pais": "United Kingdom",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 55,
-   "ticker": "SAP",
-   "nombre": "SAP",
-   "market_cap": 271330344960.0,
-   "pais": "Germany",
+   "ticker": "TXN",
+   "nombre": "Texas Instruments",
+   "market_cap": 273817174016.0,
+   "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 56,
-   "ticker": "TXN",
-   "nombre": "Texas Instruments",
-   "market_cap": 270361329664.0,
+   "ticker": "RTX",
+   "nombre": "RTX",
+   "market_cap": 270623539200.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 57,
+   "ticker": "SAP",
+   "nombre": "SAP",
+   "market_cap": 270199226368.0,
+   "pais": "Germany",
+   "operable": true,
+   "nueva": false
+  },
+  {
+   "rank": 58,
+   "ticker": "NESN.SW",
+   "nombre": "Nestlé",
+   "market_cap": 269618638542.0,
+   "pais": "Switzerland",
+   "operable": false,
+   "nueva": false
+  },
+  {
+   "rank": 59,
    "ticker": "600519.SS",
    "nombre": "Kweichow Moutai",
    "market_cap": 269501339251.0,
@@ -523,92 +541,74 @@
    "nueva": false
   },
   {
-   "rank": 58,
-   "ticker": "NESN.SW",
-   "nombre": "Nestlé",
-   "market_cap": 269431420091.0,
-   "pais": "Switzerland",
-   "operable": false,
-   "nueva": false
-  },
-  {
-   "rank": 59,
-   "ticker": "RTX",
-   "nombre": "RTX",
-   "market_cap": 269307854848.0,
-   "pais": "United States",
-   "operable": true,
-   "nueva": false
-  },
-  {
    "rank": 60,
-   "ticker": "PANW",
-   "nombre": "Palo Alto Networks",
-   "market_cap": 269192085504.0,
+   "ticker": "CAT",
+   "nombre": "Caterpillar",
+   "market_cap": 266383900672.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 61,
-   "ticker": "CAT",
-   "nombre": "Caterpillar",
-   "market_cap": 266994745344.0,
-   "pais": "United States",
-   "operable": true,
+   "ticker": "OR.PA",
+   "nombre": "L'Oréal",
+   "market_cap": 265908614984.0,
+   "pais": "France",
+   "operable": false,
    "nueva": false
   },
   {
    "rank": 62,
    "ticker": "TMO",
    "nombre": "Thermo Fisher Scientific",
-   "market_cap": 266582458368.0,
+   "market_cap": 265583919104.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 63,
-   "ticker": "OR.PA",
-   "nombre": "L'Oréal",
-   "market_cap": 265429334221.0,
-   "pais": "France",
-   "operable": false,
+   "ticker": "PANW",
+   "nombre": "Palo Alto Networks",
+   "market_cap": 265069166592.0,
+   "pais": "United States",
+   "operable": true,
    "nueva": false
   },
   {
    "rank": 64,
    "ticker": "GS",
    "nombre": "Goldman Sachs",
-   "market_cap": 263594606592.0,
+   "market_cap": 262427885568.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 65,
-   "ticker": "BABA",
-   "nombre": "Alibaba",
-   "market_cap": 259690725376.0,
-   "pais": "China",
+   "ticker": "NFLX",
+   "nombre": "Netflix",
+   "market_cap": 258020999168.0,
+   "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 66,
-   "ticker": "NFLX",
-   "nombre": "Netflix",
-   "market_cap": 258801205248.0,
+   "ticker": "WFC",
+   "nombre": "Wells Fargo",
+   "market_cap": 257753874432.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 67,
-   "ticker": "WFC",
-   "nombre": "Wells Fargo",
-   "market_cap": 257723875328.0,
-   "pais": "United States",
+   "ticker": "BABA",
+   "nombre": "Alibaba",
+   "market_cap": 255068487680.0,
+   "pais": "China",
    "operable": true,
    "nueva": false
   },
@@ -616,7 +616,7 @@
    "rank": 68,
    "ticker": "TM",
    "nombre": "Toyota",
-   "market_cap": 252184068096.0,
+   "market_cap": 253079207936.0,
    "pais": "Japan",
    "operable": true,
    "nueva": false
@@ -625,7 +625,7 @@
    "rank": 69,
    "ticker": "AMGN",
    "nombre": "Amgen",
-   "market_cap": 250528514048.0,
+   "market_cap": 250777387008.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -634,40 +634,22 @@
    "rank": 70,
    "ticker": "MUFG",
    "nombre": "Mitsubishi UFJ Financial",
-   "market_cap": 244790362112.0,
+   "market_cap": 244193820672.0,
    "pais": "Japan",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 71,
-   "ticker": "ANET",
-   "nombre": "Arista Networks",
-   "market_cap": 239838003200.0,
-   "pais": "United States",
-   "operable": true,
-   "nueva": false
-  },
-  {
-   "rank": 72,
    "ticker": "LIN",
    "nombre": "Linde",
-   "market_cap": 238242840576.0,
+   "market_cap": 239614181376.0,
    "pais": "United Kingdom",
    "operable": true,
    "nueva": false
   },
   {
-   "rank": 73,
-   "ticker": "SIE.DE",
-   "nombre": "Siemens",
-   "market_cap": 235436860286.0,
-   "pais": "Germany",
-   "operable": false,
-   "nueva": false
-  },
-  {
-   "rank": 74,
+   "rank": 72,
    "ticker": "0857.HK",
    "nombre": "PetroChina",
    "market_cap": 234905756983.0,
@@ -676,19 +658,37 @@
    "nueva": false
   },
   {
+   "rank": 73,
+   "ticker": "SIE.DE",
+   "nombre": "Siemens",
+   "market_cap": 233118971573.0,
+   "pais": "Germany",
+   "operable": false,
+   "nueva": false
+  },
+  {
+   "rank": 74,
+   "ticker": "ANET",
+   "nombre": "Arista Networks",
+   "market_cap": 232661860352.0,
+   "pais": "United States",
+   "operable": true,
+   "nueva": false
+  },
+  {
    "rank": 75,
-   "ticker": "CRWD",
-   "nombre": "CrowdStrike",
-   "market_cap": 234440130560.0,
+   "ticker": "IBM",
+   "nombre": "IBM",
+   "market_cap": 231039516672.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 76,
-   "ticker": "IBM",
-   "nombre": "IBM",
-   "market_cap": 230590578688.0,
+   "ticker": "CRWD",
+   "nombre": "CrowdStrike",
+   "market_cap": 230098632704.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -706,7 +706,7 @@
    "rank": 78,
    "ticker": "MC.PA",
    "nombre": "LVMH",
-   "market_cap": 222938548297.0,
+   "market_cap": 221009535712.0,
    "pais": "France",
    "operable": false,
    "nueva": false
@@ -715,16 +715,16 @@
    "rank": 79,
    "ticker": "AXP",
    "nombre": "American Express",
-   "market_cap": 218462502912.0,
+   "market_cap": 217617661952.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 80,
-   "ticker": "DELL",
-   "nombre": "Dell",
-   "market_cap": 215171760128.0,
+   "ticker": "GILD",
+   "nombre": "Gilead Sciences",
+   "market_cap": 210547474432.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -733,16 +733,16 @@
    "rank": 81,
    "ticker": "ITX.MC",
    "nombre": "Inditex",
-   "market_cap": 210653290881.0,
+   "market_cap": 210443328324.0,
    "pais": "Spain",
    "operable": false,
    "nueva": false
   },
   {
    "rank": 82,
-   "ticker": "GILD",
-   "nombre": "Gilead Sciences",
-   "market_cap": 209331945472.0,
+   "ticker": "DELL",
+   "nombre": "Dell",
+   "market_cap": 209840455680.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -751,7 +751,7 @@
    "rank": 83,
    "ticker": "BHP",
    "nombre": "BHP Group",
-   "market_cap": 208070721536.0,
+   "market_cap": 206672904192.0,
    "pais": "Australia",
    "operable": true,
    "nueva": false
@@ -760,7 +760,7 @@
    "rank": 84,
    "ticker": "GEV",
    "nombre": "GE Vernova",
-   "market_cap": 207918678016.0,
+   "market_cap": 206024638464.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -769,7 +769,7 @@
    "rank": 85,
    "ticker": "DIS",
    "nombre": "Walt Disney",
-   "market_cap": 203904450560.0,
+   "market_cap": 205389398016.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -778,7 +778,7 @@
    "rank": 86,
    "ticker": "TD",
    "nombre": "Toronto Dominion Bank",
-   "market_cap": 203865800704.0,
+   "market_cap": 203286085632.0,
    "pais": "Canada",
    "operable": true,
    "nueva": false
@@ -787,31 +787,22 @@
    "rank": 87,
    "ticker": "C",
    "nombre": "Citigroup",
-   "market_cap": 203416354816.0,
+   "market_cap": 202398400512.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 88,
-   "ticker": "APH",
-   "nombre": "Amphenol",
-   "market_cap": 200010170368.0,
+   "ticker": "MCD",
+   "nombre": "McDonald",
+   "market_cap": 199098351616.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 89,
-   "ticker": "KLAC",
-   "nombre": "KLA",
-   "market_cap": 198714785792.0,
-   "pais": "United States",
-   "operable": true,
-   "nueva": false
-  },
-  {
-   "rank": 90,
    "ticker": "CBA.AX",
    "nombre": "Commonwealth Bank",
    "market_cap": 198310185205.0,
@@ -820,61 +811,61 @@
    "nueva": false
   },
   {
+   "rank": 90,
+   "ticker": "KLAC",
+   "nombre": "KLA",
+   "market_cap": 197919981568.0,
+   "pais": "United States",
+   "operable": true,
+   "nueva": false
+  },
+  {
    "rank": 91,
    "ticker": "ALV.DE",
    "nombre": "Allianz SE",
-   "market_cap": 197908869206.0,
+   "market_cap": 197482796871.0,
    "pais": "Germany",
    "operable": false,
    "nueva": false
   },
   {
    "rank": 92,
-   "ticker": "MCD",
-   "nombre": "McDonald",
-   "market_cap": 197453889536.0,
+   "ticker": "APH",
+   "nombre": "Amphenol",
+   "market_cap": 195516104704.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 93,
-   "ticker": "ARM",
-   "nombre": "Arm Holdings",
-   "market_cap": 195660201984.0,
-   "pais": "United Kingdom",
-   "operable": true,
-   "nueva": false
-  },
-  {
-   "rank": 94,
    "ticker": "PEP",
    "nombre": "Pepsico",
-   "market_cap": 193032273920.0,
+   "market_cap": 195022159872.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
-   "rank": 95,
-   "ticker": "SHOP",
-   "nombre": "Shopify",
-   "market_cap": 192798179328.0,
-   "pais": "Canada",
-   "operable": true,
-   "nueva": false
-  },
-  {
-   "rank": 96,
+   "rank": 94,
    "ticker": "TTE",
    "nombre": "TotalEnergies",
-   "market_cap": 191329779712.0,
+   "market_cap": 192054296576.0,
    "pais": "France",
    "operable": true,
    "nueva": false
   },
   {
-   "rank": 97,
+   "rank": 95,
+   "ticker": "VZ",
+   "nombre": "Verizon",
+   "market_cap": 191501172736.0,
+   "pais": "United States",
+   "operable": true,
+   "nueva": false
+  },
+  {
+   "rank": 96,
    "ticker": "IHC.AE",
    "nombre": "International Holding Company",
    "market_cap": 191126928414.0,
@@ -883,7 +874,25 @@
    "nueva": false
   },
   {
+   "rank": 97,
+   "ticker": "ARM",
+   "nombre": "Arm Holdings",
+   "market_cap": 191021744128.0,
+   "pais": "United Kingdom",
+   "operable": true,
+   "nueva": false
+  },
+  {
    "rank": 98,
+   "ticker": "ABT",
+   "nombre": "Abbott Laboratories",
+   "market_cap": 190382653440.0,
+   "pais": "United States",
+   "operable": true,
+   "nueva": false
+  },
+  {
+   "rank": 99,
    "ticker": "RELIANCE.NS",
    "nombre": "Reliance Industries",
    "market_cap": 189755492584.0,
@@ -892,34 +901,16 @@
    "nueva": false
   },
   {
-   "rank": 99,
-   "ticker": "VZ",
-   "nombre": "Verizon",
-   "market_cap": 189325246464.0,
-   "pais": "United States",
-   "operable": true,
-   "nueva": false
-  },
-  {
    "rank": 100,
    "ticker": "ADI",
    "nombre": "Analog Devices",
-   "market_cap": 189280960512.0,
+   "market_cap": 189610459136.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 101,
-   "ticker": "ABT",
-   "nombre": "Abbott Laboratories",
-   "market_cap": 189257924608.0,
-   "pais": "United States",
-   "operable": true,
-   "nueva": false
-  },
-  {
-   "rank": 102,
    "ticker": "2454.TW",
    "nombre": "MediaTek",
    "market_cap": 188273537722.0,
@@ -928,55 +919,64 @@
    "nueva": false
   },
   {
-   "rank": 103,
+   "rank": 102,
    "ticker": "BLK",
    "nombre": "BlackRock",
-   "market_cap": 187552661504.0,
+   "market_cap": 187938717696.0,
+   "pais": "United States",
+   "operable": true,
+   "nueva": false
+  },
+  {
+   "rank": 103,
+   "ticker": "DE",
+   "nombre": "Deere &amp; Company (John Deere)",
+   "market_cap": 186165559296.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 104,
-   "ticker": "AIR.PA",
-   "nombre": "Airbus",
-   "market_cap": 185561642651.0,
-   "pais": "Netherlands",
-   "operable": false,
+   "ticker": "SHOP",
+   "nombre": "Shopify",
+   "market_cap": 185593659392.0,
+   "pais": "Canada",
+   "operable": true,
    "nueva": false
   },
   {
    "rank": 105,
-   "ticker": "PRX.AS",
-   "nombre": "Prosus",
-   "market_cap": 185341578241.0,
+   "ticker": "AIR.PA",
+   "nombre": "Airbus",
+   "market_cap": 184608676201.0,
    "pais": "Netherlands",
    "operable": false,
    "nueva": false
   },
   {
    "rank": 106,
-   "ticker": "SAN",
-   "nombre": "Santander",
-   "market_cap": 182319546368.0,
-   "pais": "Spain",
-   "operable": true,
+   "ticker": "PRX.AS",
+   "nombre": "Prosus",
+   "market_cap": 184016307422.0,
+   "pais": "Netherlands",
+   "operable": false,
    "nueva": false
   },
   {
    "rank": 107,
    "ticker": "QCOM",
    "nombre": "QUALCOMM",
-   "market_cap": 182220996608.0,
+   "market_cap": 183034200064.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 108,
-   "ticker": "DE",
-   "nombre": "Deere &amp; Company (John Deere)",
-   "market_cap": 182036250624.0,
+   "ticker": "WELL",
+   "nombre": "Welltower",
+   "market_cap": 181539094528.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -985,17 +985,17 @@
    "rank": 109,
    "ticker": "NEE",
    "nombre": "Nextera Energy",
-   "market_cap": 180756316160.0,
+   "market_cap": 181060435968.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 110,
-   "ticker": "WELL",
-   "nombre": "Welltower",
-   "market_cap": 179554680832.0,
-   "pais": "United States",
+   "ticker": "SAN",
+   "nombre": "Santander",
+   "market_cap": 180805615616.0,
+   "pais": "Spain",
    "operable": true,
    "nueva": false
   },
@@ -1003,7 +1003,7 @@
    "rank": 111,
    "ticker": "NVO",
    "nombre": "Novo Nordisk",
-   "market_cap": 179245924352.0,
+   "market_cap": 178891063296.0,
    "pais": "Denmark",
    "operable": true,
    "nueva": false
@@ -1012,7 +1012,7 @@
    "rank": 112,
    "ticker": "UNP",
    "nombre": "Union Pacific Corporation",
-   "market_cap": 176193880064.0,
+   "market_cap": 178647416832.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -1021,27 +1021,27 @@
    "rank": 113,
    "ticker": "TMUS",
    "nombre": "T-Mobile US",
-   "market_cap": 175759802368.0,
+   "market_cap": 177788305408.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 114,
-   "ticker": "CRM",
-   "nombre": "Salesforce",
-   "market_cap": 175463596032.0,
-   "pais": "United States",
-   "operable": true,
-   "nueva": false
-  },
-  {
-   "rank": 115,
    "ticker": "3968.HK",
    "nombre": "CM Bank",
    "market_cap": 175187163334.0,
    "pais": "China",
    "operable": false,
+   "nueva": false
+  },
+  {
+   "rank": 115,
+   "ticker": "CRM",
+   "nombre": "Salesforce",
+   "market_cap": 173653000192.0,
+   "pais": "United States",
+   "operable": true,
    "nueva": false
   },
   {
@@ -1057,7 +1057,7 @@
    "rank": 117,
    "ticker": "IBE.MC",
    "nombre": "Iberdrola",
-   "market_cap": 171583562121.0,
+   "market_cap": 171434427601.0,
    "pais": "Spain",
    "operable": false,
    "nueva": false
@@ -1066,7 +1066,7 @@
    "rank": 118,
    "ticker": "BUD",
    "nombre": "Anheuser-Busch Inbev",
-   "market_cap": 168340815872.0,
+   "market_cap": 169581379584.0,
    "pais": "Belgium",
    "operable": true,
    "nueva": false
@@ -1075,7 +1075,7 @@
    "rank": 119,
    "ticker": "PFE",
    "nombre": "Pfizer",
-   "market_cap": 166093733888.0,
+   "market_cap": 166617546752.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -1084,7 +1084,7 @@
    "rank": 120,
    "ticker": "DHR",
    "nombre": "Danaher",
-   "market_cap": 164795056128.0,
+   "market_cap": 165364924416.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -1093,31 +1093,22 @@
    "rank": 121,
    "ticker": "SCHW",
    "nombre": "Charles Schwab",
-   "market_cap": 160561872896.0,
+   "market_cap": 161468022784.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 122,
-   "ticker": "RMS.PA",
-   "nombre": "Hermès",
-   "market_cap": 159891732362.0,
-   "pais": "France",
-   "operable": false,
-   "nueva": false
-  },
-  {
-   "rank": 123,
    "ticker": "COP",
    "nombre": "ConocoPhillips",
-   "market_cap": 159609323520.0,
+   "market_cap": 160643858432.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
-   "rank": 124,
+   "rank": 123,
    "ticker": "601088.SS",
    "nombre": "China Shenhua Energy",
    "market_cap": 158573194428.0,
@@ -1126,11 +1117,20 @@
    "nueva": false
   },
   {
-   "rank": 125,
+   "rank": 124,
    "ticker": "9983.T",
    "nombre": "Fast Retailing",
    "market_cap": 158345944081.0,
    "pais": "Japan",
+   "operable": false,
+   "nueva": false
+  },
+  {
+   "rank": 125,
+   "ticker": "RMS.PA",
+   "nombre": "Hermès",
+   "market_cap": 158303393596.0,
+   "pais": "France",
    "operable": false,
    "nueva": false
   },
@@ -1145,24 +1145,6 @@
   },
   {
    "rank": 127,
-   "ticker": "ISRG",
-   "nombre": "Intuitive Surgical",
-   "market_cap": 157034807296.0,
-   "pais": "United States",
-   "operable": true,
-   "nueva": false
-  },
-  {
-   "rank": 128,
-   "ticker": "SU.PA",
-   "nombre": "Schneider Electric",
-   "market_cap": 156963704386.0,
-   "pais": "France",
-   "operable": false,
-   "nueva": false
-  },
-  {
-   "rank": 129,
    "ticker": "D05.SI",
    "nombre": "DBS Group",
    "market_cap": 156627476956.0,
@@ -1171,79 +1153,88 @@
    "nueva": false
   },
   {
-   "rank": 130,
+   "rank": 128,
    "ticker": "SONY",
    "nombre": "Sony",
-   "market_cap": 154419593216.0,
+   "market_cap": 155381235712.0,
    "pais": "Japan",
    "operable": true,
    "nueva": false
   },
   {
-   "rank": 131,
-   "ticker": "SMFG",
-   "nombre": "Sumitomo Mitsui Financial Group",
-   "market_cap": 153261932544.0,
-   "pais": "Japan",
-   "operable": true,
-   "nueva": false
-  },
-  {
-   "rank": 132,
-   "ticker": "ABBN.SW",
-   "nombre": "ABB",
-   "market_cap": 152486427844.0,
-   "pais": "Switzerland",
+   "rank": 129,
+   "ticker": "SU.PA",
+   "nombre": "Schneider Electric",
+   "market_cap": 155379212233.0,
+   "pais": "France",
    "operable": false,
    "nueva": false
   },
   {
-   "rank": 133,
-   "ticker": "BX",
-   "nombre": "Blackstone Group",
-   "market_cap": 151074979840.0,
+   "rank": 130,
+   "ticker": "ISRG",
+   "nombre": "Intuitive Surgical",
+   "market_cap": 155079737344.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
+   "rank": 131,
+   "ticker": "ACN",
+   "nombre": "Accenture",
+   "market_cap": 153048252416.0,
+   "pais": "Ireland",
+   "operable": true,
+   "nueva": false
+  },
+  {
+   "rank": 132,
+   "ticker": "SMFG",
+   "nombre": "Sumitomo Mitsui Financial Group",
+   "market_cap": 152854249472.0,
+   "pais": "Japan",
+   "operable": true,
+   "nueva": false
+  },
+  {
+   "rank": 133,
+   "ticker": "ABBN.SW",
+   "nombre": "ABB",
+   "market_cap": 151084664467.0,
+   "pais": "Switzerland",
+   "operable": false,
+   "nueva": false
+  },
+  {
    "rank": 134,
-   "ticker": "TJX",
-   "nombre": "TJX Companies",
-   "market_cap": 150366437376.0,
+   "ticker": "BX",
+   "nombre": "Blackstone Group",
+   "market_cap": 151025598464.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 135,
-   "ticker": "UBS",
-   "nombre": "UBS",
-   "market_cap": 150058270720.0,
-   "pais": "Switzerland",
-   "operable": true,
-   "nueva": false
-  },
-  {
-   "rank": 136,
-   "ticker": "ACN",
-   "nombre": "Accenture",
-   "market_cap": 148413923328.0,
-   "pais": "Ireland",
-   "operable": true,
-   "nueva": false
-  },
-  {
-   "rank": 137,
-   "ticker": "SCCO",
-   "nombre": "Southern Copper",
-   "market_cap": 148306640896.0,
+   "ticker": "TJX",
+   "nombre": "TJX Companies",
+   "market_cap": 150586441728.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
-   "rank": 138,
+   "rank": 136,
+   "ticker": "UBS",
+   "nombre": "UBS",
+   "market_cap": 149058289664.0,
+   "pais": "Switzerland",
+   "operable": true,
+   "nueva": false
+  },
+  {
+   "rank": 137,
    "ticker": "601628.SS",
    "nombre": "China Life Insurance",
    "market_cap": 147997163732.0,
@@ -1252,16 +1243,16 @@
    "nueva": false
   },
   {
-   "rank": 139,
-   "ticker": "RR.L",
-   "nombre": "Rolls-Royce Holdings",
-   "market_cap": 147213155643.0,
-   "pais": "United Kingdom",
-   "operable": false,
+   "rank": 138,
+   "ticker": "T",
+   "nombre": "AT&T",
+   "market_cap": 147124584448.0,
+   "pais": "United States",
+   "operable": true,
    "nueva": false
   },
   {
-   "rank": 140,
+   "rank": 139,
    "ticker": "601318.SS",
    "nombre": "Ping An Insurance",
    "market_cap": 146764460895.0,
@@ -1270,19 +1261,28 @@
    "nueva": false
   },
   {
+   "rank": 140,
+   "ticker": "RR.L",
+   "nombre": "Rolls-Royce Holdings",
+   "market_cap": 146028085537.0,
+   "pais": "United Kingdom",
+   "operable": false,
+   "nueva": false
+  },
+  {
    "rank": 141,
    "ticker": "SAF.PA",
    "nombre": "Safran",
-   "market_cap": 146181930164.0,
+   "market_cap": 145391515370.0,
    "pais": "France",
    "operable": false,
    "nueva": false
   },
   {
    "rank": 142,
-   "ticker": "T",
-   "nombre": "AT&T",
-   "market_cap": 146181488640.0,
+   "ticker": "SCCO",
+   "nombre": "Southern Copper",
+   "market_cap": 144663085056.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -1291,58 +1291,49 @@
    "rank": 143,
    "ticker": "BBVA",
    "nombre": "Banco Bilbao Vizcaya Argentaria",
-   "market_cap": 145623810048.0,
+   "market_cap": 144015753216.0,
    "pais": "Spain",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 144,
-   "ticker": "UBER",
-   "nombre": "Uber",
-   "market_cap": 143259582464.0,
-   "pais": "United States",
-   "operable": true,
-   "nueva": false
-  },
-  {
-   "rank": 145,
    "ticker": "UL",
    "nombre": "Unilever",
-   "market_cap": 142682112000.0,
+   "market_cap": 143328100352.0,
    "pais": "United Kingdom",
    "operable": true,
    "nueva": false
   },
   {
-   "rank": 146,
-   "ticker": "UCG.MI",
-   "nombre": "UniCredit",
-   "market_cap": 141698462094.0,
-   "pais": "Italy",
-   "operable": false,
-   "nueva": false
-  },
-  {
-   "rank": 147,
-   "ticker": "MRVL",
-   "nombre": "Marvell Technology",
-   "market_cap": 140417466368.0,
+   "rank": 145,
+   "ticker": "UBER",
+   "nombre": "Uber",
+   "market_cap": 141544374272.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
-   "rank": 148,
-   "ticker": "DTE.DE",
-   "nombre": "Deutsche Telekom",
-   "market_cap": 140222567774.0,
-   "pais": "Germany",
+   "rank": 146,
+   "ticker": "CB",
+   "nombre": "Chubb",
+   "market_cap": 141208829952.0,
+   "pais": "Switzerland",
+   "operable": true,
+   "nueva": false
+  },
+  {
+   "rank": 147,
+   "ticker": "UCG.MI",
+   "nombre": "UniCredit",
+   "market_cap": 140621290497.0,
+   "pais": "Italy",
    "operable": false,
    "nueva": false
   },
   {
-   "rank": 149,
+   "rank": 148,
    "ticker": "9984.T",
    "nombre": "SoftBank Group Corp.",
    "market_cap": 139596522595.0,
@@ -1351,57 +1342,66 @@
    "nueva": false
   },
   {
+   "rank": 149,
+   "ticker": "DTE.DE",
+   "nombre": "Deutsche Telekom",
+   "market_cap": 139255512409.0,
+   "pais": "Germany",
+   "operable": false,
+   "nueva": false
+  },
+  {
    "rank": 150,
-   "ticker": "ETN",
-   "nombre": "Eaton",
-   "market_cap": 139259756544.0,
-   "pais": "Ireland",
-   "operable": true,
-   "nueva": false
-  },
-  {
-   "rank": 151,
-   "ticker": "CB",
-   "nombre": "Chubb",
-   "market_cap": 139197202432.0,
-   "pais": "Switzerland",
-   "operable": true,
-   "nueva": false
-  },
-  {
-   "rank": 152,
-   "ticker": "VRTX",
-   "nombre": "Vertex Pharmaceuticals",
-   "market_cap": 139033722880.0,
+   "ticker": "LMT",
+   "nombre": "Lockheed Martin",
+   "market_cap": 139127177216.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
+   "rank": 151,
+   "ticker": "VRTX",
+   "nombre": "Vertex Pharmaceuticals",
+   "market_cap": 138979213312.0,
+   "pais": "United States",
+   "operable": true,
+   "nueva": false
+  },
+  {
+   "rank": 152,
+   "ticker": "0883.HK",
+   "nombre": "CNOOC",
+   "market_cap": 137880543958.0,
+   "pais": "China",
+   "operable": false,
+   "nueva": false
+  },
+  {
    "rank": 153,
-   "ticker": "RIO",
-   "nombre": "Rio Tinto",
-   "market_cap": 138658889728.0,
-   "pais": "United Kingdom",
+   "ticker": "BA",
+   "nombre": "Boeing",
+   "market_cap": 137719873536.0,
+   "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 154,
-   "ticker": "LMT",
-   "nombre": "Lockheed Martin",
-   "market_cap": 138102669312.0,
+   "ticker": "MRVL",
+   "nombre": "Marvell Technology",
+   "market_cap": 137682173952.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 155,
-   "ticker": "0883.HK",
-   "nombre": "CNOOC",
-   "market_cap": 137880543958.0,
-   "pais": "China",
-   "operable": false,
+   "ticker": "RIO",
+   "nombre": "Rio Tinto",
+   "market_cap": 137552871424.0,
+   "pais": "United Kingdom",
+   "operable": true,
    "nueva": false
   },
   {
@@ -1415,6 +1415,15 @@
   },
   {
    "rank": 157,
+   "ticker": "SPGI",
+   "nombre": "S&P Global",
+   "market_cap": 136966152192.0,
+   "pais": "United States",
+   "operable": true,
+   "nueva": false
+  },
+  {
+   "rank": 158,
    "ticker": "BHARTIARTL.NS",
    "nombre": "Bharti Airtel",
    "market_cap": 136946583466.0,
@@ -1423,25 +1432,25 @@
    "nueva": false
   },
   {
-   "rank": 158,
-   "ticker": "BA",
-   "nombre": "Boeing",
-   "market_cap": 136582701056.0,
-   "pais": "United States",
+   "rank": 159,
+   "ticker": "ETN",
+   "nombre": "Eaton",
+   "market_cap": 136862720000.0,
+   "pais": "Ireland",
    "operable": true,
    "nueva": false
   },
   {
-   "rank": 159,
+   "rank": 160,
    "ticker": "AI.PA",
    "nombre": "Air Liquide",
-   "market_cap": 136378815566.0,
+   "market_cap": 136450502466.0,
    "pais": "France",
    "operable": false,
    "nueva": false
   },
   {
-   "rank": 160,
+   "rank": 161,
    "ticker": "6857.T",
    "nombre": "Advantest",
    "market_cap": 135627210458.0,
@@ -1450,46 +1459,37 @@
    "nueva": false
   },
   {
-   "rank": 161,
-   "ticker": "SPGI",
-   "nombre": "S&P Global",
-   "market_cap": 135465926656.0,
+   "rank": 162,
+   "ticker": "PGR",
+   "nombre": "Progressive",
+   "market_cap": 134180282368.0,
    "pais": "United States",
    "operable": true,
-   "nueva": false
-  },
-  {
-   "rank": 162,
-   "ticker": "INVE-B.ST",
-   "nombre": "Investor AB",
-   "market_cap": 133714155021.0,
-   "pais": "Sweden",
-   "operable": false,
    "nueva": false
   },
   {
    "rank": 163,
    "ticker": "HDB",
    "nombre": "HDFC Bank",
-   "market_cap": 133515059200.0,
+   "market_cap": 133592219648.0,
    "pais": "India",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 164,
-   "ticker": "IBKR",
-   "nombre": "Interactive Brokers",
-   "market_cap": 132652556288.0,
-   "pais": "United States",
-   "operable": true,
+   "ticker": "INVE-B.ST",
+   "nombre": "Investor AB",
+   "market_cap": 133466442704.0,
+   "pais": "Sweden",
+   "operable": false,
    "nueva": false
   },
   {
    "rank": 165,
-   "ticker": "PGR",
-   "nombre": "Progressive",
-   "market_cap": 131877314560.0,
+   "ticker": "IBKR",
+   "nombre": "Interactive Brokers",
+   "market_cap": 132047691776.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -1498,16 +1498,16 @@
    "rank": 166,
    "ticker": "BTI",
    "nombre": "British American Tobacco",
-   "market_cap": 130491547648.0,
+   "market_cap": 130588196864.0,
    "pais": "United Kingdom",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 167,
-   "ticker": "APP",
-   "nombre": "AppLovin",
-   "market_cap": 129878220800.0,
+   "ticker": "LOW",
+   "nombre": "Lowe's Companies",
+   "market_cap": 129850343424.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -1516,7 +1516,7 @@
    "rank": 168,
    "ticker": "MDT",
    "nombre": "Medtronic",
-   "market_cap": 129685397504.0,
+   "market_cap": 129723777024.0,
    "pais": "Ireland",
    "operable": true,
    "nueva": false
@@ -1532,15 +1532,6 @@
   },
   {
    "rank": 170,
-   "ticker": "LOW",
-   "nombre": "Lowe's Companies",
-   "market_cap": 128680542208.0,
-   "pais": "United States",
-   "operable": true,
-   "nueva": false
-  },
-  {
-   "rank": 171,
    "ticker": "601138.SS",
    "nombre": "Foxconn Industrial Internet",
    "market_cap": 128373565494.0,
@@ -1549,19 +1540,28 @@
    "nueva": false
   },
   {
+   "rank": 171,
+   "ticker": "BMY",
+   "nombre": "Bristol-Myers Squibb",
+   "market_cap": 127336325120.0,
+   "pais": "United States",
+   "operable": true,
+   "nueva": false
+  },
+  {
    "rank": 172,
-   "ticker": "MO",
-   "nombre": "Altria Group",
-   "market_cap": 126231068672.0,
+   "ticker": "APP",
+   "nombre": "AppLovin",
+   "market_cap": 127100076032.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 173,
-   "ticker": "NEM",
-   "nombre": "Newmont",
-   "market_cap": 125925064704.0,
+   "ticker": "MO",
+   "nombre": "Altria Group",
+   "market_cap": 127020048384.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -1570,63 +1570,63 @@
    "rank": 174,
    "ticker": "PLD",
    "nombre": "Prologis",
-   "market_cap": 125695188992.0,
+   "market_cap": 126356340736.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 175,
-   "ticker": "ISP.MI",
-   "nombre": "Intesa Sanpaolo",
-   "market_cap": 125562946355.0,
-   "pais": "Italy",
+   "ticker": "CFR.SW",
+   "nombre": "Compagnie Financière Richemont",
+   "market_cap": 125130850741.0,
+   "pais": "Switzerland",
    "operable": false,
    "nueva": false
   },
   {
    "rank": 176,
-   "ticker": "SNDK",
-   "nombre": "Sandisk",
-   "market_cap": 125525540864.0,
-   "pais": "United States",
+   "ticker": "IBN",
+   "nombre": "ICICI Bank",
+   "market_cap": 125126336512.0,
+   "pais": "India",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 177,
-   "ticker": "BMY",
-   "nombre": "Bristol-Myers Squibb",
-   "market_cap": 125506879488.0,
+   "ticker": "SBUX",
+   "nombre": "Starbucks",
+   "market_cap": 124852346880.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 178,
-   "ticker": "IBN",
-   "nombre": "ICICI Bank",
-   "market_cap": 124731400192.0,
-   "pais": "India",
+   "ticker": "MCK",
+   "nombre": "McKesson",
+   "market_cap": 124502687744.0,
+   "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 179,
-   "ticker": "CFR.SW",
-   "nombre": "Compagnie Financière Richemont",
-   "market_cap": 124239347080.0,
-   "pais": "Switzerland",
-   "operable": false,
+   "ticker": "NEM",
+   "nombre": "Newmont",
+   "market_cap": 124417409024.0,
+   "pais": "United States",
+   "operable": true,
    "nueva": false
   },
   {
    "rank": 180,
-   "ticker": "SBUX",
-   "nombre": "Starbucks",
-   "market_cap": 123689443328.0,
-   "pais": "United States",
-   "operable": true,
+   "ticker": "ISP.MI",
+   "nombre": "Intesa Sanpaolo",
+   "market_cap": 124164343212.0,
+   "pais": "Italy",
+   "operable": false,
    "nueva": false
   },
   {
@@ -1642,52 +1642,52 @@
    "rank": 182,
    "ticker": "SPOT",
    "nombre": "Spotify",
-   "market_cap": 123061673984.0,
+   "market_cap": 122811891712.0,
    "pais": "Sweden",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 183,
-   "ticker": "MCK",
-   "nombre": "McKesson",
-   "market_cap": 122885144576.0,
+   "ticker": "SYK",
+   "nombre": "Stryker Corporation",
+   "market_cap": 122281754624.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 184,
-   "ticker": "SYK",
-   "nombre": "Stryker Corporation",
-   "market_cap": 121668845568.0,
+   "ticker": "PH",
+   "nombre": "Parker-Hannifin",
+   "market_cap": 121750241280.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 185,
-   "ticker": "BMO",
-   "nombre": "Bank of Montreal",
-   "market_cap": 121161523200.0,
-   "pais": "Canada",
-   "operable": true,
-   "nueva": false
-  },
-  {
-   "rank": 186,
-   "ticker": "BKNG",
-   "nombre": "Booking Holdings (Booking.com)",
-   "market_cap": 121083273216.0,
+   "ticker": "SNDK",
+   "nombre": "Sandisk",
+   "market_cap": 120985804800.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
+   "rank": 186,
+   "ticker": "BMO",
+   "nombre": "Bank of Montreal",
+   "market_cap": 120647163904.0,
+   "pais": "Canada",
+   "operable": true,
+   "nueva": false
+  },
+  {
    "rank": 187,
-   "ticker": "PH",
-   "nombre": "Parker-Hannifin",
-   "market_cap": 120954560512.0,
+   "ticker": "ADP",
+   "nombre": "Automatic Data Processing",
+   "market_cap": 119965376512.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
@@ -1696,54 +1696,54 @@
    "rank": 188,
    "ticker": "MFG",
    "nombre": "Mizuho Financial Group",
-   "market_cap": 120466841600.0,
+   "market_cap": 119939284992.0,
    "pais": "Japan",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 189,
-   "ticker": "BNP.PA",
-   "nombre": "BNP Paribas",
-   "market_cap": 118883126016.0,
-   "pais": "France",
-   "operable": false,
+   "ticker": "BKNG",
+   "nombre": "Booking Holdings (Booking.com)",
+   "market_cap": 118947577856.0,
+   "pais": "United States",
+   "operable": true,
    "nueva": false
   },
   {
    "rank": 190,
    "ticker": "COF",
    "nombre": "Capital One",
-   "market_cap": 118835879936.0,
+   "market_cap": 117888466944.0,
    "pais": "United States",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 191,
-   "ticker": "ADP",
-   "nombre": "Automatic Data Processing",
-   "market_cap": 117500141568.0,
-   "pais": "United States",
-   "operable": true,
+   "ticker": "BNP.PA",
+   "nombre": "BNP Paribas",
+   "market_cap": 117775061874.0,
+   "pais": "France",
+   "operable": false,
    "nueva": false
   },
   {
    "rank": 192,
    "ticker": "PBR",
    "nombre": "Petrobras",
-   "market_cap": 117287469056.0,
+   "market_cap": 117416353792.0,
    "pais": "Brazil",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 193,
-   "ticker": "ENR.F",
-   "nombre": "Siemens Energy",
-   "market_cap": 115498243589.0,
-   "pais": "Germany",
-   "operable": false,
+   "ticker": "SNY",
+   "nombre": "Sanofi",
+   "market_cap": 115601653760.0,
+   "pais": "France",
+   "operable": true,
    "nueva": false
   },
   {
@@ -1757,15 +1757,6 @@
   },
   {
    "rank": 195,
-   "ticker": "ZURN.SW",
-   "nombre": "Zurich Insurance Group",
-   "market_cap": 115346828367.0,
-   "pais": "Switzerland",
-   "operable": false,
-   "nueva": false
-  },
-  {
-   "rank": 196,
    "ticker": "002594.SZ",
    "nombre": "BYD",
    "market_cap": 115337715805.0,
@@ -1774,20 +1765,29 @@
    "nueva": false
   },
   {
+   "rank": 196,
+   "ticker": "ZURN.SW",
+   "nombre": "Zurich Insurance Group",
+   "market_cap": 115310597026.0,
+   "pais": "Switzerland",
+   "operable": false,
+   "nueva": false
+  },
+  {
    "rank": 197,
-   "ticker": "SNY",
-   "nombre": "Sanofi",
-   "market_cap": 114918752256.0,
-   "pais": "France",
-   "operable": true,
+   "ticker": "ENR.F",
+   "nombre": "Siemens Energy",
+   "market_cap": 115135042231.0,
+   "pais": "Germany",
+   "operable": false,
    "nueva": false
   },
   {
    "rank": 198,
-   "ticker": "STX",
-   "nombre": "Seagate Technology",
-   "market_cap": 114773663744.0,
-   "pais": "Ireland",
+   "ticker": "BP",
+   "nombre": "BP",
+   "market_cap": 114693783552.0,
+   "pais": "United Kingdom",
    "operable": true,
    "nueva": true
   },
@@ -1795,17 +1795,17 @@
    "rank": 199,
    "ticker": "BNS",
    "nombre": "Scotiabank",
-   "market_cap": 114161704960.0,
+   "market_cap": 113503543296.0,
    "pais": "Canada",
    "operable": true,
    "nueva": false
   },
   {
    "rank": 200,
-   "ticker": "PDD",
-   "nombre": "PDD Holdings (Pinduoduo)",
-   "market_cap": 113658208256.0,
-   "pais": "China",
+   "ticker": "STX",
+   "nombre": "Seagate Technology",
+   "market_cap": 113096720384.0,
+   "pais": "Ireland",
    "operable": true,
    "nueva": false
   }

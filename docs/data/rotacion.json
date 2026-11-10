@@ -1,0 +1,151 @@
+{
+ "historial": {
+  "NEM": {
+   "veces": 1,
+   "ultima": "2026-11-10",
+   "etiqueta": "Tendencia sana",
+   "zona_compra": false
+  },
+  "MO": {
+   "veces": 1,
+   "ultima": "2026-11-10",
+   "etiqueta": "Tendencia sana",
+   "zona_compra": false
+  },
+  "MFG": {
+   "veces": 1,
+   "ultima": "2026-11-10",
+   "etiqueta": "Tendencia sana",
+   "zona_compra": false
+  },
+  "META": {
+   "veces": 1,
+   "ultima": "2026-11-10",
+   "etiqueta": "Tendencia sana",
+   "zona_compra": false
+  },
+  "CRM": {
+   "veces": 1,
+   "ultima": "2026-11-10",
+   "etiqueta": "Zona de compra (retroceso en tendencia alcista)",
+   "zona_compra": true
+  },
+  "APP": {
+   "veces": 1,
+   "ultima": "2026-11-10",
+   "etiqueta": "Debilidad: no apurarse",
+   "zona_compra": false
+  },
+  "PBR": {
+   "veces": 1,
+   "ultima": "2026-11-10",
+   "etiqueta": "Neutral",
+   "zona_compra": false
+  },
+  "SNDK": {
+   "veces": 1,
+   "ultima": "2026-11-10",
+   "etiqueta": "Neutral",
+   "zona_compra": false
+  },
+  "NVDA": {
+   "veces": 1,
+   "ultima": "2026-11-10",
+   "etiqueta": "Neutral",
+   "zona_compra": false
+  },
+  "TSM": {
+   "veces": 1,
+   "ultima": "2026-11-10",
+   "etiqueta": "Neutral",
+   "zona_compra": false
+  },
+  "NVO": {
+   "veces": 1,
+   "ultima": "2026-11-10",
+   "etiqueta": "Debilidad: no apurarse",
+   "zona_compra": false
+  },
+  "MU": {
+   "veces": 1,
+   "ultima": "2026-11-10",
+   "etiqueta": "Neutral",
+   "zona_compra": false
+  },
+  "STX": {
+   "veces": 1,
+   "ultima": "2026-11-10",
+   "etiqueta": "Neutral",
+   "zona_compra": false
+  },
+  "COF": {
+   "veces": 1,
+   "ultima": "2026-11-10",
+   "etiqueta": "Neutral",
+   "zona_compra": false
+  },
+  "ASML": {
+   "veces": 1,
+   "ultima": "2026-11-10",
+   "etiqueta": "Neutral",
+   "zona_compra": false
+  },
+  "IBKR": {
+   "veces": 1,
+   "ultima": "2026-11-10",
+   "etiqueta": "Neutral",
+   "zona_compra": false
+  },
+  "SCCO": {
+   "veces": 1,
+   "ultima": "2026-11-10",
+   "etiqueta": "Neutral",
+   "zona_compra": false
+  },
+  "BKNG": {
+   "veces": 1,
+   "ultima": "2026-11-10",
+   "etiqueta": "Debilidad: no apurarse",
+   "zona_compra": false
+  },
+  "NFLX": {
+   "veces": 1,
+   "ultima": "2026-11-10",
+   "etiqueta": "Debilidad: no apurarse",
+   "zona_compra": false
+  },
+  "LRCX": {
+   "veces": 1,
+   "ultima": "2026-11-10",
+   "etiqueta": "Debilidad: no apurarse",
+   "zona_compra": false
+  }
+ },
+ "semanas": [
+  {
+   "fecha": "2026-11-10",
+   "tickers": [
+    "NEM",
+    "MO",
+    "MFG",
+    "META",
+    "CRM",
+    "APP",
+    "PBR",
+    "SNDK",
+    "NVDA",
+    "TSM",
+    "NVO",
+    "MU",
+    "STX",
+    "COF",
+    "ASML",
+    "IBKR",
+    "SCCO",
+    "BKNG",
+    "NFLX",
+    "LRCX"
+   ]
+  }
+ ]
+}
