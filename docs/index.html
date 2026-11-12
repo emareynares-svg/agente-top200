@@ -32,6 +32,8 @@ main{max-width:1280px;margin:auto;padding:20px 24px 60px}
 .row{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
 .tk{font-weight:700;font-size:15px}
 .nm{color:var(--muted);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:170px}
+.card .row>div:first-child{min-width:0;flex:1;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.card .row .big{flex-shrink:0}
 .big{font-size:20px;font-weight:650}
 .chip{display:inline-block;padding:2px 8px;border-radius:99px;background:var(--chip);font-size:12px;margin:2px 4px 2px 0}
 .chip.pos{color:var(--pos)}.chip.neg{color:var(--neg)}.chip.warn{color:var(--warn)}
@@ -139,7 +141,7 @@ function renderHoy(){
   h+=`<div class="row" style="margin:4px 0 10px"><div class="mut">Ordenadas por momento de entrada y puntaje técnico (−100 a +100)</div>${legend}</div><div class="grid">`;
   for(const e of emp){const w=pe[e.ticker];
     h+=`<div class="card" onclick="detalle('${esc(e.ticker)}')">
-      <div class="row"><div><span class="tk">${esc(e.ticker)}</span> <span class="nm">${esc(e.nombre)}</span></div>
+      <div class="row"><div title="${esc(e.nombre)}"><span class="tk">${esc(e.ticker)}</span> <span class="nm">${esc(e.nombre)}</span></div>
       <div class="big ${e.puntaje_tecnico>=0?"pos":"neg"}">${e.puntaje_tecnico>0?"+":""}${e.puntaje_tecnico}</div></div>
       <div>${chipMom(w?.momento)}${e.alerta_tesis?`<span class="chip warn">⚠ Noticia</span>`:""}${/Seguimiento/.test(e.motivo||"")?`<span class="chip warn">Seguimiento</span>`:/Primera/.test(e.motivo||"")?`<span class="chip">Nueva</span>`:""}</div>
       ${spark(e.ticker)}
