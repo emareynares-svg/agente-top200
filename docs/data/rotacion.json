@@ -1,8 +1,8 @@
 {
  "historial": {
   "NEM": {
-   "veces": 1,
-   "ultima": "2026-11-10",
+   "veces": 2,
+   "ultima": "2026-11-15",
    "etiqueta": "Tendencia sana",
    "zona_compra": false
   },
@@ -25,56 +25,56 @@
    "zona_compra": false
   },
   "CRM": {
-   "veces": 1,
-   "ultima": "2026-11-10",
+   "veces": 2,
+   "ultima": "2026-11-15",
    "etiqueta": "Zona de compra (retroceso en tendencia alcista)",
    "zona_compra": true
   },
   "APP": {
-   "veces": 1,
-   "ultima": "2026-11-10",
-   "etiqueta": "Debilidad: no apurarse",
+   "veces": 2,
+   "ultima": "2026-11-15",
+   "etiqueta": "Sobrecomprada: esperar",
    "zona_compra": false
   },
   "PBR": {
-   "veces": 1,
-   "ultima": "2026-11-10",
+   "veces": 2,
+   "ultima": "2026-11-15",
    "etiqueta": "Neutral",
    "zona_compra": false
   },
   "SNDK": {
-   "veces": 1,
-   "ultima": "2026-11-10",
+   "veces": 2,
+   "ultima": "2026-11-15",
    "etiqueta": "Neutral",
    "zona_compra": false
   },
   "NVDA": {
-   "veces": 1,
-   "ultima": "2026-11-10",
+   "veces": 2,
+   "ultima": "2026-11-15",
    "etiqueta": "Neutral",
    "zona_compra": false
   },
   "TSM": {
-   "veces": 1,
-   "ultima": "2026-11-10",
+   "veces": 2,
+   "ultima": "2026-11-15",
    "etiqueta": "Neutral",
    "zona_compra": false
   },
   "NVO": {
-   "veces": 1,
-   "ultima": "2026-11-10",
+   "veces": 2,
+   "ultima": "2026-11-15",
    "etiqueta": "Debilidad: no apurarse",
    "zona_compra": false
   },
   "MU": {
-   "veces": 1,
-   "ultima": "2026-11-10",
-   "etiqueta": "Neutral",
-   "zona_compra": false
+   "veces": 2,
+   "ultima": "2026-11-15",
+   "etiqueta": "Zona de compra (retroceso en tendencia alcista)",
+   "zona_compra": true
   },
   "STX": {
-   "veces": 1,
-   "ultima": "2026-11-10",
+   "veces": 2,
+   "ultima": "2026-11-15",
    "etiqueta": "Neutral",
    "zona_compra": false
   },
@@ -103,8 +103,8 @@
    "zona_compra": false
   },
   "BKNG": {
-   "veces": 1,
-   "ultima": "2026-11-10",
+   "veces": 2,
+   "ultima": "2026-11-15",
    "etiqueta": "Debilidad: no apurarse",
    "zona_compra": false
   },
@@ -117,6 +117,60 @@
   "LRCX": {
    "veces": 1,
    "ultima": "2026-11-10",
+   "etiqueta": "Debilidad: no apurarse",
+   "zona_compra": false
+  },
+  "BMY": {
+   "veces": 1,
+   "ultima": "2026-11-15",
+   "etiqueta": "Tendencia sana",
+   "zona_compra": false
+  },
+  "GILD": {
+   "veces": 1,
+   "ultima": "2026-11-15",
+   "etiqueta": "Tendencia sana",
+   "zona_compra": false
+  },
+  "TTE": {
+   "veces": 1,
+   "ultima": "2026-11-15",
+   "etiqueta": "Tendencia sana",
+   "zona_compra": false
+  },
+  "BBVA": {
+   "veces": 1,
+   "ultima": "2026-11-15",
+   "etiqueta": "Tendencia sana",
+   "zona_compra": false
+  },
+  "SNY": {
+   "veces": 1,
+   "ultima": "2026-11-15",
+   "etiqueta": "Sobrecomprada: esperar",
+   "zona_compra": false
+  },
+  "BHP": {
+   "veces": 1,
+   "ultima": "2026-11-15",
+   "etiqueta": "Neutral",
+   "zona_compra": false
+  },
+  "SCHW": {
+   "veces": 1,
+   "ultima": "2026-11-15",
+   "etiqueta": "Neutral",
+   "zona_compra": false
+  },
+  "AVGO": {
+   "veces": 1,
+   "ultima": "2026-11-15",
+   "etiqueta": "Debilidad: no apurarse",
+   "zona_compra": false
+  },
+  "T": {
+   "veces": 1,
+   "ultima": "2026-11-15",
    "etiqueta": "Debilidad: no apurarse",
    "zona_compra": false
   }
@@ -145,6 +199,31 @@
     "BKNG",
     "NFLX",
     "LRCX"
+   ]
+  },
+  {
+   "fecha": "2026-11-15",
+   "tickers": [
+    "BMY",
+    "GILD",
+    "TTE",
+    "BBVA",
+    "NEM",
+    "CRM",
+    "APP",
+    "SNY",
+    "MU",
+    "BHP",
+    "TSM",
+    "STX",
+    "SCHW",
+    "NVO",
+    "PBR",
+    "AVGO",
+    "NVDA",
+    "T",
+    "SNDK",
+    "BKNG"
    ]
   }
  ]

@@ -1,9 +1,10 @@
 {
- "actualizado": "2026-11-12T12:29:15+00:00",
+ "actualizado": "2026-11-15T13:42:16+00:00",
  "referencia": "VOO",
  "dias_minimos": 7,
  "fechas": [
-  "2026-11-10"
+  "2026-11-10",
+  "2026-11-15"
  ],
  "senales": {
   "veredicto": [],
@@ -27,11 +28,11 @@
    "score": 72.32559,
    "motivo": null,
    "precio_eval": 119.959999,
-   "precio_actual": 118.470001,
-   "rend": -0.012421,
-   "rend_ref": 0.012835,
-   "exceso": -0.025256,
-   "dias": 2
+   "precio_actual": 113.139999,
+   "rend": -0.056852,
+   "rend_ref": 0.005627,
+   "exceso": -0.06248,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -49,11 +50,11 @@
    "score": 66.060223,
    "motivo": null,
    "precio_eval": 76.339996,
-   "precio_actual": 77.389999,
-   "rend": 0.013754,
-   "rend_ref": 0.012835,
-   "exceso": 0.000919,
-   "dias": 2
+   "precio_actual": 78.639999,
+   "rend": 0.030128,
+   "rend_ref": 0.005627,
+   "exceso": 0.024501,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -71,11 +72,11 @@
    "score": 61.040629,
    "motivo": null,
    "precio_eval": 9.93,
-   "precio_actual": 10.16,
-   "rend": 0.023162,
-   "rend_ref": 0.012835,
-   "exceso": 0.010327,
-   "dias": 2
+   "precio_actual": 10.34,
+   "rend": 0.041289,
+   "rend_ref": 0.005627,
+   "exceso": 0.035662,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -93,11 +94,11 @@
    "score": 61.250582,
    "motivo": null,
    "precio_eval": 641.390015,
-   "precio_actual": 628.77002,
-   "rend": -0.019676,
-   "rend_ref": 0.012835,
-   "exceso": -0.032511,
-   "dias": 2
+   "precio_actual": 641.690002,
+   "rend": 0.000468,
+   "rend_ref": 0.005627,
+   "exceso": -0.00516,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -115,11 +116,11 @@
    "score": 68.583928,
    "motivo": null,
    "precio_eval": 18.280001,
-   "precio_actual": 17.82,
-   "rend": -0.025164,
-   "rend_ref": 0.012835,
-   "exceso": -0.038,
-   "dias": 2
+   "precio_actual": 18.34,
+   "rend": 0.003282,
+   "rend_ref": 0.005627,
+   "exceso": -0.002345,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -137,11 +138,11 @@
    "score": 66.18413,
    "motivo": null,
    "precio_eval": 395.51001,
-   "precio_actual": 404.769989,
-   "rend": 0.023413,
-   "rend_ref": 0.012835,
-   "exceso": 0.010577,
-   "dias": 2
+   "precio_actual": 409.100006,
+   "rend": 0.034361,
+   "rend_ref": 0.005627,
+   "exceso": 0.028733,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -159,11 +160,11 @@
    "score": 86.896328,
    "motivo": null,
    "precio_eval": 79.400002,
-   "precio_actual": 79.010002,
-   "rend": -0.004912,
-   "rend_ref": 0.012835,
-   "exceso": -0.017747,
-   "dias": 2
+   "precio_actual": 78.970001,
+   "rend": -0.005416,
+   "rend_ref": 0.005627,
+   "exceso": -0.011043,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -181,11 +182,11 @@
    "score": 84.245411,
    "motivo": null,
    "precio_eval": 859.98999,
-   "precio_actual": 977.690002,
-   "rend": 0.136862,
-   "rend_ref": 0.012835,
-   "exceso": 0.124027,
-   "dias": 2
+   "precio_actual": 885.01001,
+   "rend": 0.029093,
+   "rend_ref": 0.005627,
+   "exceso": 0.023466,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -203,11 +204,11 @@
    "score": 73.28464,
    "motivo": null,
    "precio_eval": 168.889999,
-   "precio_actual": 173.729996,
-   "rend": 0.028658,
-   "rend_ref": 0.012835,
-   "exceso": 0.015822,
-   "dias": 2
+   "precio_actual": 162.850006,
+   "rend": -0.035763,
+   "rend_ref": 0.005627,
+   "exceso": -0.04139,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -225,11 +226,11 @@
    "score": 72.687644,
    "motivo": null,
    "precio_eval": 396.480011,
-   "precio_actual": 413.350006,
-   "rend": 0.042549,
-   "rend_ref": 0.012835,
-   "exceso": 0.029714,
-   "dias": 2
+   "precio_actual": 398.730011,
+   "rend": 0.005675,
+   "rend_ref": 0.005627,
+   "exceso": 4.8e-05,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -247,11 +248,11 @@
    "score": 71.14381,
    "motivo": null,
    "precio_eval": 40.700001,
-   "precio_actual": 41.09,
-   "rend": 0.009582,
-   "rend_ref": 0.012835,
-   "exceso": -0.003253,
-   "dias": 2
+   "precio_actual": 41.630001,
+   "rend": 0.02285,
+   "rend_ref": 0.005627,
+   "exceso": 0.017223,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -269,11 +270,11 @@
    "score": 81.63831,
    "motivo": null,
    "precio_eval": 725.109985,
-   "precio_actual": 811.299988,
-   "rend": 0.118865,
-   "rend_ref": 0.012835,
-   "exceso": 0.106029,
-   "dias": 2
+   "precio_actual": 778.309998,
+   "rend": 0.073368,
+   "rend_ref": 0.005627,
+   "exceso": 0.067741,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -291,11 +292,11 @@
    "score": 70.879547,
    "motivo": null,
    "precio_eval": 501.619995,
-   "precio_actual": 551.719971,
-   "rend": 0.099876,
-   "rend_ref": 0.012835,
-   "exceso": 0.087041,
-   "dias": 2
+   "precio_actual": 528.289978,
+   "rend": 0.053168,
+   "rend_ref": 0.005627,
+   "exceso": 0.04754,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -313,11 +314,11 @@
    "score": 66.659583,
    "motivo": null,
    "precio_eval": 52.709999,
-   "precio_actual": 51.360001,
-   "rend": -0.025612,
-   "rend_ref": 0.012835,
-   "exceso": -0.038447,
-   "dias": 2
+   "precio_actual": 49.740002,
+   "rend": -0.056346,
+   "rend_ref": 0.005627,
+   "exceso": -0.061973,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -335,11 +336,11 @@
    "score": 62.977861,
    "motivo": null,
    "precio_eval": 195.839996,
-   "precio_actual": 197.110001,
-   "rend": 0.006485,
-   "rend_ref": 0.012835,
-   "exceso": -0.00635,
-   "dias": 2
+   "precio_actual": 195.080002,
+   "rend": -0.003881,
+   "rend_ref": 0.005627,
+   "exceso": -0.009508,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -357,11 +358,11 @@
    "score": 61.898512,
    "motivo": null,
    "precio_eval": 1507.849976,
-   "precio_actual": 1534.420044,
-   "rend": 0.017621,
-   "rend_ref": 0.012835,
-   "exceso": 0.004786,
-   "dias": 2
+   "precio_actual": 1495.160034,
+   "rend": -0.008416,
+   "rend_ref": 0.005627,
+   "exceso": -0.014043,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -379,11 +380,11 @@
    "score": 60.685468,
    "motivo": null,
    "precio_eval": 77.589996,
-   "precio_actual": 82.489998,
-   "rend": 0.063152,
-   "rend_ref": 0.012835,
-   "exceso": 0.050317,
-   "dias": 2
+   "precio_actual": 81.790001,
+   "rend": 0.054131,
+   "rend_ref": 0.005627,
+   "exceso": 0.048503,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -401,11 +402,11 @@
    "score": 80.188067,
    "motivo": null,
    "precio_eval": 159.259995,
-   "precio_actual": 160.210007,
-   "rend": 0.005965,
-   "rend_ref": 0.012835,
-   "exceso": -0.00687,
-   "dias": 2
+   "precio_actual": 159.580002,
+   "rend": 0.002009,
+   "rend_ref": 0.005627,
+   "exceso": -0.003618,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -423,11 +424,11 @@
    "score": 67.185881,
    "motivo": null,
    "precio_eval": 63.259998,
-   "precio_actual": 64.540001,
-   "rend": 0.020234,
-   "rend_ref": 0.012835,
-   "exceso": 0.007399,
-   "dias": 2
+   "precio_actual": 62.150002,
+   "rend": -0.017547,
+   "rend_ref": 0.005627,
+   "exceso": -0.023174,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -445,11 +446,11 @@
    "score": 60.615008,
    "motivo": null,
    "precio_eval": 222.389999,
-   "precio_actual": 235.880005,
-   "rend": 0.060659,
-   "rend_ref": 0.012835,
-   "exceso": 0.047824,
-   "dias": 2
+   "precio_actual": 225.919998,
+   "rend": 0.015873,
+   "rend_ref": 0.005627,
+   "exceso": 0.010246,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -469,11 +470,11 @@
    "valuacion": "Barata",
    "resumen": "SK hynix es uno de los mayores fabricantes de memorias DRAM y NAND del mundo (clave en memoria HBM para IA), con sede en Corea del Sur. Aparece en el screener por márgenes extraordinarios (~70-80%), ROIC alto, caja neta y múltiplos aparentemente muy bajos (P/E forward ~2,3x, EV/EBITDA ~3,6x).",
    "precio_eval": 1212000.0,
-   "precio_actual": 1254000.0,
-   "rend": 0.034653,
-   "rend_ref": 0.012835,
-   "exceso": 0.021818,
-   "dias": 2
+   "precio_actual": 1216000.0,
+   "rend": 0.0033,
+   "rend_ref": 0.005627,
+   "exceso": -0.002327,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -493,11 +494,11 @@
    "valuacion": "Razonable",
    "resumen": "Sandisk fabrica y vende almacenamiento basado en memoria NAND flash (SSD, almacenamiento embebido, tarjetas y USB) para PC, móviles, automotriz e industria. Aparece en el screener porque los números de este momento son extraordinarios: ROIC 73%, márgenes operativos ~80% y múltiplos de apenas 3-7x ganancias.",
    "precio_eval": 859.98999,
-   "precio_actual": 977.690002,
-   "rend": 0.136862,
-   "rend_ref": 0.012835,
-   "exceso": 0.124027,
-   "dias": 2
+   "precio_actual": 885.01001,
+   "rend": 0.029093,
+   "rend_ref": 0.005627,
+   "exceso": 0.023466,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -517,11 +518,11 @@
    "valuacion": "Razonable",
    "resumen": "Micron es un fabricante estadounidense de memoria DRAM (incluida HBM) y NAND, con exposición a centros de datos/IA, móviles y automotriz. Aparece en el screener por métricas de rentabilidad extremas (ROIC ~60%, márgenes operativos ~81%) combinadas con múltiplos aparentemente muy bajos (P/E forward 3,4x, PEG 0,16).",
    "precio_eval": 725.109985,
-   "precio_actual": 811.299988,
-   "rend": 0.118865,
-   "rend_ref": 0.012835,
-   "exceso": 0.106029,
-   "dias": 2
+   "precio_actual": 778.309998,
+   "rend": 0.073368,
+   "rend_ref": 0.005627,
+   "exceso": 0.067741,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -541,11 +542,11 @@
    "valuacion": "Razonable",
    "resumen": "Booking Holdings es la mayor agencia de viajes online del mundo (Booking.com, Priceline, Agoda, entre otras) y cobra comisión por reservas de alojamiento, vuelos y otros servicios. Aparece en el screener por su retorno sobre capital excepcional (ROIC ~51%), márgenes altísimos y múltiplos que hoy resultan bajos para ese nivel de calidad (P/E forward ~13x, FCF yield ~6,4%).",
    "precio_eval": 159.259995,
-   "precio_actual": 160.210007,
-   "rend": 0.005965,
-   "rend_ref": 0.012835,
-   "exceso": -0.00687,
-   "dias": 2
+   "precio_actual": 159.580002,
+   "rend": 0.002009,
+   "rend_ref": 0.005627,
+   "exceso": -0.003618,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -567,9 +568,9 @@
    "precio_eval": 22.76,
    "precio_actual": 22.84,
    "rend": 0.003515,
-   "rend_ref": 0.012835,
-   "exceso": -0.00932,
-   "dias": 2
+   "rend_ref": 0.005627,
+   "exceso": -0.002112,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -589,11 +590,11 @@
    "valuacion": "Razonable",
    "resumen": "NVIDIA diseña GPUs y plataformas de cómputo y redes para centros de datos de IA, además de gráficos para gaming y workstations. Aparece en el screener por su calidad extrema (ROIC ~73%, márgenes operativos ~66%, caja neta, FCF positivo y consistente) combinada con múltiplos de valor que hoy lucen razonables frente a su crecimiento (P/E forward ~10,6 y PEG ~0,22).",
    "precio_eval": 168.889999,
-   "precio_actual": 173.729996,
-   "rend": 0.028658,
-   "rend_ref": 0.012835,
-   "exceso": 0.015822,
-   "dias": 2
+   "precio_actual": 162.850006,
+   "rend": -0.035763,
+   "rend_ref": 0.005627,
+   "exceso": -0.04139,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -613,11 +614,11 @@
    "valuacion": "Razonable",
    "resumen": "TSMC es la mayor fundición de semiconductores del mundo: fabrica chips por encargo para terceros (diseñadores de IA, móviles, HPC). Aparece en el screener por rentabilidad extraordinaria (ROIC 26,7%, margen operativo 58,7%), caja neta y un múltiplo forward razonable (P/E 16,8, PEG 0,71).",
    "precio_eval": 396.480011,
-   "precio_actual": 413.350006,
-   "rend": 0.042549,
-   "rend_ref": 0.012835,
-   "exceso": 0.029714,
-   "dias": 2
+   "precio_actual": 398.730011,
+   "rend": 0.005675,
+   "rend_ref": 0.005627,
+   "exceso": 4.8e-05,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -637,11 +638,11 @@
    "valuacion": "Razonable",
    "resumen": "Newmont es la mayor productora de oro del mundo, con minas en América, Australia y África, además de algo de cobre, plata y zinc como subproductos. Aparece en el screener por márgenes muy altos (operativo ~50%), balance prácticamente sin deuda neta y valuación moderada (P/E forward ~12, EV/EBITDA ~7,2).",
    "precio_eval": 119.959999,
-   "precio_actual": 118.470001,
-   "rend": -0.012421,
-   "rend_ref": 0.012835,
-   "exceso": -0.025256,
-   "dias": 2
+   "precio_actual": 113.139999,
+   "rend": -0.056852,
+   "rend_ref": 0.005627,
+   "exceso": -0.06248,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -661,11 +662,11 @@
    "valuacion": "Razonable",
    "resumen": "CXMT es el mayor fabricante chino de memoria DRAM (DDR4/DDR5/LPDDR), con sede en Hefei y fundada en 2016. Aparece en el screener por márgenes extraordinarios, ventas casi duplicándose, caja neta y múltiplos forward bajos, aunque los datos son inconsistentes y el score de calidad es apenas mediocre.",
    "precio_eval": 40.450001,
-   "precio_actual": 40.970001,
-   "rend": 0.012855,
-   "rend_ref": 0.012835,
-   "exceso": 2e-05,
-   "dias": 2
+   "precio_actual": 39.98,
+   "rend": -0.011619,
+   "rend_ref": 0.005627,
+   "exceso": -0.017247,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -685,11 +686,11 @@
    "valuacion": "Barata",
    "resumen": "Novo Nordisk es una farmacéutica danesa líder en diabetes y obesidad (GLP-1). Aparece en el screener por sus rentabilidades extraordinarias (ROIC ~33%, margen operativo 40%) combinadas con un P/E de ~10-12x, muy por debajo de su historia reciente.",
    "precio_eval": 40.700001,
-   "precio_actual": 41.09,
-   "rend": 0.009582,
-   "rend_ref": 0.012835,
-   "exceso": -0.003253,
-   "dias": 2
+   "precio_actual": 41.630001,
+   "rend": 0.02285,
+   "rend_ref": 0.005627,
+   "exceso": 0.017223,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -709,11 +710,11 @@
    "valuacion": "Razonable",
    "resumen": "Seagate fabrica discos rígidos (HDD) y soluciones de almacenamiento de datos, con fuerte exposición a centros de datos e hiperescala. Aparece en el screener por rentabilidad extraordinaria (ROIC ~60%, margen operativo ~49%), deuda baja y un P/E forward de ~7.5 que luce muy barato frente al trailing de ~25.8.",
    "precio_eval": 501.619995,
-   "precio_actual": 551.719971,
-   "rend": 0.099876,
-   "rend_ref": 0.012835,
-   "exceso": 0.087041,
-   "dias": 2
+   "precio_actual": 528.289978,
+   "rend": 0.053168,
+   "rend_ref": 0.005627,
+   "exceso": 0.04754,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -733,11 +734,11 @@
    "valuacion": "Barata",
    "resumen": "CATL es el mayor fabricante mundial de baterías para vehículos eléctricos y almacenamiento de energía, con base en China. Aparece en el screener por combinar buena rentabilidad (ROIC 18%, ROE 24%), caja neta, FCF positivo todos los años y una valuación baja (P/E forward ~10,7x, EV/EBITDA ~7,7x).",
    "precio_eval": 249.949997,
-   "precio_actual": 240.0,
-   "rend": -0.039808,
-   "rend_ref": 0.012835,
-   "exceso": -0.052643,
-   "dias": 2
+   "precio_actual": 237.699997,
+   "rend": -0.04901,
+   "rend_ref": 0.005627,
+   "exceso": -0.054637,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -757,11 +758,11 @@
    "valuacion": "Cara",
    "resumen": "Rolls-Royce diseña y mantiene sistemas de potencia críticos: motores para aviación civil (con negocio de posventa/servicios), defensa (incluidos reactores nucleares de submarinos) y Power Systems. Aparece en el screener por sus retornos sobre capital extraordinarios, caja neta y FCF consistente, aunque con valuación exigente.",
    "precio_eval": 1330.800049,
-   "precio_actual": 1371.599976,
-   "rend": 0.030658,
-   "rend_ref": 0.012835,
-   "exceso": 0.017823,
-   "dias": 2
+   "precio_actual": 1350.599976,
+   "rend": 0.014878,
+   "rend_ref": 0.005627,
+   "exceso": 0.009251,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -781,11 +782,11 @@
    "valuacion": "Barata",
    "resumen": "Petrobras es la petrolera integrada estatal de Brasil (exploración y producción, refinación y gas/bajo carbono), con fuerte peso en pre-sal. Aparece en el screener por rentabilidad muy alta (ROIC 22%, margen operativo 45%) combinada con múltiplos muy bajos (P/E ~4,6, FCF yield 14%, dividend yield reportado de 7,79).",
    "precio_eval": 18.280001,
-   "precio_actual": 17.82,
-   "rend": -0.025164,
-   "rend_ref": 0.012835,
-   "exceso": -0.038,
-   "dias": 2
+   "precio_actual": 18.34,
+   "rend": 0.003282,
+   "rend_ref": 0.005627,
+   "exceso": -0.002345,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -805,11 +806,11 @@
    "valuacion": "Razonable",
    "resumen": "Kweichow Moutai es el mayor productor de baijiu premium de China (marca Moutai), con márgenes y retornos sobre capital fuera de lo común. Aparece en el screener por su calidad muy alta (ROIC ~35%, margen operativo 66%, caja neta, FCF consistente) combinada con una valuación que, tras la corrección, ya no luce extrema (P/E forward ~20).",
    "precio_eval": 1439.0,
-   "precio_actual": 1410.27002,
-   "rend": -0.019965,
-   "rend_ref": 0.012835,
-   "exceso": -0.032801,
-   "dias": 2
+   "precio_actual": 1435.26001,
+   "rend": -0.002599,
+   "rend_ref": 0.005627,
+   "exceso": -0.008226,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -829,11 +830,11 @@
    "valuacion": "Razonable",
    "resumen": "AppLovin es una plataforma de publicidad móvil y CTV potenciada por IA (Axon, MAX, Adjust, Wurl) con márgenes extraordinarios. Aparece en el screener por su calidad financiera sobresaliente (ROIC ~64%, margen operativo ~78%, FCF consistente, deuda casi nula) combinada con múltiplos que, al menos en apariencia, no son exagerados (PE forward ~18, PEG ~0,87).",
    "precio_eval": 395.51001,
-   "precio_actual": 404.769989,
-   "rend": 0.023413,
-   "rend_ref": 0.012835,
-   "exceso": 0.010577,
-   "dias": 2
+   "precio_actual": 409.100006,
+   "rend": 0.034361,
+   "rend_ref": 0.005627,
+   "exceso": 0.028733,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -853,11 +854,11 @@
    "valuacion": "Barata",
    "resumen": "Samsung Electronics es un conglomerado surcoreano de electrónica de consumo, celulares, electrodomésticos y semiconductores (memoria, foundry, pantallas y Harman). Aparece en el screener por múltiplos extremadamente bajos (P/E forward ~2,6x, EV/EBITDA ~3,4x), caja neta y dividendo reportado muy alto, con un score de valor de 94 pero calidad apenas media (47).",
    "precio_eval": 198900.0,
-   "precio_actual": 208000.0,
-   "rend": 0.045752,
-   "rend_ref": 0.012835,
-   "exceso": 0.032916,
-   "dias": 2
+   "precio_actual": 206000.0,
+   "rend": 0.035696,
+   "rend_ref": 0.005627,
+   "exceso": 0.030069,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -877,11 +878,11 @@
    "valuacion": "Razonable",
    "resumen": "Netflix es la mayor plataforma de streaming de video del mundo (series, películas, juegos y contenido en vivo), con modelo de suscripción global. Aparece en el screener por combinar rentabilidad muy alta (ROIC ~28%, margen operativo ~35%) con una valuación que hoy luce comprimida (P/E forward ~16,7x, FCF yield ~9,9%).",
    "precio_eval": 63.259998,
-   "precio_actual": 64.540001,
-   "rend": 0.020234,
-   "rend_ref": 0.012835,
-   "exceso": 0.007399,
-   "dias": 2
+   "precio_actual": 62.150002,
+   "rend": -0.017547,
+   "rend_ref": 0.005627,
+   "exceso": -0.023174,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -901,11 +902,11 @@
    "valuacion": "Barata",
    "resumen": "Tencent es un conglomerado chino de internet: mensajería y redes sociales (WeChat), videojuegos, contenido digital, publicidad, fintech y servicios en la nube/empresas. Aparece en el screener por combinar márgenes muy altos (operativo ~33%, neto ~30%), caja neta prácticamente neutra y múltiplos bajos (P/E forward ~12,7x) tras una caída fuerte desde máximos.",
    "precio_eval": 52.709999,
-   "precio_actual": 51.360001,
-   "rend": -0.025612,
-   "rend_ref": 0.012835,
-   "exceso": -0.038447,
-   "dias": 2
+   "precio_actual": 49.740002,
+   "rend": -0.056346,
+   "rend_ref": 0.005627,
+   "exceso": -0.061973,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -925,11 +926,11 @@
    "valuacion": "Razonable",
    "resumen": "Altria es el mayor fabricante de cigarrillos de EE.UU. (Marlboro) y avanza en productos orales y sin humo (on!, NJOY). Aparece en el screener por su rentabilidad extrema (ROIC 35%, margen operativo 61%), flujo de caja consistente y múltiplos bajos (P/E forward ~12,9x, FCF yield 5,6%).",
    "precio_eval": 76.339996,
-   "precio_actual": 77.389999,
-   "rend": 0.013754,
-   "rend_ref": 0.012835,
-   "exceso": 0.000919,
-   "dias": 2
+   "precio_actual": 78.639999,
+   "rend": 0.030128,
+   "rend_ref": 0.005627,
+   "exceso": 0.024501,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -949,11 +950,11 @@
    "valuacion": "Cara",
    "resumen": "Siemens Energy es una fabricante alemana de tecnología energética: turbinas de gas y vapor, equipos de red (transformadores, HVDC) y la unidad eólica Siemens Gamesa. Aparece en el screener por rentabilidad sobre capital (ROIC ~15,6%), caja neta, FCF consistente y crecimiento fuerte de ventas y ganancias.",
    "precio_eval": 121.540001,
-   "precio_actual": 133.740005,
-   "rend": 0.100379,
-   "rend_ref": 0.012835,
-   "exceso": 0.087543,
-   "dias": 2
+   "precio_actual": 131.919998,
+   "rend": 0.085404,
+   "rend_ref": 0.005627,
+   "exceso": 0.079777,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -973,11 +974,11 @@
    "valuacion": "Barata",
    "resumen": "Capital One es un holding financiero estadounidense cuyo negocio central son las tarjetas de crédito, con banca de consumo y comercial como segmentos complementarios (EE.UU., Canadá y Reino Unido). Aparece en el screener por su score de valor muy alto (86,5): P/E forward ~8,2x, P/B ~1,1x y crecimiento de ventas y ganancias de ~16%.",
    "precio_eval": 195.839996,
-   "precio_actual": 197.110001,
-   "rend": 0.006485,
-   "rend_ref": 0.012835,
-   "exceso": -0.00635,
-   "dias": 2
+   "precio_actual": 195.080002,
+   "rend": -0.003881,
+   "rend_ref": 0.005627,
+   "exceso": -0.009508,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -997,11 +998,11 @@
    "valuacion": "Barata",
    "resumen": "China Life es la mayor aseguradora de vida de China (seguros de vida, anualidades, salud y accidentes, para individuos y grupos), controlada por su casa matriz estatal. Aparece en el screener por valuación muy baja (P/E forward ~8,5x, PEG 0,76) con un ROE de ~12%, aunque el puntaje de calidad es mediocre y hay alerta por caída de ventas.",
    "precio_eval": 34.950001,
-   "precio_actual": 34.299999,
-   "rend": -0.018598,
-   "rend_ref": 0.012835,
-   "exceso": -0.031433,
-   "dias": 2
+   "precio_actual": 34.950001,
+   "rend": 0.0,
+   "rend_ref": 0.005627,
+   "exceso": -0.005627,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1021,11 +1022,11 @@
    "valuacion": "Cara",
    "resumen": "ASML fabrica los sistemas de litografía (incluida la EUV, de la que es proveedor prácticamente exclusivo) que las fabricantes de chips necesitan para producir semiconductores avanzados. Aparece en el screener por su calidad excepcional (ROIC ~40%, márgenes operativos de 44%, caja neta) con una valuación forward que no es extrema para su crecimiento.",
    "precio_eval": 1507.849976,
-   "precio_actual": 1534.420044,
-   "rend": 0.017621,
-   "rend_ref": 0.012835,
-   "exceso": 0.004786,
-   "dias": 2
+   "precio_actual": 1495.160034,
+   "rend": -0.008416,
+   "rend_ref": 0.005627,
+   "exceso": -0.014043,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1045,11 +1046,11 @@
    "valuacion": "Barata",
    "resumen": "Mizuho es uno de los tres megabancos de Japón (banca corporativa, de inversión, fiduciaria y de valores, con presencia en Américas, Europa y Asia). Aparece en el screener por un score de valor alto (80/100): PE forward ~7,1x, PB 1,66x, ROE ~12,5% y fuerte crecimiento de ganancias.",
    "precio_eval": 9.93,
-   "precio_actual": 10.16,
-   "rend": 0.023162,
-   "rend_ref": 0.012835,
-   "exceso": 0.010327,
-   "dias": 2
+   "precio_actual": 10.34,
+   "rend": 0.041289,
+   "rend_ref": 0.005627,
+   "exceso": 0.035662,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1069,11 +1070,11 @@
    "valuacion": "Razonable",
    "resumen": "Interactive Brokers es un broker electrónico automatizado que ofrece ejecución, custodia y financiamiento de margen sobre acciones, opciones, futuros, divisas, bonos y cripto, tanto a clientes individuales como institucionales. Aparece en el screener por su alta rentabilidad (ROIC/ROE ~24%), márgenes operativos muy altos, flujo de caja consistente y fuerte crecimiento, aunque el puntaje de valor es bajo (36/100).",
    "precio_eval": 77.589996,
-   "precio_actual": 82.489998,
-   "rend": 0.063152,
-   "rend_ref": 0.012835,
-   "exceso": 0.050317,
-   "dias": 2
+   "precio_actual": 81.790001,
+   "rend": 0.054131,
+   "rend_ref": 0.005627,
+   "exceso": 0.048503,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1093,11 +1094,11 @@
    "valuacion": "Razonable",
    "resumen": "Meta es la dueña de Facebook, Instagram, WhatsApp y Messenger (Family of Apps), con un negocio publicitario enorme, y una división de apuestas de largo plazo en realidad virtual y lentes con IA (Reality Labs). Aparece en el screener por combinar rentabilidad excepcional (ROIC 22%, margen operativo 35%) con múltiplos que no son exigentes para una empresa que crece ventas casi 20%.",
    "precio_eval": 641.390015,
-   "precio_actual": 628.77002,
-   "rend": -0.019676,
-   "rend_ref": 0.012835,
-   "exceso": -0.032511,
-   "dias": 2
+   "precio_actual": 641.690002,
+   "rend": 0.000468,
+   "rend_ref": 0.005627,
+   "exceso": -0.00516,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1117,11 +1118,11 @@
    "valuacion": "Cara",
    "resumen": "Advantest fabrica equipos de testeo automatizado (ATE) para semiconductores, con fuerte exposición a chips de IA/SoC y memoria, y es líder global en su nicho. Aparece en el screener por su calidad excepcional (ROIC 47%, márgenes operativos de ~56%, caja neta), a pesar de que el componente de valor es flojo.",
    "precio_eval": 29690.0,
-   "precio_actual": 29985.0,
-   "rend": 0.009936,
-   "rend_ref": 0.012835,
-   "exceso": -0.002899,
-   "dias": 2
+   "precio_actual": 30610.0,
+   "rend": 0.030987,
+   "rend_ref": 0.005627,
+   "exceso": 0.02536,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1141,11 +1142,11 @@
    "valuacion": "Razonable",
    "resumen": "Schneider Electric es un líder europeo en gestión de energía y automatización industrial (baja y media tensión, UPS, refrigeración para data centers, software de edificios y fábricas). Aparece en el screener por la combinación de FCF positivo todos los años, ROIC razonable y un puntaje de valor alto frente a su historia, con el precio unos 25% por debajo del máximo de 52 semanas.",
    "precio_eval": 235.350006,
-   "precio_actual": 243.800003,
-   "rend": 0.035904,
-   "rend_ref": 0.012835,
-   "exceso": 0.023069,
-   "dias": 2
+   "precio_actual": 243.449997,
+   "rend": 0.034417,
+   "rend_ref": 0.005627,
+   "exceso": 0.02879,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1165,11 +1166,11 @@
    "valuacion": "Barata",
    "resumen": "ICBC es uno de los mayores bancos del mundo por activos: banca corporativa, personal y tesorería, principalmente en China continental. Aparece en el screener por su valuación muy deprimida (P/E ~6,3-6,7x, P/B 0,6x), dividendo de ~4,7% y rentabilidad estable, aunque con un score de calidad más flojo (43/100).",
    "precio_eval": 7.99,
-   "precio_actual": 7.835,
-   "rend": -0.019399,
-   "rend_ref": 0.012835,
-   "exceso": -0.032235,
-   "dias": 2
+   "precio_actual": 7.92,
+   "rend": -0.008761,
+   "rend_ref": 0.005627,
+   "exceso": -0.014388,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1189,11 +1190,11 @@
    "valuacion": "Razonable",
    "resumen": "Lam Research fabrica equipos de deposición y grabado (etch) que las fábricas de chips usan para producir circuitos integrados, con servicios y refurbishing como complemento. Aparece en el screener por su rentabilidad excepcional (ROIC ~46%, margen operativo ~40%), caja neta y un precio que, medido por P/E forward y PEG, no luce exigente frente a su calidad.",
    "precio_eval": 222.389999,
-   "precio_actual": 235.880005,
-   "rend": 0.060659,
-   "rend_ref": 0.012835,
-   "exceso": 0.047824,
-   "dias": 2
+   "precio_actual": 225.919998,
+   "rend": 0.015873,
+   "rend_ref": 0.005627,
+   "exceso": 0.010246,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1213,11 +1214,11 @@
    "valuacion": "Razonable",
    "resumen": "LVMH es el mayor conglomerado de lujo del mundo (moda y cuero, vinos y espirits, perfumería, relojería y joyería, retail selectivo). Aparece en el screener porque combina márgenes brutos y operativos altos con una valuación que, tras caer cerca de 39% desde su máximo de 52 semanas, se ubica en múltiplos poco habituales para este negocio.",
    "precio_eval": 401.0,
-   "precio_actual": 410.799988,
-   "rend": 0.024439,
-   "rend_ref": 0.012835,
-   "exceso": 0.011604,
-   "dias": 2
+   "precio_actual": 403.450012,
+   "rend": 0.00611,
+   "rend_ref": 0.005627,
+   "exceso": 0.000482,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1237,11 +1238,11 @@
    "valuacion": "Cara",
    "resumen": "Southern Copper es una de las mayores mineras de cobre del mundo, con minas en Perú y México, y subproductos como molibdeno, plata y oro. Aparece en el screener por su rentabilidad excepcional (ROIC 25,6%, márgenes operativos ~60%), deuda casi nula y FCF positivo todos los años; el puntaje de valor, en cambio, es flojo (44,9 vs 73,5 de calidad).",
    "precio_eval": 170.360001,
-   "precio_actual": 172.610001,
-   "rend": 0.013207,
-   "rend_ref": 0.012835,
-   "exceso": 0.000372,
-   "dias": 2
+   "precio_actual": 164.080002,
+   "rend": -0.036863,
+   "rend_ref": 0.005627,
+   "exceso": -0.04249,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1261,11 +1262,11 @@
    "valuacion": "Cara",
    "resumen": "Safran es un proveedor francés de motores (junto a GE, a través de CFM International), equipamiento y defensa para la aviación, con un negocio de posventa muy rentable. Aparece en el screener por su ROIC alto (~38%), caja neta y FCF positivo todos los años, aunque su score de valor es flojo.",
    "precio_eval": 312.700012,
-   "precio_actual": 314.5,
-   "rend": 0.005756,
-   "rend_ref": 0.012835,
-   "exceso": -0.007079,
-   "dias": 2
+   "precio_actual": 306.600006,
+   "rend": -0.019508,
+   "rend_ref": 0.005627,
+   "exceso": -0.025135,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1285,11 +1286,11 @@
    "valuacion": "Razonable",
    "resumen": "Tokyo Electron fabrica equipos de producción de semiconductores (deposición, grabado por plasma, limpieza, coaters/developers) y es uno de los proveedores clave de la cadena de chips. Aparece en el screener por su alta rentabilidad sobre el capital (ROIC ~23%), caja neta y un P/E forward muy bajo (~7x).",
    "precio_eval": 9006.0,
-   "precio_actual": 9304.0,
-   "rend": 0.033089,
-   "rend_ref": 0.012835,
-   "exceso": 0.020254,
-   "dias": 2
+   "precio_actual": 9461.0,
+   "rend": 0.050522,
+   "rend_ref": 0.005627,
+   "exceso": 0.044895,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1309,11 +1310,11 @@
    "valuacion": "Barata",
    "resumen": "Salesforce es el líder global en software CRM en la nube y viene expandiéndose a IA empresarial con su plataforma Agentforce. Aparece en el screener por la combinación de márgenes altos y flujo de caja consistente con una valuación que luce baja (P/E forward ~13x, FCF yield ~10%).",
    "precio_eval": 213.479996,
-   "precio_actual": 218.009995,
-   "rend": 0.02122,
-   "rend_ref": 0.012835,
-   "exceso": 0.008384,
-   "dias": 2
+   "precio_actual": 217.839996,
+   "rend": 0.020423,
+   "rend_ref": 0.005627,
+   "exceso": 0.014796,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1332,12 +1333,12 @@
    "veredicto": "Candidata para el satélite",
    "valuacion": "Razonable",
    "resumen": "Schwab es una de las mayores plataformas de brokerage, banca y gestión de patrimonio de EE.UU. (savings and loan holding con segmentos Investor Services y Advisor Services). Aparece en el screener por rentabilidad alta (ROIC/ROE ~21%, margen neto ~39%) con múltiplos razonables (P/E forward ~12, PEG ~0,77).",
-   "precio_eval": 93.029999,
-   "precio_actual": 92.779999,
-   "rend": -0.002687,
-   "rend_ref": 0.012835,
-   "exceso": -0.015523,
-   "dias": 2
+   "precio_eval": 92.705429,
+   "precio_actual": 92.980003,
+   "rend": 0.002962,
+   "rend_ref": 0.005627,
+   "exceso": -0.002665,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1357,11 +1358,11 @@
    "valuacion": "Barata",
    "resumen": "China Merchants Bank es un banco comercial chino con fuerte foco en banca minorista y de patrimonio, y es de los mejor valorados del sistema bancario de su país. Aparece en el screener por su valuación baja (P/E ~7-8x, P/B ~1x), dividendo de ~4% y una rentabilidad (ROE ~11,5%) razonable para un banco.",
    "precio_eval": 54.5,
-   "precio_actual": 54.0,
-   "rend": -0.009174,
-   "rend_ref": 0.012835,
-   "exceso": -0.02201,
-   "dias": 2
+   "precio_actual": 53.950001,
+   "rend": -0.010092,
+   "rend_ref": 0.005627,
+   "exceso": -0.015719,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1381,11 +1382,11 @@
    "valuacion": "Barata",
    "resumen": "TotalEnergies es una petrolera integrada francesa (upstream, GNL, refinación, marketing y un brazo creciente de electricidad/renovables). Aparece en el screener por valuación muy baja (P/E forward ~7,2x, EV/EBITDA ~4,6x), FCF yield de ~7,3% y deuda baja, aunque con un score de calidad mediocre (43/100).",
    "precio_eval": 87.879997,
-   "precio_actual": 87.959999,
-   "rend": 0.00091,
-   "rend_ref": 0.012835,
-   "exceso": -0.011925,
-   "dias": 2
+   "precio_actual": 90.739998,
+   "rend": 0.032544,
+   "rend_ref": 0.005627,
+   "exceso": 0.026917,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1405,11 +1406,11 @@
    "valuacion": "Razonable",
    "resumen": "Broadcom diseña semiconductores (conectividad de red, silicio a medida, almacenamiento) y software de infraestructura, con márgenes excepcionales y fuerte crecimiento. Aparece en el screener por su rentabilidad, generación de caja consistente y un P/E forward bajo respecto de su crecimiento.",
    "precio_eval": 331.980011,
-   "precio_actual": 345.220001,
-   "rend": 0.039882,
-   "rend_ref": 0.012835,
-   "exceso": 0.027047,
-   "dias": 2
+   "precio_actual": 347.01001,
+   "rend": 0.045274,
+   "rend_ref": 0.005627,
+   "exceso": 0.039647,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1429,11 +1430,11 @@
    "valuacion": "Barata",
    "resumen": "Bristol-Myers Squibb es una farmacéutica grande de EE.UU. con foco en oncología, inmunología, hematología, cardiovascular y neurociencia (Opdivo, Orencia, Yervoy, Reblozyl, Breyanzi). Aparece en el screener por su valuación muy baja (P/E forward ~9,3x, EV/EBITDA ~8,7x), márgenes altos y dividendo de ~4%.",
    "precio_eval": 62.799999,
-   "precio_actual": 62.91,
-   "rend": 0.001752,
-   "rend_ref": 0.012835,
-   "exceso": -0.011084,
-   "dias": 2
+   "precio_actual": 63.43,
+   "rend": 0.010032,
+   "rend_ref": 0.005627,
+   "exceso": 0.004405,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1453,11 +1454,11 @@
    "valuacion": "Cara",
    "resumen": "Hermès es la casa de lujo francesa de cuero (Birkin/Kelly), prêt-à-porter, seda, perfumes y relojes, con márgenes y retornos excepcionales. Aparece en el screener por su calidad (ROIC ~24%, margen operativo ~42%, caja neta, FCF consistente), no por valuación.",
    "precio_eval": 1345.5,
-   "precio_actual": 1381.0,
-   "rend": 0.026384,
-   "rend_ref": 0.012835,
-   "exceso": 0.013549,
-   "dias": 2
+   "precio_actual": 1341.5,
+   "rend": -0.002973,
+   "rend_ref": 0.005627,
+   "exceso": -0.0086,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1477,11 +1478,11 @@
    "valuacion": "Barata",
    "resumen": "China Mobile es el mayor operador de telecomunicaciones móviles de China continental y Hong Kong, con negocios crecientes en nube, centros de datos e IA. Aparece en el screener por su puntaje de valor muy alto (83,7): P/E ~12x, EV/EBITDA ~6,3x, P/B ~1,07x, FCF yield de 8,3% y caja neta.",
    "precio_eval": 81.050003,
-   "precio_actual": 80.699997,
-   "rend": -0.004318,
-   "rend_ref": 0.012835,
-   "exceso": -0.017154,
-   "dias": 2
+   "precio_actual": 80.400002,
+   "rend": -0.00802,
+   "rend_ref": 0.005627,
+   "exceso": -0.013647,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1501,11 +1502,11 @@
    "valuacion": "Razonable",
    "resumen": "UniCredit es un banco comercial paneuropeo (Italia, Alemania, Europa Central y del Este) con banca minorista, privada, corporativa y de inversión. Aparece en el screener por rentabilidad alta para un banco (ROE ~16%) combinada con múltiplos bajos (P/E forward ~9,6x, PEG 0,8).",
    "precio_eval": 83.550003,
-   "precio_actual": 84.379997,
-   "rend": 0.009934,
-   "rend_ref": 0.012835,
-   "exceso": -0.002901,
-   "dias": 2
+   "precio_actual": 83.68,
+   "rend": 0.001556,
+   "rend_ref": 0.005627,
+   "exceso": -0.004071,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1525,11 +1526,11 @@
    "valuacion": "Cara",
    "resumen": "ABB es un conglomerado suizo de electrificación, motores y automatización industrial, con presencia global en utilities, industria e infraestructura. Aparece en el screener por su combinación de ROIC cercano al 19%, márgenes sólidos, FCF consistente y deuda casi nula.",
    "precio_eval": 68.980003,
-   "precio_actual": 70.860001,
-   "rend": 0.027254,
-   "rend_ref": 0.012835,
-   "exceso": 0.014419,
-   "dias": 2
+   "precio_actual": 69.959999,
+   "rend": 0.014207,
+   "rend_ref": 0.005627,
+   "exceso": 0.00858,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1549,11 +1550,11 @@
    "valuacion": "Razonable",
    "resumen": "BHP es una de las mineras diversificadas más grandes del mundo, con exposición a mineral de hierro, cobre y carbón siderúrgico. Aparece en el screener por su alto ROIC (~24%), márgenes operativos muy elevados (~43%), deuda mínima y FCF positivo todos los años analizados.",
    "precio_eval": 81.120003,
-   "precio_actual": 82.059998,
-   "rend": 0.011588,
-   "rend_ref": 0.012835,
-   "exceso": -0.001248,
-   "dias": 2
+   "precio_actual": 79.489998,
+   "rend": -0.020094,
+   "rend_ref": 0.005627,
+   "exceso": -0.025721,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1573,11 +1574,11 @@
    "valuacion": "Razonable",
    "resumen": "Gilead es una biofarmacéutica estadounidense líder en antivirales (HIV con Biktarvy, hepatitis B/C) que viene diversificando hacia oncología (Trodelvy, terapias celulares). Aparece en el screener por su ROIC cercano al 20%, márgenes operativos muy altos, FCF consistente y un múltiplo forward razonable (~16,8x).",
    "precio_eval": 170.869995,
-   "precio_actual": 169.729996,
-   "rend": -0.006672,
-   "rend_ref": 0.012835,
-   "exceso": -0.019507,
-   "dias": 2
+   "precio_actual": 168.080002,
+   "rend": -0.016328,
+   "rend_ref": 0.005627,
+   "exceso": -0.021955,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1597,11 +1598,11 @@
    "valuacion": "Barata",
    "resumen": "AT&T es una de las mayores telcos de EE.UU.: telefonía móvil, fibra y banda ancha, con foco en conectividad tras desprenderse de los medios. Aparece en el screener por su valuación muy baja (P/E forward ~8,4, FCF yield ~8,1%, EV/EBITDA ~7,3) más un dividendo de ~5% y generación de caja consistente.",
    "precio_eval": 21.940001,
-   "precio_actual": 22.26,
-   "rend": 0.014585,
-   "rend_ref": 0.012835,
-   "exceso": 0.00175,
-   "dias": 2
+   "precio_actual": 22.18,
+   "rend": 0.010939,
+   "rend_ref": 0.005627,
+   "exceso": 0.005312,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1621,11 +1622,11 @@
    "valuacion": "Razonable",
    "resumen": "BBVA es un banco universal español con fuerte presencia en México, Turquía y Sudamérica, además de banca digital. Aparece en el screener por una rentabilidad alta para un banco (ROE ~20%), múltiplos bajos (P/E forward ~9,9x, PEG ~0,74) y un dividendo de ~4,3%.",
    "precio_eval": 26.49,
-   "precio_actual": 26.209999,
-   "rend": -0.01057,
-   "rend_ref": 0.012835,
-   "exceso": -0.023405,
-   "dias": 2
+   "precio_actual": 25.92,
+   "rend": -0.021518,
+   "rend_ref": 0.005627,
+   "exceso": -0.027145,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1645,11 +1646,11 @@
    "valuacion": "Barata",
    "resumen": "Sanofi es una farmacéutica francesa diversificada (inmunología e inflamación, enfermedades raras, oncología y una de las mayores franquicias de vacunas del mundo). Aparece en el screener por su valuación muy baja (P/E forward ~8,9, FCF yield ~8%, dividendo ~5%) con balance sano y flujos de caja consistentes.",
    "precio_eval": 48.23,
-   "precio_actual": 48.43,
-   "rend": 0.004147,
-   "rend_ref": 0.012835,
-   "exceso": -0.008689,
-   "dias": 2
+   "precio_actual": 48.369999,
+   "rend": 0.002903,
+   "rend_ref": 0.005627,
+   "exceso": -0.002725,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1667,11 +1668,11 @@
    "score": 72.978732,
    "motivo": "Primera vez en el ciclo",
    "precio_eval": 119.959999,
-   "precio_actual": 118.470001,
-   "rend": -0.012421,
-   "rend_ref": 0.012835,
-   "exceso": -0.025256,
-   "dias": 2
+   "precio_actual": 113.139999,
+   "rend": -0.056852,
+   "rend_ref": 0.005627,
+   "exceso": -0.06248,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1689,11 +1690,11 @@
    "score": 66.136008,
    "motivo": "Primera vez en el ciclo",
    "precio_eval": 76.339996,
-   "precio_actual": 77.389999,
-   "rend": 0.013754,
-   "rend_ref": 0.012835,
-   "exceso": 0.000919,
-   "dias": 2
+   "precio_actual": 78.639999,
+   "rend": 0.030128,
+   "rend_ref": 0.005627,
+   "exceso": 0.024501,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1711,11 +1712,11 @@
    "score": 61.856418,
    "motivo": "Primera vez en el ciclo",
    "precio_eval": 9.93,
-   "precio_actual": 10.16,
-   "rend": 0.023162,
-   "rend_ref": 0.012835,
-   "exceso": 0.010327,
-   "dias": 2
+   "precio_actual": 10.34,
+   "rend": 0.041289,
+   "rend_ref": 0.005627,
+   "exceso": 0.035662,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1733,11 +1734,11 @@
    "score": 61.502711,
    "motivo": "Primera vez en el ciclo",
    "precio_eval": 641.390015,
-   "precio_actual": 628.77002,
-   "rend": -0.019676,
-   "rend_ref": 0.012835,
-   "exceso": -0.032511,
-   "dias": 2
+   "precio_actual": 641.690002,
+   "rend": 0.000468,
+   "rend_ref": 0.005627,
+   "exceso": -0.00516,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1755,11 +1756,11 @@
    "score": 59.976761,
    "motivo": "Primera vez en el ciclo",
    "precio_eval": 213.479996,
-   "precio_actual": 218.009995,
-   "rend": 0.02122,
-   "rend_ref": 0.012835,
-   "exceso": 0.008384,
-   "dias": 2
+   "precio_actual": 217.839996,
+   "rend": 0.020423,
+   "rend_ref": 0.005627,
+   "exceso": 0.014796,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1777,11 +1778,11 @@
    "score": 68.020501,
    "motivo": "Primera vez en el ciclo",
    "precio_eval": 395.51001,
-   "precio_actual": 404.769989,
-   "rend": 0.023413,
-   "rend_ref": 0.012835,
-   "exceso": 0.010577,
-   "dias": 2
+   "precio_actual": 409.100006,
+   "rend": 0.034361,
+   "rend_ref": 0.005627,
+   "exceso": 0.028733,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1799,11 +1800,11 @@
    "score": 68.744939,
    "motivo": "Primera vez en el ciclo",
    "precio_eval": 18.280001,
-   "precio_actual": 17.82,
-   "rend": -0.025164,
-   "rend_ref": 0.012835,
-   "exceso": -0.038,
-   "dias": 2
+   "precio_actual": 18.34,
+   "rend": 0.003282,
+   "rend_ref": 0.005627,
+   "exceso": -0.002345,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1821,11 +1822,11 @@
    "score": 84.699758,
    "motivo": "Primera vez en el ciclo",
    "precio_eval": 859.98999,
-   "precio_actual": 977.690002,
-   "rend": 0.136862,
-   "rend_ref": 0.012835,
-   "exceso": 0.124027,
-   "dias": 2
+   "precio_actual": 885.01001,
+   "rend": 0.029093,
+   "rend_ref": 0.005627,
+   "exceso": 0.023466,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1843,11 +1844,11 @@
    "score": 74.063122,
    "motivo": "Primera vez en el ciclo",
    "precio_eval": 168.889999,
-   "precio_actual": 173.729996,
-   "rend": 0.028658,
-   "rend_ref": 0.012835,
-   "exceso": 0.015822,
-   "dias": 2
+   "precio_actual": 162.850006,
+   "rend": -0.035763,
+   "rend_ref": 0.005627,
+   "exceso": -0.04139,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1865,11 +1866,11 @@
    "score": 73.049774,
    "motivo": "Primera vez en el ciclo",
    "precio_eval": 396.480011,
-   "precio_actual": 413.350006,
-   "rend": 0.042549,
-   "rend_ref": 0.012835,
-   "exceso": 0.029714,
-   "dias": 2
+   "precio_actual": 398.730011,
+   "rend": 0.005675,
+   "rend_ref": 0.005627,
+   "exceso": 4.8e-05,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1887,11 +1888,11 @@
    "score": 71.432105,
    "motivo": "Primera vez en el ciclo",
    "precio_eval": 40.700001,
-   "precio_actual": 41.09,
-   "rend": 0.009582,
-   "rend_ref": 0.012835,
-   "exceso": -0.003253,
-   "dias": 2
+   "precio_actual": 41.630001,
+   "rend": 0.02285,
+   "rend_ref": 0.005627,
+   "exceso": 0.017223,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1909,11 +1910,11 @@
    "score": 81.99553,
    "motivo": "Primera vez en el ciclo",
    "precio_eval": 725.109985,
-   "precio_actual": 811.299988,
-   "rend": 0.118865,
-   "rend_ref": 0.012835,
-   "exceso": 0.106029,
-   "dias": 2
+   "precio_actual": 778.309998,
+   "rend": 0.073368,
+   "rend_ref": 0.005627,
+   "exceso": 0.067741,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1931,11 +1932,11 @@
    "score": 71.001425,
    "motivo": "Primera vez en el ciclo",
    "precio_eval": 501.619995,
-   "precio_actual": 551.719971,
-   "rend": 0.099876,
-   "rend_ref": 0.012835,
-   "exceso": 0.087041,
-   "dias": 2
+   "precio_actual": 528.289978,
+   "rend": 0.053168,
+   "rend_ref": 0.005627,
+   "exceso": 0.04754,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1953,11 +1954,11 @@
    "score": 63.726024,
    "motivo": "Primera vez en el ciclo",
    "precio_eval": 195.839996,
-   "precio_actual": 197.110001,
-   "rend": 0.006485,
-   "rend_ref": 0.012835,
-   "exceso": -0.00635,
-   "dias": 2
+   "precio_actual": 195.080002,
+   "rend": -0.003881,
+   "rend_ref": 0.005627,
+   "exceso": -0.009508,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1975,11 +1976,11 @@
    "score": 62.46568,
    "motivo": "Primera vez en el ciclo",
    "precio_eval": 1507.849976,
-   "precio_actual": 1534.420044,
-   "rend": 0.017621,
-   "rend_ref": 0.012835,
-   "exceso": 0.004786,
-   "dias": 2
+   "precio_actual": 1495.160034,
+   "rend": -0.008416,
+   "rend_ref": 0.005627,
+   "exceso": -0.014043,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -1997,11 +1998,11 @@
    "score": 61.598939,
    "motivo": "Primera vez en el ciclo",
    "precio_eval": 77.589996,
-   "precio_actual": 82.489998,
-   "rend": 0.063152,
-   "rend_ref": 0.012835,
-   "exceso": 0.050317,
-   "dias": 2
+   "precio_actual": 81.790001,
+   "rend": 0.054131,
+   "rend_ref": 0.005627,
+   "exceso": 0.048503,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -2019,11 +2020,11 @@
    "score": 60.64329,
    "motivo": "Primera vez en el ciclo",
    "precio_eval": 170.360001,
-   "precio_actual": 172.610001,
-   "rend": 0.013207,
-   "rend_ref": 0.012835,
-   "exceso": 0.000372,
-   "dias": 2
+   "precio_actual": 164.080002,
+   "rend": -0.036863,
+   "rend_ref": 0.005627,
+   "exceso": -0.04249,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -2041,11 +2042,11 @@
    "score": 80.993098,
    "motivo": "Primera vez en el ciclo",
    "precio_eval": 159.259995,
-   "precio_actual": 160.210007,
-   "rend": 0.005965,
-   "rend_ref": 0.012835,
-   "exceso": -0.00687,
-   "dias": 2
+   "precio_actual": 159.580002,
+   "rend": 0.002009,
+   "rend_ref": 0.005627,
+   "exceso": -0.003618,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -2063,11 +2064,11 @@
    "score": 67.339883,
    "motivo": "Primera vez en el ciclo",
    "precio_eval": 63.259998,
-   "precio_actual": 64.540001,
-   "rend": 0.020234,
-   "rend_ref": 0.012835,
-   "exceso": 0.007399,
-   "dias": 2
+   "precio_actual": 62.150002,
+   "rend": -0.017547,
+   "rend_ref": 0.005627,
+   "exceso": -0.023174,
+   "dias": 3
   },
   {
    "fecha": "2026-11-10",
@@ -2085,38 +2086,478 @@
    "score": 60.789038,
    "motivo": "Primera vez en el ciclo",
    "precio_eval": 222.389999,
-   "precio_actual": 235.880005,
-   "rend": 0.060659,
-   "rend_ref": 0.012835,
-   "exceso": 0.047824,
-   "dias": 2
+   "precio_actual": 225.919998,
+   "rend": 0.015873,
+   "rend_ref": 0.005627,
+   "exceso": 0.010246,
+   "dias": 3
+  },
+  {
+   "fecha": "2026-11-15",
+   "tipo": "semanal",
+   "ticker": "BMY",
+   "nombre": "Bristol-Myers Squibb Company",
+   "precio_reportado": 63.43,
+   "puntaje_tecnico": 60,
+   "etiqueta": "Tendencia sana",
+   "tendencia": "Alcista",
+   "rsi": 56.08494,
+   "momento": "Entrar de a poco",
+   "comentario": "Valuación barata (P/E fwd ~9) con tendencia alcista sana y RSI neutral (56). El riesgo de la tesis es que los lanzamientos no compensen la pérdida de patentes; está a 6% del máximo, así que no hay gran descuento técnico.",
+   "alerta_tesis": null,
+   "score": 59.652109,
+   "motivo": "Primera vez en el ciclo",
+   "precio_eval": 63.43,
+   "precio_actual": 63.43,
+   "rend": 0.0,
+   "rend_ref": 0.0,
+   "exceso": 0.0,
+   "dias": -2
+  },
+  {
+   "fecha": "2026-11-15",
+   "tipo": "semanal",
+   "ticker": "GILD",
+   "nombre": "Gilead Sciences, Inc.",
+   "precio_reportado": 168.080002,
+   "puntaje_tecnico": 50,
+   "etiqueta": "Tendencia sana",
+   "tendencia": "Alcista",
+   "rsi": 59.314688,
+   "momento": "Esperar",
+   "comentario": "Buen negocio (ROIC ~20%) pero cotiza a 3,7% del máximo y +41% YTD, justo donde la propia tesis pide mejor margen de seguridad. El MACD está en negativo pese a la tendencia alcista.",
+   "alerta_tesis": null,
+   "score": 58.312201,
+   "motivo": "Primera vez en el ciclo",
+   "precio_eval": 168.080002,
+   "precio_actual": 168.080002,
+   "rend": 0.0,
+   "rend_ref": 0.0,
+   "exceso": 0.0,
+   "dias": -2
+  },
+  {
+   "fecha": "2026-11-15",
+   "tipo": "semanal",
+   "ticker": "TTE",
+   "nombre": "TotalEnergies SE",
+   "precio_reportado": 90.739998,
+   "puntaje_tecnico": 40,
+   "etiqueta": "Tendencia sana",
+   "tendencia": "Alcista",
+   "rsi": 53.258815,
+   "momento": "Entrar de a poco",
+   "comentario": "Muy barata (P/E fwd ~7, FCF yield ~7%) y técnico neutral-sano, cerca de la SMA50. Ya subió ~40% YTD y es sensible al crudo; entrada escalonada y chica.",
+   "alerta_tesis": null,
+   "score": 59.795932,
+   "motivo": "Primera vez en el ciclo",
+   "precio_eval": 90.739998,
+   "precio_actual": 90.739998,
+   "rend": 0.0,
+   "rend_ref": 0.0,
+   "exceso": 0.0,
+   "dias": -2
+  },
+  {
+   "fecha": "2026-11-15",
+   "tipo": "semanal",
+   "ticker": "BBVA",
+   "nombre": "Banco Bilbao Vizcaya Argentaria, S.A.",
+   "precio_reportado": 25.92,
+   "puntaje_tecnico": 40,
+   "etiqueta": "Tendencia sana",
+   "tendencia": "Alcista",
+   "rsi": 51.810841,
+   "momento": "Esperar",
+   "comentario": "ROE ~20% y múltiplos bajos, pero está por debajo de la SMA50 (26,5) y 11% bajo el máximo, con rend. a 3 meses negativo. Falta confirmar que recupere la SMA50. Riesgo emergente (México/Turquía) y baja de tasas.",
+   "alerta_tesis": null,
+   "score": 58.147152,
+   "motivo": "Primera vez en el ciclo",
+   "precio_eval": 25.92,
+   "precio_actual": 25.92,
+   "rend": 0.0,
+   "rend_ref": 0.0,
+   "exceso": 0.0,
+   "dias": -2
+  },
+  {
+   "fecha": "2026-11-15",
+   "tipo": "semanal",
+   "ticker": "NEM",
+   "nombre": "Newmont Corporation",
+   "precio_reportado": 113.139999,
+   "puntaje_tecnico": 40,
+   "etiqueta": "Tendencia sana",
+   "tendencia": "Alcista",
+   "rsi": 46.314629,
+   "momento": "Esperar",
+   "comentario": "Bajo la SMA50 tras caer 6,4% en la semana; la tesis depende del precio del oro y el AISC, que no tenemos. Sin ese dato es difícil juzgar el colchón de valuación.",
+   "alerta_tesis": null,
+   "score": 72.978732,
+   "motivo": "Rotación (último análisis 2026-11-10)",
+   "precio_eval": 113.139999,
+   "precio_actual": 113.139999,
+   "rend": 0.0,
+   "rend_ref": 0.0,
+   "exceso": 0.0,
+   "dias": -2
+  },
+  {
+   "fecha": "2026-11-15",
+   "tipo": "semanal",
+   "ticker": "CRM",
+   "nombre": "Salesforce, Inc.",
+   "precio_reportado": 217.839996,
+   "puntaje_tecnico": 30,
+   "etiqueta": "Zona de compra (retroceso en tendencia alcista)",
+   "tendencia": "Alcista",
+   "rsi": 39.504103,
+   "momento": "Entrar de a poco",
+   "comentario": "Barata (P/E fwd ~13, FCF yield ~10%) en retroceso ordenado dentro de tendencia alcista, RSI 39 y cerca de la banda baja. Es el caso más claro de 'buena tesis en pullback'; vigilar crecimiento y apalancamiento por las adquisiciones.",
+   "alerta_tesis": "Compró Cresta 13 días después de Braze: más adquisiciones pueden elevar el apalancamiento, un punto de vigilancia de la tesis. Es una señal de cautela, no un quiebre.",
+   "score": 59.976761,
+   "motivo": "Seguimiento: zona de compra la semana pasada",
+   "precio_eval": 217.839996,
+   "precio_actual": 217.839996,
+   "rend": 0.0,
+   "rend_ref": 0.0,
+   "exceso": 0.0,
+   "dias": -2
+  },
+  {
+   "fecha": "2026-11-15",
+   "tipo": "semanal",
+   "ticker": "APP",
+   "nombre": "AppLovin Corporation",
+   "precio_reportado": 409.100006,
+   "puntaje_tecnico": 30,
+   "etiqueta": "Sobrecomprada: esperar",
+   "tendencia": "Lateral / mixta",
+   "rsi": 72.574656,
+   "momento": "Esperar",
+   "comentario": "Calidad extraordinaria, pero RSI 72, +46% en un mes y recién recuperando la SMA200; lejos aún del máximo (-44%) con alta volatilidad. Perseguir esta suba contradice el uso del técnico para entradas.",
+   "alerta_tesis": null,
+   "score": 68.020501,
+   "motivo": "Rotación (último análisis 2026-11-10)",
+   "precio_eval": 409.100006,
+   "precio_actual": 409.100006,
+   "rend": 0.0,
+   "rend_ref": 0.0,
+   "exceso": 0.0,
+   "dias": -2
+  },
+  {
+   "fecha": "2026-11-15",
+   "tipo": "semanal",
+   "ticker": "SNY",
+   "nombre": "Sanofi",
+   "precio_reportado": 48.369999,
+   "puntaje_tecnico": 20,
+   "etiqueta": "Sobrecomprada: esperar",
+   "tendencia": "Lateral / mixta",
+   "rsi": 76.204147,
+   "momento": "Esperar",
+   "comentario": "Barata (P/E fwd ~8,9, dividendo ~5%) pero sobrecomprada: RSI 76, +20% en un mes, pegada al máximo. Mejor esperar enfriamiento.",
+   "alerta_tesis": null,
+   "score": 58.143951,
+   "motivo": "Primera vez en el ciclo",
+   "precio_eval": 48.369999,
+   "precio_actual": 48.369999,
+   "rend": 0.0,
+   "rend_ref": 0.0,
+   "exceso": 0.0,
+   "dias": -2
+  },
+  {
+   "fecha": "2026-11-15",
+   "tipo": "semanal",
+   "ticker": "MU",
+   "nombre": "Micron Technology, Inc.",
+   "precio_reportado": 778.309998,
+   "puntaje_tecnico": 10,
+   "etiqueta": "Zona de compra (retroceso en tendencia alcista)",
+   "tendencia": "Alcista",
+   "rsi": 42.453875,
+   "momento": "Esperar",
+   "comentario": "Fundamentales extremos pero típicos de pico de ciclo en memoria; la señal 'zona de compra' técnica choca con riesgos de sobreoferta (titular sobre la apuesta HBM de Samsung). Bajo la SMA50 y con -36% desde el máximo.",
+   "alerta_tesis": "El titular sobre la apuesta de 34.000 M de Samsung en HBM plantea riesgo de sobreoferta, lo que debilita la tesis; la nota de que >75% de la producción 2027 está comprometida la refuerza parcialmente.",
+   "score": 81.99553,
+   "motivo": "Rotación (último análisis 2026-11-10)",
+   "precio_eval": 778.309998,
+   "precio_actual": 778.309998,
+   "rend": 0.0,
+   "rend_ref": 0.0,
+   "exceso": 0.0,
+   "dias": -2
+  },
+  {
+   "fecha": "2026-11-15",
+   "tipo": "semanal",
+   "ticker": "BHP",
+   "nombre": "BHP Group Limited",
+   "precio_reportado": 79.489998,
+   "puntaje_tecnico": -10,
+   "etiqueta": "Neutral",
+   "tendencia": "Lateral / mixta",
+   "rsi": 44.0485,
+   "momento": "Esperar",
+   "comentario": "Negocio sólido y valuación razonable, pero técnico neutral, bajo la SMA50 y con rendimiento a 3 meses negativo. Sin catalizador técnico; es cíclica y depende de China.",
+   "alerta_tesis": null,
+   "score": 58.690292,
+   "motivo": "Primera vez en el ciclo",
+   "precio_eval": 79.489998,
+   "precio_actual": 79.489998,
+   "rend": 0.0,
+   "rend_ref": 0.0,
+   "exceso": 0.0,
+   "dias": -2
+  },
+  {
+   "fecha": "2026-11-15",
+   "tipo": "semanal",
+   "ticker": "TSM",
+   "nombre": "Taiwan Semiconductor Manufacturing Company Limited",
+   "precio_reportado": 398.730011,
+   "puntaje_tecnico": -10,
+   "etiqueta": "Neutral",
+   "tendencia": "Lateral / mixta",
+   "rsi": 45.280454,
+   "momento": "Entrar de a poco",
+   "comentario": "Candidata para el satélite del mes, con ROIC 26,7%, caja neta y P/E fwd ~17, en retroceso moderado (-18% del máximo) y RSI neutral. Riesgo geopolítico permanente; el EV/EBITDA de 3,6 parece un error de datos. Posición chica y escalonada.",
+   "alerta_tesis": null,
+   "score": 73.049774,
+   "motivo": "Rotación (último análisis 2026-11-10)",
+   "precio_eval": 398.730011,
+   "precio_actual": 398.730011,
+   "rend": 0.0,
+   "rend_ref": 0.0,
+   "exceso": 0.0,
+   "dias": -2
+  },
+  {
+   "fecha": "2026-11-15",
+   "tipo": "semanal",
+   "ticker": "STX",
+   "nombre": "Seagate Technology Holdings plc",
+   "precio_reportado": 528.289978,
+   "puntaje_tecnico": -10,
+   "etiqueta": "Neutral",
+   "tendencia": "Lateral / mixta",
+   "rsi": 37.062965,
+   "momento": "Esperar",
+   "comentario": "Cayó 47% en 3 meses y está 52% bajo el máximo; el P/E de 7,5 puede reflejar ganancias pico. Rebote semanal de 14,6% no confirma cambio de tendencia.",
+   "alerta_tesis": null,
+   "score": 71.001425,
+   "motivo": "Rotación (último análisis 2026-11-10)",
+   "precio_eval": 528.289978,
+   "precio_actual": 528.289978,
+   "rend": 0.0,
+   "rend_ref": 0.0,
+   "exceso": 0.0,
+   "dias": -2
+  },
+  {
+   "fecha": "2026-11-15",
+   "tipo": "semanal",
+   "ticker": "SCHW",
+   "nombre": "The Charles Schwab Corporation",
+   "precio_reportado": 92.980003,
+   "puntaje_tecnico": -20,
+   "etiqueta": "Neutral",
+   "tendencia": "Lateral / mixta",
+   "rsi": 50.613964,
+   "momento": "Entrar de a poco",
+   "comentario": "Candidata para el satélite con ROE ~21% y P/E fwd ~12, en techo de rango técnico (neutral, cerca de SMA50/SMA200). No hay descuento técnico claro; entrada gradual si se consolida.",
+   "alerta_tesis": null,
+   "score": 59.929488,
+   "motivo": "Primera vez en el ciclo",
+   "precio_eval": 92.980003,
+   "precio_actual": 92.980003,
+   "rend": 0.0,
+   "rend_ref": 0.0,
+   "exceso": 0.0,
+   "dias": -2
+  },
+  {
+   "fecha": "2026-11-15",
+   "tipo": "semanal",
+   "ticker": "NVO",
+   "nombre": "Novo Nordisk A/S",
+   "precio_reportado": 41.630001,
+   "puntaje_tecnico": -20,
+   "etiqueta": "Debilidad: no apurarse",
+   "tendencia": "Bajista",
+   "rsi": 58.088328,
+   "momento": "Evitar",
+   "comentario": "Tendencia bajista (bajo SMA200) y -32% del máximo; aunque la tesis luce barata, la compresión de márgenes y la competencia de Lilly siguen abiertas. Algunos datos (EV/EBITDA 1,49) son dudosos.",
+   "alerta_tesis": null,
+   "score": 71.432105,
+   "motivo": "Rotación (último análisis 2026-11-10)",
+   "precio_eval": 41.630001,
+   "precio_actual": 41.630001,
+   "rend": 0.0,
+   "rend_ref": 0.0,
+   "exceso": 0.0,
+   "dias": -2
+  },
+  {
+   "fecha": "2026-11-15",
+   "tipo": "semanal",
+   "ticker": "PBR",
+   "nombre": "Petróleo Brasileiro S.A. - Petrobras",
+   "precio_reportado": 18.34,
+   "puntaje_tecnico": -20,
+   "etiqueta": "Neutral",
+   "tendencia": "Lateral / mixta",
+   "rsi": 28.803157,
+   "momento": "Esperar",
+   "comentario": "Muy barata pero con riesgo político (dividendos) y caída de 27,5% en el mes; RSI 29 sugiere sobreventa, aunque sin giro confirmado. Trimestre reciente con resultados: faltan datos para evaluar.",
+   "alerta_tesis": null,
+   "score": 68.744939,
+   "motivo": "Rotación (último análisis 2026-11-10)",
+   "precio_eval": 18.34,
+   "precio_actual": 18.34,
+   "rend": 0.0,
+   "rend_ref": 0.0,
+   "exceso": 0.0,
+   "dias": -2
+  },
+  {
+   "fecha": "2026-11-15",
+   "tipo": "semanal",
+   "ticker": "AVGO",
+   "nombre": "Broadcom Inc.",
+   "precio_reportado": 347.01001,
+   "puntaje_tecnico": -30,
+   "etiqueta": "Debilidad: no apurarse",
+   "tendencia": "Bajista",
+   "rsi": 53.200069,
+   "momento": "Esperar",
+   "comentario": "Tendencia bajista (bajo SMA200) y rebote de 18% en la semana que parece de corto plazo. FCF yield de 1,9% exige crecimiento sostenido; no hay urgencia.",
+   "alerta_tesis": null,
+   "score": 59.773026,
+   "motivo": "Primera vez en el ciclo",
+   "precio_eval": 347.01001,
+   "precio_actual": 347.01001,
+   "rend": 0.0,
+   "rend_ref": 0.0,
+   "exceso": 0.0,
+   "dias": -2
+  },
+  {
+   "fecha": "2026-11-15",
+   "tipo": "semanal",
+   "ticker": "NVDA",
+   "nombre": "NVIDIA Corporation",
+   "precio_reportado": 162.850006,
+   "puntaje_tecnico": -30,
+   "etiqueta": "Neutral",
+   "tendencia": "Lateral / mixta",
+   "rsi": 24.859579,
+   "momento": "Esperar",
+   "comentario": "Calidad excepcional pero cae libre: RSI 25, en banda inferior, -25% en un mes. El salto del CEO añade incertidumbre antes de los primeros resultados post-Huang; sobrevendida no equivale a piso.",
+   "alerta_tesis": "La salida de Jensen Huang como CEO es un cambio de liderazgo material: HSBC bajó su recomendación y hay escepticismo en Wall Street. Debilita la tesis hasta ver los primeros resultados sin él.",
+   "score": 74.063122,
+   "motivo": "Rotación (último análisis 2026-11-10)",
+   "precio_eval": 162.850006,
+   "precio_actual": 162.850006,
+   "rend": 0.0,
+   "rend_ref": 0.0,
+   "exceso": 0.0,
+   "dias": -2
+  },
+  {
+   "fecha": "2026-11-15",
+   "tipo": "semanal",
+   "ticker": "T",
+   "nombre": "AT&T Inc.",
+   "precio_reportado": 22.18,
+   "puntaje_tecnico": -40,
+   "etiqueta": "Debilidad: no apurarse",
+   "tendencia": "Bajista",
+   "rsi": 48.381143,
+   "momento": "Evitar",
+   "comentario": "Tendencia bajista (bajo SMA50 y SMA200) y la caída de ganancias de -90% sin explicar. Barata y con dividendo, pero la deuda neta/EBITDA ~3,7x pide cautela.",
+   "alerta_tesis": null,
+   "score": 58.18988,
+   "motivo": "Primera vez en el ciclo",
+   "precio_eval": 22.18,
+   "precio_actual": 22.18,
+   "rend": 0.0,
+   "rend_ref": 0.0,
+   "exceso": 0.0,
+   "dias": -2
+  },
+  {
+   "fecha": "2026-11-15",
+   "tipo": "semanal",
+   "ticker": "SNDK",
+   "nombre": "Sandisk Corporation",
+   "precio_reportado": 885.01001,
+   "puntaje_tecnico": -40,
+   "etiqueta": "Neutral",
+   "tendencia": "Lateral / mixta",
+   "rsi": 33.925976,
+   "momento": "Esperar",
+   "comentario": "Cayó 50% en 3 meses y 62% desde el máximo; los múltiplos de 3-7x probablemente reflejan ganancias pico de NAND. Faltan señales de piso y el split no cambia la tesis.",
+   "alerta_tesis": null,
+   "score": 84.699758,
+   "motivo": "Rotación (último análisis 2026-11-10)",
+   "precio_eval": 885.01001,
+   "precio_actual": 885.01001,
+   "rend": 0.0,
+   "rend_ref": 0.0,
+   "exceso": 0.0,
+   "dias": -2
+  },
+  {
+   "fecha": "2026-11-15",
+   "tipo": "semanal",
+   "ticker": "BKNG",
+   "nombre": "Booking Holdings Inc.",
+   "precio_reportado": 159.580002,
+   "puntaje_tecnico": -50,
+   "etiqueta": "Debilidad: no apurarse",
+   "tendencia": "Bajista",
+   "rsi": 48.694167,
+   "momento": "Evitar",
+   "comentario": "Tendencia bajista, -25% YTD y bajo ambas medias, con riesgo de que los agentes de IA desvíen tráfico. Candidata del mes por calidad, pero el técnico no acompaña todavía.",
+   "alerta_tesis": "Los titulares sobre agentes de IA como nuevos 'gatekeepers' de búsqueda de viajes tocan el punto de vigilancia de la tesis (costo de adquisición de tráfico). Es un riesgo a monitorear, no un quiebre confirmado.",
+   "score": 80.993098,
+   "motivo": "Rotación (último análisis 2026-11-10)",
+   "precio_eval": 159.580002,
+   "precio_actual": 159.580002,
+   "rend": 0.0,
+   "rend_ref": 0.0,
+   "exceso": 0.0,
+   "dias": -2
   }
  ],
  "series": {
   "000660.KS": {
    "fechas": [
     "2026-11-06",
-    "2026-11-12"
+    "2026-11-13"
    ],
    "close": [
     1132000.0,
-    1254000.0
+    1216000.0
    ]
   },
   "005930.KS": {
    "fechas": [
     "2026-11-06",
-    "2026-11-12"
+    "2026-11-13"
    ],
    "close": [
     188700.0,
-    208000.0
+    206000.0
    ]
   },
   "0883.HK": {
    "fechas": [
     "2026-11-06",
-    "2026-11-12"
+    "2026-11-13"
    ],
    "close": [
     23.48,
@@ -2126,491 +2567,491 @@
   "0941.HK": {
    "fechas": [
     "2026-11-06",
-    "2026-11-12"
+    "2026-11-13"
    ],
    "close": [
     81.1,
-    80.7
+    80.4
    ]
   },
   "1398.HK": {
    "fechas": [
     "2026-11-06",
-    "2026-11-12"
+    "2026-11-13"
    ],
    "close": [
     7.95,
-    7.84
+    7.92
    ]
   },
   "300750.SZ": {
    "fechas": [
     "2026-11-06",
-    "2026-11-12"
+    "2026-11-13"
    ],
    "close": [
     254.22,
-    240.0
+    237.7
    ]
   },
   "3968.HK": {
    "fechas": [
     "2026-11-06",
-    "2026-11-12"
+    "2026-11-13"
    ],
    "close": [
     54.15,
-    54.0
+    53.95
    ]
   },
   "600519.SS": {
    "fechas": [
     "2026-11-06",
-    "2026-11-12"
+    "2026-11-13"
    ],
    "close": [
     1453.0,
-    1410.27
+    1435.26
    ]
   },
   "601628.SS": {
    "fechas": [
     "2026-11-06",
-    "2026-11-12"
+    "2026-11-13"
    ],
    "close": [
     35.51,
-    34.3
+    34.95
    ]
   },
   "6857.T": {
    "fechas": [
     "2026-11-06",
-    "2026-11-12"
+    "2026-11-13"
    ],
    "close": [
     28015.0,
-    29985.0
+    30610.0
    ]
   },
   "688825.SS": {
    "fechas": [
     "2026-11-06",
-    "2026-11-12"
+    "2026-11-13"
    ],
    "close": [
     40.41,
-    40.97
+    39.98
    ]
   },
   "8035.T": {
    "fechas": [
     "2026-11-06",
-    "2026-11-12"
+    "2026-11-13"
    ],
    "close": [
     8263.0,
-    9304.0
+    9461.0
    ]
   },
   "ABBN.SW": {
    "fechas": [
     "2026-11-06",
-    "2026-11-12"
+    "2026-11-13"
    ],
    "close": [
     66.98,
-    70.86
+    69.96
    ]
   },
   "APP": {
    "fechas": [
     "2026-11-06",
-    "2026-11-11"
+    "2026-11-13"
    ],
    "close": [
     391.22,
-    404.77
+    409.1
    ]
   },
   "ASML": {
    "fechas": [
     "2026-11-06",
-    "2026-11-11"
+    "2026-11-13"
    ],
    "close": [
     1424.75,
-    1534.42
+    1495.16
    ]
   },
   "AVGO": {
    "fechas": [
     "2026-11-06",
-    "2026-11-11"
+    "2026-11-13"
    ],
    "close": [
     293.69,
-    345.22
+    347.01
    ]
   },
   "BBVA": {
    "fechas": [
     "2026-11-06",
-    "2026-11-11"
+    "2026-11-13"
    ],
    "close": [
     25.05,
-    26.21
+    25.92
    ]
   },
   "BHP": {
    "fechas": [
     "2026-11-06",
-    "2026-11-11"
+    "2026-11-13"
    ],
    "close": [
     79.89,
-    82.06
+    79.49
    ]
   },
   "BKNG": {
    "fechas": [
     "2026-11-06",
-    "2026-11-11"
+    "2026-11-13"
    ],
    "close": [
     160.67,
-    160.21
+    159.58
    ]
   },
   "BMY": {
    "fechas": [
     "2026-11-06",
-    "2026-11-11"
+    "2026-11-13"
    ],
    "close": [
     62.14,
-    62.91
+    63.43
    ]
   },
   "COF": {
    "fechas": [
     "2026-11-06",
-    "2026-11-11"
+    "2026-11-13"
    ],
    "close": [
     201.87,
-    197.11
+    195.08
    ]
   },
   "CRM": {
    "fechas": [
     "2026-11-06",
-    "2026-11-11"
+    "2026-11-13"
    ],
    "close": [
     213.65,
-    218.01
+    217.84
    ]
   },
   "ENR.F": {
    "fechas": [
     "2026-11-06",
-    "2026-11-12"
+    "2026-11-13"
    ],
    "close": [
     116.76,
-    133.74
+    131.92
    ]
   },
   "GILD": {
    "fechas": [
     "2026-11-06",
-    "2026-11-11"
+    "2026-11-13"
    ],
    "close": [
     166.89,
-    169.73
+    168.08
    ]
   },
   "IBKR": {
    "fechas": [
     "2026-11-06",
-    "2026-11-11"
+    "2026-11-13"
    ],
    "close": [
     75.82,
-    82.49
+    81.79
    ]
   },
   "LRCX": {
    "fechas": [
     "2026-11-06",
-    "2026-11-11"
+    "2026-11-13"
    ],
    "close": [
     200.44,
-    235.88
+    225.92
    ]
   },
   "MC.PA": {
    "fechas": [
     "2026-11-06",
-    "2026-11-12"
+    "2026-11-13"
    ],
    "close": [
     408.75,
-    410.8
+    403.45
    ]
   },
   "META": {
    "fechas": [
     "2026-11-06",
-    "2026-11-11"
+    "2026-11-13"
    ],
    "close": [
     610.15,
-    628.77
+    641.69
    ]
   },
   "MFG": {
    "fechas": [
     "2026-11-06",
-    "2026-11-11"
+    "2026-11-13"
    ],
    "close": [
     9.4,
-    10.16
+    10.34
    ]
   },
   "MO": {
    "fechas": [
     "2026-11-06",
-    "2026-11-11"
+    "2026-11-13"
    ],
    "close": [
     76.12,
-    77.39
+    78.64
    ]
   },
   "MU": {
    "fechas": [
     "2026-11-06",
-    "2026-11-11"
+    "2026-11-13"
    ],
    "close": [
     690.0,
-    811.3
+    778.31
    ]
   },
   "NEM": {
    "fechas": [
     "2026-11-06",
-    "2026-11-11"
+    "2026-11-13"
    ],
    "close": [
     120.91,
-    118.47
+    113.14
    ]
   },
   "NFLX": {
    "fechas": [
     "2026-11-06",
-    "2026-11-11"
+    "2026-11-13"
    ],
    "close": [
     63.41,
-    64.54
+    62.15
    ]
   },
   "NVDA": {
    "fechas": [
     "2026-11-06",
-    "2026-11-11"
+    "2026-11-13"
    ],
    "close": [
     186.64,
-    173.73
+    162.85
    ]
   },
   "NVO": {
    "fechas": [
     "2026-11-06",
-    "2026-11-11"
+    "2026-11-13"
    ],
    "close": [
     40.31,
-    41.09
+    41.63
    ]
   },
   "PBR": {
    "fechas": [
     "2026-11-06",
-    "2026-11-11"
+    "2026-11-13"
    ],
    "close": [
     18.53,
-    17.82
+    18.34
    ]
   },
   "PDD": {
    "fechas": [
     "2026-11-06",
-    "2026-11-11"
+    "2026-11-13"
    ],
    "close": [
     83.03,
-    79.01
+    78.97
    ]
   },
   "RMS.PA": {
    "fechas": [
     "2026-11-06",
-    "2026-11-12"
+    "2026-11-13"
    ],
    "close": [
     1362.5,
-    1381.0
+    1341.5
    ]
   },
   "RR.L": {
    "fechas": [
     "2026-11-06",
-    "2026-11-12"
+    "2026-11-13"
    ],
    "close": [
     1261.2,
-    1371.6
+    1350.6
    ]
   },
   "SAF.PA": {
    "fechas": [
     "2026-11-06",
-    "2026-11-12"
+    "2026-11-13"
    ],
    "close": [
     295.5,
-    314.5
+    306.6
    ]
   },
   "SCCO": {
    "fechas": [
     "2026-11-06",
-    "2026-11-11"
+    "2026-11-13"
    ],
    "close": [
     167.27,
-    172.61
+    164.08
    ]
   },
   "SCHW": {
    "fechas": [
     "2026-11-06",
-    "2026-11-11"
+    "2026-11-13"
    ],
    "close": [
-    91.49,
-    92.78
+    91.17,
+    92.98
    ]
   },
   "SNDK": {
    "fechas": [
     "2026-11-06",
-    "2026-11-11"
+    "2026-11-13"
    ],
    "close": [
     835.06,
-    977.69
+    885.01
    ]
   },
   "SNY": {
    "fechas": [
     "2026-11-06",
-    "2026-11-11"
+    "2026-11-13"
    ],
    "close": [
     47.04,
-    48.43
+    48.37
    ]
   },
   "STX": {
    "fechas": [
     "2026-11-06",
-    "2026-11-11"
+    "2026-11-13"
    ],
    "close": [
     460.99,
-    551.72
+    528.29
    ]
   },
   "SU.PA": {
    "fechas": [
     "2026-11-06",
-    "2026-11-12"
+    "2026-11-13"
    ],
    "close": [
     228.65,
-    243.8
+    243.45
    ]
   },
   "T": {
    "fechas": [
     "2026-11-06",
-    "2026-11-11"
+    "2026-11-13"
    ],
    "close": [
     21.63,
-    22.26
+    22.18
    ]
   },
   "TCEHY": {
    "fechas": [
     "2026-11-06",
-    "2026-11-11"
+    "2026-11-13"
    ],
    "close": [
     53.66,
-    51.36
+    49.74
    ]
   },
   "TSM": {
    "fechas": [
     "2026-11-06",
-    "2026-11-11"
+    "2026-11-13"
    ],
    "close": [
     375.44,
-    413.35
+    398.73
    ]
   },
   "TTE": {
    "fechas": [
     "2026-11-06",
-    "2026-11-11"
+    "2026-11-13"
    ],
    "close": [
     87.82,
-    87.96
+    90.74
    ]
   },
   "UCG.MI": {
    "fechas": [
     "2026-11-06",
-    "2026-11-12"
+    "2026-11-13"
    ],
    "close": [
     76.8,
-    84.38
+    83.68
    ]
   },
   "VOO": {
    "fechas": [
     "2026-11-06",
-    "2026-11-11"
+    "2026-11-13"
    ],
    "close": [
     675.99,
-    698.35
+    693.38
    ]
   }
  }
